@@ -1,0 +1,1 @@
+/* ############## SET FUNCTIONS ############## *//* ############## CALL FUNCTIONS ############## */$(document).ready(function() {	// hooray, we have JS, so we can remove the 'no-js' class from the html tag!	$('no-js').removeClass('no-js');});
