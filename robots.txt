@@ -1,4 +1,4 @@
 User-Agent: *
 
-Disallow: /styles/
+Disallow: /css/
 Disallow: /js/

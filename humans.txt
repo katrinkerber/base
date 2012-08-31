@@ -1,1 +1,1 @@
-/* SITE INFO */	Site: 	Contact: 	Twitter: 	Location: /* TEAM */	/* SITE */  Standards: HTML5, CSS2, CSS3  Components:   CMS:   Software: 
+/* SITE INFO */	Site: 	Contact: 	Twitter: 	Location: /* TEAM *//* THANKS */	/* TECHNOLOGY */  Standards: HTML5, CSS2, CSS3  Components:   CMS:   Software: 

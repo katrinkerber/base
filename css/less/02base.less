@@ -1,0 +1,176 @@
+// BASE
+
+/* ===============================================
+  Contents
+
+  --Main colour variables
+  --Mixins (gradients, border-radius, etc)
+  --Grid
+  --Typography
+  --Media
+  --Inline links
+  --Lists
+  --Tables
+  --Forms 
+================================================== */
+
+/* --Main colour variables */
+@text: #333;
+
+/* --Mixins */
+/* border radius */
+.rounded-corners(@radius: 0.5em) {-webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius: @radius;}
+/* linear gradient */
+.linear-gradient( @startcolor, @startpoint, @endcolor, @endpoint ) {background: @endcolor; background: -webkit-gradient(linear, left top, left bottom, color-stop(@startpoint, @startcolor), color-stop(@endpoint,@endcolor)); /* Chrome,Safari4+ */ background: -moz-linear-gradient(top, @startcolor @startpoint, @endcolor @endpoint); /* FF3.6+ */ background: -o-gradient(top, @startcolor @startpoint, @endcolor @endpoint); /* Opera 11.10+ */ background: -ms-linear-gradient(top, @startcolor @startpoint, @endcolor @endpoint); /* IE10+ */ background: linear-gradient(top, @startcolor @startpoint, @endcolor @endpoint); }
+/* shadow */
+.shadow( @shadow ) {-webkit-box-shadow: @shadow; box-shadow        : @shadow; }
+/* transition */
+.transition( @transtion: all 0.25s linear ) {-webkit-transition: @transtion; -moz-transition   : @transtion; -o-transition     : @transtion; transition        : @transtion; }
+/* box sizing */
+.border-box {
+  -moz-box-sizing   : border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing        : border-box;
+  // < IE7 fallback
+  *behavior: url(/js/boxsizing.htc);
+}
+.content-box {
+  -moz-box-sizing   : content-box; 
+  -webkit-box-sizing: content-box; 
+  box-sizing        : content-box;
+  *behavior         : none;
+}
+
+/* --Grid */
+
+/* --Typography */
+body {
+  font: 87.5%/1.29em Helvetica, Arial, sans-serif; /* 14px/18px */
+  color: @text;
+   /* Nicer text rendering in webkit */ 
+  -webkit-font-smoothing: antialiased;
+  /* preventing text size adjustment on iOS without disabling zoom */
+  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+}
+    
+h1, h2, h3, h4, h5, h6, .faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 { font-family: Helvetica, Arial, sans-serif; font-weight: normal; } 
+h1, .faux_h1 {}
+h2, .faux_h2 {}
+h3, .faux_h3 {}
+h4, .faux_h4 {}
+h5, h6, .faux_h5, .faux_h6 {}
+
+p { margin: 0 0 1.43em 0; } /* 20px */
+p img { margin: 0; }
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+small { font-size: 85%; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+  sup { top: -0.5em; }
+  sub { bottom: -0.25em; }
+
+blockquote {
+  font-size: 1.14em; line-height: 1.38em; margin: 0 35px 1.07em 20px;
+  padding-left: 10px;
+  border-left: 2px solid #ccc; 
+
+  p { margin: 0; }
+  cite { font-size: 0.86em; line-height: 1em; }
+}
+
+hr { clear:both; display: block; height: 1px; border:0; border-top: 1px solid #ccc; margin:0.71em 0; padding:0; }
+
+::-moz-selection, ::selection {}
+
+/* --Media */
+
+/* improve image quality when scaled in IE 7,
+  remove the gap between images and the bottom of their containers */
+img { 
+  -ms-interpolation-mode: bicubic; 
+  vertical-align: middle;
+}
+
+/* --Inline links */
+a { 
+  color: red; text-decoration:underline;
+  .transition;
+  /* be nice to people that tab through links and show outline on focus */
+  &:focus { outline: thin dotted; }
+
+  &:visited { color: red; }
+  &:hover, &:active { outline: 0; }
+
+  img { border: none; }
+  img:hover { opacity:0.8; -moz-opacity:0.8; }
+}
+
+/* --Lists */
+ul, ol { 
+  margin:0 0 1.07em 20px;
+}
+  ul li { list-style-type: disc; }
+  ol li { list-style-type: decimal; }
+
+  ul.unstyled, ol.unstyled {
+    margin-left: 0;
+    li { list-style: none; }
+  }
+
+nav ul, nav ul li { margin:0; list-style:none; }
+
+dl { margin:0 0 1.07em 0; }
+  dt { font-weight: bold; }
+  dd { margin:0 0 0.71em 10px; }
+
+/* --Tables */
+table {
+  width: 100%; margin-bottom: 1.43em; text-align: left;
+
+  th {
+    padding: 0.36em 10px;
+    border: 1px solid #333;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  td {
+    padding: 0.36em 10px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+  }
+}
+
+/* --Forms */
+form { margin: 0 0 1.49em 0; }
+  fieldset { margin-bottom: 1.07em; }
+  label { display: block; font-weight: bold; }
+  input, textarea { display: block; border: 1px solid #CCC; padding: 0.38em 5px; background: #FFF; outline:none; color:#777; }
+  input:focus, textarea:focus { border: 1px solid #000; background: #CCC; color: #000;}
+  textarea { min-height: 60px; }
+  input[type="checkbox"] { display: inline; padding: 0; vertical-align: bottom; }
+  input[type="radio"] { display: inline; vertical-align: text-bottom; }
+
+  /*  addresses `appearance` set to `searchfield` in Safari 5 and Chrome */
+  input[type="search"] { -webkit-appearance: textfield; }
+
+  /* removes default vertical scrollbar in IE 6/7/8/9, 
+      improves readability and alignment in all browsers,
+      only allow vertical resizing */
+  textarea { overflow: auto; vertical-align: top; resize: vertical;}
+
+  button, 
+  input[type="button"], 
+  input[type="submit"] { font-size: 100%; cursor: pointer; }
+
+  button[disabled],
+  input[disabled] {
+      cursor: default;
+  }
+  /* custom placeholder styles */
+  ::-webkit-input-placeholder {color: #999; font-style: italic; }
