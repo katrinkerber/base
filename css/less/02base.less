@@ -18,15 +18,10 @@
 @text: #333;
 
 /* --Mixins */
-/* border radius */
 .rounded-corners(@radius: 0.5em) {-webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius: @radius;}
-/* linear gradient */
 .linear-gradient( @startcolor, @startpoint, @endcolor, @endpoint ) {background: @endcolor; background: -webkit-gradient(linear, left top, left bottom, color-stop(@startpoint, @startcolor), color-stop(@endpoint,@endcolor)); /* Chrome,Safari4+ */ background: -moz-linear-gradient(top, @startcolor @startpoint, @endcolor @endpoint); /* FF3.6+ */ background: -o-gradient(top, @startcolor @startpoint, @endcolor @endpoint); /* Opera 11.10+ */ background: -ms-linear-gradient(top, @startcolor @startpoint, @endcolor @endpoint); /* IE10+ */ background: linear-gradient(top, @startcolor @startpoint, @endcolor @endpoint); }
-/* shadow */
 .shadow( @shadow ) {-webkit-box-shadow: @shadow; box-shadow        : @shadow; }
-/* transition */
 .transition( @transtion: all 0.25s linear ) {-webkit-transition: @transtion; -moz-transition   : @transtion; -o-transition     : @transtion; transition        : @transtion; }
-/* box sizing */
 .border-box {
   -moz-box-sizing   : border-box; 
   -webkit-box-sizing: border-box; 
