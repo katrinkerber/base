@@ -189,13 +189,21 @@ FileETag None
 </IfModule>
 
 # ----------------------------------------------------------------------
-# Force the "www." at the beginning of URLs
+# Suppress "www." at the beginning of URLs
 # ----------------------------------------------------------------------
-	<IfModule mod_rewrite.c>
-		RewriteCond %{HTTPS} !=on
-		RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
-		RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-	</IfModule>
+
+# The same content should never be available under two different URLs -
+# especially not with and without "www." at the beginning, since this can cause
+# SEO problems (duplicate content). That's why you should choose one of the
+# alternatives and redirect the other one.
+
+# Rewrite "www.example.com -> example.com".
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # Add trailing slash to (non-file) URLs
