@@ -2,6 +2,14 @@
 
 /* Font families */
 
+/* EM function - convert pixel value into em value */
+$basefont:14;
+$baselh:21;
+
+@function em($target, $context: $basefont) {
+    @return ($target / $context) * 1em; /* i.e. em(21) returns 1.5em (21 / 14) */
+}
+
 /* Mixins */
 @mixin rounded-corners($radius: 0.5em) {-webkit-border-radius: $radius; -moz-border-radius: $radius; border-radius: $radius;}
 
