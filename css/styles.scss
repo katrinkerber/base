@@ -5,7 +5,6 @@ Following the mobile-first approach, styles are declared for small viewports fir
 
 CONTENTS
 --Sass variables and mixins
---Webfonts
 --Reset
 --Typography
 --Forms
@@ -23,10 +22,6 @@ CONTENTS
     £Sass VARIABLES AND MIXINS
 \*###########################################################################################*/
 @import "variablesmixins";
-/*###########################################################################################*\
-    £WEBFONTS
-\*###########################################################################################*/
-/* @font-face declarations should not be in media queries (not standard and breaks in FF) */
 /*###########################################################################################*\
     £RESET
 \*###########################################################################################*/
