@@ -13,7 +13,6 @@ CONTENTS
 --Site footer
 --Content
 --Little helpers
---No-JS
 --IE
 --Print
 */
@@ -156,11 +155,6 @@ input[disabled] { cursor: default; }
 .clear { overflow:hidden; clear:both; display:block; }
 /* no bottom margin on element */
 .no-btm-margin { margin-bottom: 0; }
-
-/*###########################################################################################*\
-    £NO JS
-\*###########################################################################################*/
-.no-js {  }
 
 /*###########################################################################################*\
     £IE
