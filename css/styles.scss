@@ -8,10 +8,11 @@ CONTENTS
 --Webfonts
 --Reset
 --Typography
+--Forms
 --Modular components
 --Site header
 --Site footer
---Content
+--Pagecontent
 --Little helpers
 --IE
 --Print
@@ -97,18 +98,43 @@ table { width: 100%; margin-bottom: 1.5em; text-align: left; }
 th {padding: 0.31em 10px; border-bottom: 1px solid #666; font-weight: bold; text-align: left; vertical-align: top; }
 td {padding: 0.31em 10px; border-bottom: 1px solid #999; vertical-align: top; }
 
-/* Forms */
+/*###########################################################################################*\
+    £FORMS
+\*###########################################################################################*/
 form { margin: 0 0 1.31em 0; }
 fieldset { margin-bottom: 1.31em; }
+
 label { display: block; font-weight: bold; }
+
+/* reset field styles */
+input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0;}
+input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0;}
+input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0;}
+input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0;}
+textarea  { -webkit-appearance: none; -webkit-border-radius: 0;}
+
 input, textarea { display: block; border: 1px solid #CCC; padding: 0.31em 5px; background: #FFF; outline:none; color:#777; }
 input:focus, textarea:focus { border: 1px solid #000; background: #CCC; color: #000;}
+
 textarea { min-height: 60px; }
+
 input[type="checkbox"] { display: inline; padding: 0; vertical-align: bottom; }
 input[type="radio"] { display: inline; vertical-align: text-bottom; }
-input[type="search"] { -webkit-appearance: textfield; }
+
 textarea { overflow: auto; vertical-align: top; resize: vertical;} /* removes default vertical scrollbar in <=IE9, improves readability and alignment, only allow vertical resizing */
-::-webkit-input-placeholder {color: #999; font-style: italic; }
+
+::-webkit-input-placeholder { color: #999; font-style: italic; }
+::-moz-placeholder { color: #999; font-style: italic; } /* Firefox 4 to 18 */ 
+:-moz-placeholder{ color: #999; font-style: italic; } /* Firefox 19+ */
+:-ms-input-placeholder { color: #999; font-style: italic; } /*Internet Explorer 10+ */
+::input-placeholder { color: #999; font-style: italic; }
+  /* remove placeholder on input focus - http://adactio.com/journal/6147/ */
+  [placeholder]:focus::-webkit-input-placeholder { color: transparent; }
+  [placeholder]:focus::-moz-placeholder { color: transparent; }
+  [placeholder]:focus:-moz-placeholder { color: transparent; }
+  [placeholder]:focus:-ms-input-placeholder { color: transparent; }
+  [placeholder]:focus::input-placeholder { color: transparent; }
+
 /* enforce font display on following elements */
 button, 
 input[type="button"], 
@@ -128,7 +154,7 @@ input[disabled] { cursor: default; }
 \*###########################################################################################*/
 
 /*###########################################################################################*\
-    £CONTENT
+    £PAGECONTENT
 \*###########################################################################################*/
 /* Site wide */
 
