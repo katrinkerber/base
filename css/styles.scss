@@ -45,28 +45,40 @@ body { font: 100%/1.5em Helvetica, Arial, sans-serif; /* 16px/24px */
 }  
 h1, h2, h3, h4, h5, h6, 
 .faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 { } 
-h1, .faux_h1 {  /* 25px */font-size: 1.56em; line-height: 1.4em; margin-bottom: 0.28em; text-transform: uppercase;}
-h2, .faux_h2 {  /* 22px */font-size: 1.38em; line-height: 1.27em; margin-bottom: 0.64em; text-transform: uppercase;}
-h3, .faux_h3 { /* 20px */font-size: 1.25em; line-height: 1.4em; margin-bottom: 0.35em; text-transform: none;} 
-h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 { /* 18px */font-size: 1.13em; line-height: 1.17em; text-transform: none;} 
-p { margin: 0 0 1.5em 0; }
+h1, .faux_h1 { font-size: em(25); line-height: em(28,25); margin-bottom: em(5,25); }
+h2, .faux_h2 { font-size: em(22); line-height:em(24,22); margin-bottom: em(5,22); }
+h3, .faux_h3 { font-size: em(20); line-height: em(22,20); margin-bottom: em(5,20); } 
+h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 { font-size: em(18); line-height: em(24,18); } 
+
+p { margin: 0 0 em(24) 0; }
 p img { margin: 0; }
 
 em { font-style: italic; }
 strong, b { font-weight: bold; }
+
 small { font-size: 0.81em; line-height: 1.15em; }
+
 abbr[title] { border-bottom: 1px dotted; }
+
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
+
 blockquote { position: relative; margin: 0 0 1.31em 0; padding: 0 25px; }
-blockquote p {font-style: italic;}
-blockquote p:last-of-type { margin-bottom: 0;}
-blockquote cite { font-size: 0.81em; line-height: 1em; }
-blockquote cite:before { content:'– '; }
-hr { border: 0; border-top: 1px solid $chocolate; padding: 1.31em 0 1.25em 0; margin: 0;}
-::-moz-selection, ::selection { }
-img { -ms-interpolation-mode: bicubic; vertical-align: middle; } /* improve image quality when scaled in IE 7, remove gap between images and the bottom of their containers */
+  blockquote p { font-style: italic; }
+  blockquote p:last-of-type { margin-bottom: 0; }
+  blockquote cite { font-size: em(12); line-height: 1em; }
+  blockquote cite:before { content:'– '; }
+
+hr { border: 0; border-top: 1px solid; padding: em(14) 0 em(15) 0; margin: 0;}
+
+::-moz-selection { }
+::selection { }
+
+img { 
+  -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
+  vertical-align: middle; /* remove gap between images and the bottom of their containers */
+}  
 
 /* Links */
 a { color: red; text-decoration:none; }
@@ -76,9 +88,9 @@ a img { border: none; }
 a img:hover { opacity:0.8; -moz-opacity:0.8; }
 
 /* Lists */
-ul, ol { margin:0 0 1.75em 20px; }
-li { margin-bottom: 0.44em;}
-li:last-child {margin-bottom: 0;}
+ul, ol { margin: 0 0 em(24) 20px; }
+li { margin-bottom: em(2); }
+li:last-child { margin-bottom: 0; }
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
 
@@ -89,20 +101,20 @@ ul.inline li, ol.inline li { display: inline-block; *display: inline; zoom:1;}
 
 nav ul, nav ul li { margin:0; list-style:none; }
 
-dl { margin: 0 0 1.5em 0; }
-dt { font-weight: bold; }
-dd { margin:0 0 0.44em 10px; }
+dl { margin: 0 0 em(24) 0; }
+  dt { font-weight: bold; }
+  dd { margin:0 0 em(2) 10px; }
 
 /* Tables */
-table { width: 100%; margin-bottom: 1.5em; text-align: left; }
-th {padding: 0.31em 10px; border-bottom: 1px solid #666; font-weight: bold; text-align: left; vertical-align: top; }
-td {padding: 0.31em 10px; border-bottom: 1px solid #999; vertical-align: top; }
+table { width: 100%; margin-bottom: em(24); text-align: left; }
+th { padding: em(5) 10px; border-bottom: 1px solid; font-weight: bold; text-align: left; vertical-align: top; }
+td { padding: em(5) 10px; border-bottom: 1px solid; vertical-align: top; }
 
 /*###########################################################################################*\
     £FORMS
 \*###########################################################################################*/
-form { margin: 0 0 1.31em 0; }
-fieldset { margin-bottom: 1.31em; }
+form { margin: 0 0 em(24) 0; }
+fieldset { margin-bottom: em(24); }
 
 label { display: block; font-weight: bold; }
 
@@ -113,15 +125,23 @@ input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0;}
 input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0;}
 textarea  { -webkit-appearance: none; -webkit-border-radius: 0;}
 
-input, textarea { display: block; border: 1px solid #CCC; padding: 0.31em 5px; background: #FFF; outline:none; color:#777; }
-input:focus, textarea:focus { border: 1px solid #000; background: #CCC; color: #000;}
+input, textarea { display: block; border: 1px solid #CCC; padding: em(5) 5px; background: #FFF; outline:none; }
+  input:focus, textarea:focus { border: 1px solid #000; background: #CCC; }
 
 textarea { min-height: 60px; }
 
-input[type="checkbox"] { display: inline; padding: 0; vertical-align: bottom; }
-input[type="radio"] { display: inline; vertical-align: text-bottom; }
+input[type="checkbox"],
+input[type="radio"] { 
+  float: left; 
+  margin: em(2) 8px em(10) 0; /* bottom margin ensure long label text does no fall below input element */ 
+  vertical-align: top; 
+} 
 
-textarea { overflow: auto; vertical-align: top; resize: vertical;} /* removes default vertical scrollbar in <=IE9, improves readability and alignment, only allow vertical resizing */
+textarea { 
+  overflow: auto;  /* removes default vertical scrollbar in <=IE9 */
+  vertical-align: top; /* improves readability and alignment */
+  resize: vertical;  /* only allow vertical resizing */
+}
 
 ::-webkit-input-placeholder { color: #999; font-style: italic; }
 ::-moz-placeholder { color: #999; font-style: italic; } /* Firefox 4 to 18 */ 
@@ -139,8 +159,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical;} /* removes de
 button, 
 input[type="button"], 
 input[type="submit"] { font-size: 100%; font-family: Helvetica, Arial, sans-serif; cursor: pointer; }
-button[disabled],
-input[disabled] { cursor: default; }
+button[disabled], input[disabled] { cursor: default; }
 /*###########################################################################################*\
     £MODULAR COMPONENTS
 \*###########################################################################################*/
