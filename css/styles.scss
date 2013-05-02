@@ -86,9 +86,14 @@ li { margin-bottom: 0.44em;}
 li:last-child {margin-bottom: 0;}
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
-ul.unstyled, ol.unstyled { margin-left: 0; }
-ul.unstyled li, ol.unstyled li { list-style: none; }
+
+ul.no-bull, ol.no-bull { margin-left: 0; }
+ul.no-bull li, ol.no-bull li { list-style: none; }
+
+ul.inline li, ol.inline li { display: inline-block; *display: inline; zoom:1;}
+
 nav ul, nav ul li { margin:0; list-style:none; }
+
 dl { margin: 0 0 1.5em 0; }
 dt { font-weight: bold; }
 dd { margin:0 0 0.44em 10px; }
