@@ -14,7 +14,7 @@ CONTENTS
 --Site footer
 --Pagecontent
 --Little helpers
---IE
+--Oldies
 --Print
 */
 
@@ -188,16 +188,8 @@ input[disabled] { cursor: default; }
 .no-btm-margin { margin-bottom: 0; }
 
 /*###########################################################################################*\
-    £IE
+    £OLDIES
 \*###########################################################################################*/
-.ie.eight, .ie.seven {
-  [class*=icon],
-  header#top nav a.active:before,
-  blockquote:after { display: none; }
-} 
-.ie-six {
-body, body * {font-family: Arial, Helvetica, sans-serif;}
-}
 
 /*###########################################################################################*\
     £PRINT
@@ -219,8 +211,4 @@ body, body * {font-family: Arial, Helvetica, sans-serif;}
   img { page-break-inside: avoid;}
 
   img { max-width: 100% !important;}
-
-  header nav,
-  .go-up,
-  footer[role=contentinfo] { display: none;}
 }
