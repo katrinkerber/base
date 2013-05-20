@@ -182,10 +182,6 @@ button[disabled], input[disabled] { cursor: default; }
 /*###########################################################################################*\
     £Little helpers
 \*###########################################################################################*/
-/* ensure parent element wraps around its floating children - http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before, .clearfix:after { display:table; content:""; }
-.clearfix:after { clear:both; }
-.clearfix { *zoom:1; } /* for IE 6/7 only */
 /*  hide element visually, but have it available for screenreaders - http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
 .visuallyhidden { position: absolute; overflow: hidden; width: 1px; height: 1px; border:0; padding: 0; margin: -1px; clip: rect(0 0 0 0); }
 /* hide from everybody */
