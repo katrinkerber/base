@@ -2,45 +2,15 @@
 
 /* Font families */
 
-/* EM function - convert pixel value into em value */
-$basefont:14;
-$baselh:21;
+/* EM function - converts pixel value into em value */
+$baseFontSize:14;
 
-@function em($target, $context: $basefont) {
-    @return ($target / $context) * 1em; /* i.e. em(21) returns 1.5em (21 / 14) */
+@function em($target, $context: $baseFontSize) {
+    @return ($target / $context) * 1em; /* em(21) runs (21 / 14) and returns 1.5em */
 }
 
-/* Mixins */
-@mixin rounded-corners($radius: 0.5em) {-webkit-border-radius: $radius; -moz-border-radius: $radius; border-radius: $radius;}
-
-@mixin linear-gradient($startcolor, $startpoint, $endcolor, $endpoint) {background: $endcolor; background: -webkit-gradient(linear, left top, left bottom, color-stop($startpoint, $startcolor), color-stop($endpoint,$endcolor)); /* Chrome,Safari4+ */ background: -moz-linear-gradient(top, $startcolor $startpoint, $endcolor $endpoint); /* FF3.6+ */ background: -o-gradient(top, $startcolor $startpoint, $endcolor $endpoint); /* Opera 11.10+ */ background: -ms-linear-gradient(top, $startcolor $startpoint, $endcolor $endpoint); /* IE10+ */ background: linear-gradient(top, $startcolor $startpoint, $endcolor $endpoint); }
-
-@mixin shadow($shadow) { -webkit-box-shadow: $shadow; box-shadow: $shadow; }
-
+/* Opacity Mixin */
 @mixin opacity($opacity) { 
   opacity: $opacity;
-  //<=IE8 
-  $opacityIE: $opacity * 100; 
-  filter: alpha(opacity=$opacityIE);  
-}
-
-@mixin transition($transtion: all 0.25s linear ) { -webkit-transition: $transtion; -moz-transition: $transtion; -o-transition: $transtion; transition: $transtion; }
-
-@mixin rotate($angle) { -webkit-transform: rotate($angle); -moz-transform: rotate($angle); -ms-transform: rotate($angle); -o-transform: rotate($angle); transform: rotate($angle); }
-
-@mixin keyframes($name) { @-webkit-keyframes #{$name} {@content; } @-moz-keyframes #{$name} {@content; } @-ms-keyframes #{$name} {@content; } @keyframes #{$name} {@content; } }
-
-@mixin animate($animation, $animation-2: false) {-webkit-animation: #{$animation, $animation-2}; -moz-animation: #{$animation, $animation-2}; -o-animation: #{$animation, $animation-2}; animation: #{$animation, $animation-2}; };
-
-@mixin border-box { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *behavior: url(/js/boxsizing.htc); }
-
-@mixin content-box { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; *behavior: none; }
-
-
-/* Clearfix placeholder = http://web-design-weekly.com/2013/05/12/handy-sass-mixins/#comment-3668 */
-/* ensure parent element wraps around its floating children - http://nicolasgallagher.com/micro-clearfix-hack/ */
-%clearfix { 
-  & { *zoom: 1; } /* for IE 6/7 only */
-  &:before, &:after { content: ""; display: table; } 
-  &:after { clear: both; } 
+  $opacityIE: $opacity * 100; filter: alpha(opacity=$opacityIE); /* <= IE8 */ 
 }
