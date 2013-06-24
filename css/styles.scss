@@ -1,12 +1,14 @@
 /*
-This stylesheet is written as '.scss' and combined and compressed using CodeKit
-
+This stylesheet is written as '.scss' and combined and compressed using CodeKit.
 Following the mobile-first approach, styles are declared for small viewports first, then optimised for larger viewports.
 
 CONTENTS
 --Sass variables and mixins
---Reset
+--Normalize
 --Typography
+--Lists
+--Tables
+--Media
 --Forms
 --Modular components
 --Site header
@@ -19,30 +21,25 @@ CONTENTS
 
 
 /*###########################################################################################*\
-    £Sass VARIABLES AND MIXINS
+    --SASS VARIABLES AND MIXINS
 \*###########################################################################################*/
 @import "variablesmixins";
+
 /*###########################################################################################*\
-    £RESET
+    --NORMALIZE
 \*###########################################################################################*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline;}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, time {display:block;}
-blockquote, q {quotes:none;}
-blockquote:before, blockquote:after,
-q:before, q:after {content:''; content:none;}
-table {border-spacing:0; border-collapse: collapse;}
-html { height: 100%; width: 100%; overflow-y: scroll; } /* forcing a scroll bar to prevent page jumps on short pages */
-body { height: 100%; width: 100%; margin: 0 auto;}
+@import "normalize";
+
 /*###########################################################################################*\
-    £TYPOGRAPHY
+    --TYPOGRAPHY
 \*###########################################################################################*/
-body { font: 100%/1.5em Helvetica, Arial, sans-serif; /* 16px/24px */
-  color: #333;
+body { font: 100%/1.5em sans-serif; /* 16px/24px */
    /* Nicer text rendering in webkit */ 
   -webkit-font-smoothing: antialiased;
   /* preventing text size adjustment on iOS without disabling zoom */
   -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
 }  
+
 h1, h2, h3, h4, h5, h6, 
 .faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 { } 
 h1, .faux_h1 { font-size: em(25); line-height: em(28,25); margin-bottom: em(5,25); }
@@ -56,10 +53,12 @@ p img { margin: 0; }
 em { font-style: italic; }
 strong, b { font-weight: bold; }
 
-small { font-size: 0.81em; line-height: 1.15em; }
+small { font-size: 80%; line-height: 1.2em; }
 
+/* ABBR styling not present in IE 8/9, Safari 5, and Chrome. */
 abbr[title] { border-bottom: 1px dotted; }
 
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
@@ -70,72 +69,100 @@ blockquote { position: relative; margin: 0 0 1.31em 0; padding: 0 25px; }
   blockquote cite { font-size: em(12); line-height: 1em; }
   blockquote cite:before { content:'– '; }
 
-hr { border: 0; border-top: 1px solid; padding: em(14) 0 em(15) 0; margin: 0;}
+hr { height: 0; border: 0; border-top: 1px solid; padding: em(14) 0 em(15) 0; margin: 0;}
 
 ::-moz-selection { }
 ::selection { }
 
-img { 
-  -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
-  vertical-align: middle; /* remove gap between images and the bottom of their containers */
-}  
-
 /* Links */
 a { color: red; text-decoration:none; }
 a:focus { outline: thin dotted; }
-a:hover, a:active { text-decoration: underline; }
-a img { border: none; }
-a img:hover { opacity:0.8; -moz-opacity:0.8; }
+a:hover, a:active { text-decoration: underline; outline: 0; }
 
-/* Lists */
+/*###########################################################################################*\
+    --LISTS
+\*###########################################################################################*/
 ul, ol { margin: 0 0 em(24) 20px; }
-li { margin-bottom: em(2); }
-li:last-child { margin-bottom: 0; }
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
 
-ul.no-bull, ol.no-bull { margin-left: 0; }
-ul.no-bull li, ol.no-bull li { list-style: none; }
+ul.no-bull, 
+ol.no-bull { margin-left: 0; }
+ul.no-bull li, 
+ol.no-bull li { list-style: none; }
 
-ul.inline li, ol.inline li { display: inline-block; *display: inline; zoom:1;}
+ul.inline li, 
+ol.inline li { display: inline-block; *display: inline; zoom:1;}
 
-nav ul, nav ul li { margin:0; list-style:none; }
+nav ul, 
+nav ul li { margin: 0; list-style: none; }
 
 dl { margin: 0 0 em(24) 0; }
   dt { font-weight: bold; }
   dd { margin:0 0 em(2) 10px; }
 
-/* Tables */
-table { width: 100%; margin-bottom: em(24); text-align: left; }
+/*###########################################################################################*\
+    --TABLES
+\*###########################################################################################*/
+table { width: 100%; margin-bottom: em(24); text-align: left; border-spacing: 0; border-collapse: collapse; }
 th { padding: em(5) 10px; border-bottom: 1px solid; font-weight: bold; text-align: left; vertical-align: top; }
 td { padding: em(5) 10px; border-bottom: 1px solid; vertical-align: top; }
 
 /*###########################################################################################*\
-    £FORMS
+    --MEDIA
+\*###########################################################################################*/
+figure { margin: 0; }
+
+img { 
+  -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
+  vertical-align: middle; /* remove gap between images and the bottom of their containers */
+  border: 0; /* Remove border when inside `a` element in IE 8/9 */
+}
+a img:hover { opacity:0.8; -moz-opacity:0.8; }  
+
+/*###########################################################################################*\
+    --FORMS
 \*###########################################################################################*/
 form { margin: 0 0 em(24) 0; }
 fieldset { margin-bottom: em(24); }
 
+legend {
+    border: 0; /* Correct `color` not being inherited in IE 8/9 */
+    padding: 0; /* Remove padding so people aren't caught out if they zero out fieldsets */
+}
+
 label { display: block; font-weight: bold; }
 
-/* reset field styles */
-input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0;}
-input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0;}
-input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0;}
-input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0;}
-textarea  { -webkit-appearance: none; -webkit-border-radius: 0;}
+input,
+select,
+textarea,
+button {
+    font-family: inherit; /* Correct font family not being inherited in all browsers */
+    font-size: 100%; /* Correct font size not being inherited in all browsers */
+    margin: 0; /* Address margins set differently in Firefox 4+, Safari 5, and Chrome */
+    line-height: normal; /* Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
+}
 
-input, textarea { display: block; border: 1px solid #CCC; padding: em(5) 5px; background: #FFF; outline:none; }
-  input:focus, textarea:focus { border: 1px solid #000; background: #CCC; }
+/* Remove any webkit styling from fields */
+input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
 
-textarea { min-height: 60px; }
+input, textarea { padding: em(5) 5px; outline:none; }
+
+textarea { 
+  min-height: em(60); 
+  overflow: auto; /* Remove default vertical scrollbar in IE 8/9 */
+  vertical-align: top; /* Improve readability and alignment in all browsers */
+}
 
 input[type="checkbox"],
 input[type="radio"] { 
-  float: left; 
-  margin: em(2) 8px em(10) 0; /* bottom margin ensure long label text does no fall below input element */ 
-  vertical-align: top; 
-} 
+  box-sizing: border-box; /* Address box sizing set to `content-box` in IE 8/9 */
+  padding: 0; /* Remove excess padding in IE 8/9 */
+}
 
 textarea { 
   overflow: auto;  /* removes default vertical scrollbar in <=IE9 */
@@ -143,6 +170,7 @@ textarea {
   resize: vertical;  /* only allow vertical resizing */
 }
 
+/* Placeholders */
 ::-webkit-input-placeholder { color: #999; font-style: italic; }
 ::-moz-placeholder { color: #999; font-style: italic; } /* Firefox 4 to 18 */ 
 :-moz-placeholder{ color: #999; font-style: italic; } /* Firefox 19+ */
@@ -155,39 +183,36 @@ textarea {
   [placeholder]:focus:-ms-input-placeholder { color: transparent; }
   [placeholder]:focus::input-placeholder { color: transparent; }
 
-/* enforce font display on following elements */
-button, 
-input[type="button"], 
-input[type="submit"] { font-size: 100%; font-family: Helvetica, Arial, sans-serif; cursor: pointer; }
 button[disabled], input[disabled] { cursor: default; }
+
 /*###########################################################################################*\
-    £MODULAR COMPONENTS
+    --MODULAR COMPONENTS
 \*###########################################################################################*/
 
 /*###########################################################################################*\
-    £SITE HEADER
+    --SITE HEADER
 \*###########################################################################################*/
 
 /*###########################################################################################*\
-    £SITE FOOTER
+    --SITE FOOTER
 \*###########################################################################################*/
 
 /*###########################################################################################*\
-    £PAGECONTENT
+    --PAGECONTENT
 \*###########################################################################################*/
 /* Site wide */
 
 /* Section specific */
 
 /*###########################################################################################*\
-    £Little helpers
+    --Little helpers
 \*###########################################################################################*/
 /*  hide element visually, but have it available for screenreaders - http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
 .visuallyhidden { position: absolute; overflow: hidden; width: 1px; height: 1px; border:0; padding: 0; margin: -1px; clip: rect(0 0 0 0); }
 /* hide from everybody */
 .hidden { visibility: hidden; display: none !important; }
 /* replace text with a background image, but keep screenreaders happy */
-.replaced { display:block; background-color:transparent; background-repeat:no-repeat; text-indent:-999999em; text-align:left; line-height:0; }
+.replaced { display:block; background-color:transparent; background-repeat:no-repeat; text-indent:-999em; text-align:left; line-height:0; }
 /* float element to the left */
 .float { float:left; clear:none; display:inline; }
 /* float element to the right */
@@ -198,11 +223,11 @@ button[disabled], input[disabled] { cursor: default; }
 .no-btm-margin { margin-bottom: 0; }
 
 /*###########################################################################################*\
-    £OLDIES
+    --OLDIES
 \*###########################################################################################*/
 
 /*###########################################################################################*\
-    £PRINT
+    --PRINT
 \*###########################################################################################*/
 @media print {
   * {
@@ -212,8 +237,8 @@ button[disabled], input[disabled] { cursor: default; }
       text-shadow: none !important;
   }
 
-  #content a[href]:after { content:" (" attr(href) ")"; }
-  #content  abbr[title]:after { content: " (" attr(title) ")"; }
+  #pagecontent a[href]:after { content:" (" attr(href) ")"; }
+  #pagecontent  abbr[title]:after { content: " (" attr(title) ")"; }
 
   thead { display: table-header-group; /* repeats table header on each page - h5bp.com/t */}
 
