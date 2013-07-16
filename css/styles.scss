@@ -156,18 +156,13 @@ textarea {
   min-height: em(60); 
   overflow: auto; /* Remove default vertical scrollbar in IE 8/9 */
   vertical-align: top; /* Improve readability and alignment in all browsers */
+  resize: vertical;  /* only allow vertical resizing */
 }
 
 input[type="checkbox"],
 input[type="radio"] { 
   box-sizing: border-box; /* Address box sizing set to `content-box` in IE 8/9 */
   padding: 0; /* Remove excess padding in IE 8/9 */
-}
-
-textarea { 
-  overflow: auto;  /* removes default vertical scrollbar in <=IE9 */
-  vertical-align: top; /* improves readability and alignment */
-  resize: vertical;  /* only allow vertical resizing */
 }
 
 /* Placeholders */
