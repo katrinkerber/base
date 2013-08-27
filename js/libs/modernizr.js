@@ -6,7 +6,7 @@
 /* Tagging on some device/OS detection */
 // var ua = navigator.userAgent;
 // // <=iOS3
-// if( /(iPhone|iPod)/i.test(ua) ) { 
+// if( /(iPhone|iPod|iPad)/i.test(ua) ) { 
 //     if(/OS [2-3]_\d(_\d)? like Mac OS X/i.test(ua)) {
 //         // iOS 2-3  
 //         document.getElementsByTagName('html')[0].className += ' old-mobile';
@@ -29,4 +29,9 @@
 //       document.getElementsByTagName('html')[0].className += ' no-position-fixed';
 //   }
 // }
+// // Opera Mini
+// if( ua.indexOf('Opera Mini') > -1) {
+//   document.getElementsByTagName('html')[0].className += ' no-icons no-position-fixed';
+// }
+
 // alert(document.getElementsByTagName('html')[0].className);
