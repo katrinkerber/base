@@ -82,7 +82,7 @@ a:hover, a:active { text-decoration: underline; outline: 0; }
 /*###########################################################################################*\
     --LISTS
 \*###########################################################################################*/
-ul, ol { margin: 0 0 em(24) 20px; }
+ul, ol { margin: 0 0 em(24) 20px; padding: 0; }
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
 
@@ -206,8 +206,9 @@ button[disabled], input[disabled] { cursor: default; }
 .visuallyhidden { position: absolute; overflow: hidden; width: 1px; height: 1px; border:0; padding: 0; margin: -1px; clip: rect(0 0 0 0); }
 /* hide from everybody */
 .hidden { visibility: hidden; display: none !important; }
-/* replace text with a background image, but keep screenreaders happy */
-.replaced { display:block; background-color:transparent; background-repeat:no-repeat; text-indent:-999em; text-align:left; line-height:0; }
+/* replace text with a background image, but keep screenreaders happy -  https://github.com/h5bp/html5-boilerplate/commit/adecc5da035d6d76b77e3fa95c6abde841073da2 */
+.replaced { background-color:transparent; background-repeat:no-repeat; border: 0; overflow: hidden; *text-indent:-999em; }
+.replaced:before { content: ""; display: block; width: 0; height: 200%; }
 /* float element to the left */
 .float { float:left; clear:none; display:inline; }
 /* float element to the right */

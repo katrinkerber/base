@@ -27,3 +27,6 @@ pre { white-space: pre-wrap; }
 
 /* Set consistent quote types. */
 q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/* Remove top margins for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p { margin-top: 0; }
