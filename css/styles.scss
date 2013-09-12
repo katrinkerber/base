@@ -204,6 +204,8 @@ button[disabled], input[disabled] { cursor: default; }
 \*###########################################################################################*/
 /*  hide element visually, but have it available for screenreaders - http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
 .visuallyhidden { position: absolute; overflow: hidden; width: 1px; height: 1px; border:0; padding: 0; margin: -1px; clip: rect(0 0 0 0); }
+  /* sometimes we need to reverse the hiding, i.e. when there's no support for font icons or in print styles etc */
+  @mixin reverse-visuallyhidden { position: static; overflow: auto; width: auto; height: auto; margin: 0; clip: auto; }
 /* hide from everybody */
 .hidden { visibility: hidden; display: none !important; }
 /* replace text with a background image, but keep screenreaders happy -  https://github.com/h5bp/html5-boilerplate/commit/adecc5da035d6d76b77e3fa95c6abde841073da2 */
