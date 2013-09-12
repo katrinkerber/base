@@ -33,3 +33,11 @@ dwsync.xml
 intermediate
 publish
 .idea
+_cache
+_cache/*
+_logs/*
+transformed_img/*
+
+
+# SFTP set up file
+sftp-config.json
