@@ -1,3 +1,17 @@
+/*###########################################################################################*\
+    --SASS VARIABLES, MIXINS, PLACEHOLDERS
+      ---Bourbon
+      ---Colours
+      ---Font families
+      ---EM function
+      ---Opactiy mixin
+      ---Breakpoint mixin
+      ---Clearfix placeholder
+      ---Reverse Visuallyhidden
+\*###########################################################################################*/
+
+/* Bourbon - http://bourbon.io/docs/ */
+@import 'bourbon';
 /* Colour variables */
 
 /* Font families */
@@ -14,3 +28,21 @@ $baseFontSize:14;
   opacity: $opacity;
   $opacityIE: $opacity * 100; filter: alpha(opacity=$opacityIE); /* <= IE8 */ 
 }
+
+/* Breakpoint Mixin */
+@mixin respond-to($widthCondition, $breakpoint) {
+    $emBreakpoint: ($breakpoint / 16) * 1em ;
+    @media only screen and ($widthCondition: $emBreakpoint ) { @content; }
+}
+
+/* Clearfix Placeholder */
+%clearfix {
+  *zoom: 1;
+  &:after {
+      content: " ";
+      display: table;
+      clear: both;
+  }
+}
+/* Reverse Visuallyhidden  */
+%reverse-visuallyhidden { position: static; overflow: auto; width: auto; height: auto; margin: 0; clip: auto; }
