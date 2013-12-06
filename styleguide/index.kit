@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]>  <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]--> 
+<!--[if IE 7 ]>     <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]--> 
+<!--[if IE 8 ]>     <html class="no-js lt-ie9 ie8" lang="en"> <![endif]--> 
+<!--[if IE 9 ]>     <html class="no-js ie9" lang="en"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!-->  <!--<![endif]-->
+
+<meta charset="UTF-8" /> 
+
+<title>Style Guide</title>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+
+<link rel="stylesheet" href="../css/styles.css">
+
+ <!-- favicon-->
+<link rel="shortcut icon" href="favicon.ico">
+ <!-- touch icon - using one high-res icon that can be used across all devices, rather than saving three different icons... -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  
+<!-- All JavaScript at bottom for optimal page load times, except for modernizr and GA -->
+  <!-- custom build of modernizr, contains HTML5 shiv, css classes, yepnope load and tagged-on detection of old mobile OS -->
+  <script src="../js/libs/modernizr.js"></script>
+
+<style>
+  pre { clear: both; padding: 15px 15px 0 15px; margin: 15px 0;}
+  code { background-color: #333; color: #ffa0a0; padding: 2px 5px; }
+</style>
+<body>
+  <header role="banner">
+    <h1>Style Guide</h1>
+    <nav>
+      <ul>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#colours">Colours</a></li>
+        <li><a href="#typography">Typography</a></li>      
+        <li><a href="#icons">Icons</a></li> 
+        <li><a href="#buttons">Buttons</a></li> 
+        <li><a href="#forms">Forms</a></li> 
+        <li><a href="#grid">Grid</a></li>
+    </nav>
+  </header>
+  <section role="main" class="pagecontent">
+
+    <!-- @include _notes.html -->
+    <!-- @include _colours.html -->
+    <!-- @include _typography.html -->
+    <!-- @include _icons.html -->
+    <!-- @include _buttons.html -->
+    <!-- @include _forms.html -->
+    <!-- @include _grid.html -->
+
+  </section> <!-- /pagecontent -->
+  
+  <!-- JavaScript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Styleguide specific -->
+      <!-- Google code prettify -->
+      <script src="run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css"></script>
+      <!-- tabs -->
+      <script type="text/javascript">
+        $(document).ready(function() {
+          var $sections = $('.pagecontent').find('section.tab-content');
+          var $links    = $('nav').find('a');
+
+          if(window.location.hash) {
+            $sections.hide();
+            $('.pagecontent').find('section.tab-content' + window.location.hash).show();
+            $('nav').find('a[href="' + window.location.hash + '"]').addClass('active');
+          } else {
+            $sections.hide();
+            $('.pagecontent').find('section.tab-content#notes').show();
+            $('nav li:first-child a').addClass('active');
+          }
+
+          $links.click(function(){
+            var $this  = $(this);
+            var target = $(this).attr('href');
+            window.location.hash = target;
+            $links.not(this).removeClass('active');
+            $sections.hide();
+            $this.addClass('active');
+            $('section' +target).fadeIn(500);
+            return false;
+          });
+        });
+      </script>
+</body>
