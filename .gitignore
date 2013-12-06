@@ -10,7 +10,7 @@
 *~
 *.sass-cache
 
-# OS or Editor folders
+# OS or Editor files and folders
 .DS_Store
 Thumbs.db
 .cache
@@ -33,6 +33,16 @@ dwsync.xml
 intermediate
 publish
 .idea
+back_up
+## EE specific
+cache
+cache/*
+system/expressionengine/cache
+system/expressionengine/cache/*
+images/made
+images/captchas
+.PBSyncDB
+## Statamic specific
 _cache
 _cache/*
 _logs/*
