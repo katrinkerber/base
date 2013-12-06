@@ -1,4 +1,8 @@
-User-Agent: *
+User-Agent: *    
+Disallow: /index.php/
 
-Disallow: /css/
-Disallow: /js/
+User-Agent: Googlebot-Image
+Disallow: /images
+Disallow: /assets
+Disallow: /themes
+Disallow: /system
