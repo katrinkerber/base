@@ -10,10 +10,10 @@ CONTENTS
 --Tables
 --Media
 --Forms
---Modular components
+--Components
 --Site header
 --Site footer
---Pagecontent
+--Pages
 --Little helpers
 --Print
 */
@@ -40,7 +40,7 @@ body { font: 100%/1.5em sans-serif; /* 16px/24px */
   
   /* WOULD LOVE TO USE THE BELOW, BUT ANDROID IS BEING A PARTY POOPER */
   /* improve handling of kerning pairs and ligatures in modern browsers */
-  /*text-rendering: optimizeLegibility;*/
+  /* text-rendering: optimizeLegibility; */
 
   /* use ligatures if available */
   font-variant-ligatures: common-ligatures;
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6,
 h1, .faux_h1 { font-size: em(25); line-height: em(28,25); margin-bottom: em(5,25); }
 h2, .faux_h2 { font-size: em(22); line-height:em(24,22); margin-bottom: em(5,22); }
 h3, .faux_h3 { font-size: em(20); line-height: em(22,20); margin-bottom: em(5,20); } 
-h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 { font-size: em(18); line-height: em(24,18); } 
+h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 { font-size: em(18); line-height: em(24,18); margin-bottom: em(5,18);} 
 
 p { margin: 0 0 em(24) 0; }
 p img { margin: 0; }
@@ -89,6 +89,8 @@ a:hover, a:active { text-decoration: underline; outline: 0; }
     --LISTS
 \*###########################################################################################*/
 ul, ol { margin: 0 0 em(24) 20px; padding: 0; }
+ul ul, 
+ol ol { margin-bottom: 0; }
 ul li { list-style-type: disc; }
 ol li { list-style-type: decimal; }
 
@@ -102,6 +104,7 @@ ol.inline li { display: inline-block; *display: inline; zoom:1;}
 
 nav ul, 
 nav ul li { margin: 0; list-style: none; }
+nav .current { font-weight: bold; }
 
 dl { margin: 0 0 em(24) 0; }
   dt { font-weight: bold; }
@@ -110,15 +113,20 @@ dl { margin: 0 0 em(24) 0; }
 /*###########################################################################################*\
     --TABLES
 \*###########################################################################################*/
-table { width: 100%; margin-bottom: em(24); text-align: left; border-spacing: 0; border-collapse: collapse; }
-th { padding: em(5) 10px; border-bottom: 1px solid; font-weight: bold; text-align: left; vertical-align: top; }
-td { padding: em(5) 10px; border-bottom: 1px solid; vertical-align: top; }
+table { width: 100%; margin-bottom: em(24); text-align: left; border-spacing: 0; border-collapse: collapse }
+th { padding: em(5) em(10); border-bottom: 1px solid #888; font-weight: bold; text-align: left; vertical-align: top; }
+td { padding: em(5) em(10); border-bottom: 1px solid #888; vertical-align: top; }
+th:first-child,
+td:first-child { padding-left: 0;}
 
 /*###########################################################################################*\
     --MEDIA
 \*###########################################################################################*/
 figure { margin: 0; }
 figure img { max-width: 100%; height: auto; }
+
+figure.inset { padding: 0 1rem 1rem 0;}
+figure.inset.floatright { padding: 0 0 1rem 1rem; }
 
 img { 
   -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
@@ -157,7 +165,7 @@ input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
 input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0; }
 textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
 
-input, textarea { padding: em(5) 5px; outline:none; }
+input, textarea { padding: em(5); outline:none; }
 
 textarea { 
   min-height: em(60); 
@@ -188,7 +196,7 @@ input[type="radio"] {
 button[disabled], input[disabled] { cursor: default; }
 
 /*###########################################################################################*\
-    --MODULAR COMPONENTS
+    --COMPONENTS
 \*###########################################################################################*/
 
 /*###########################################################################################*\
@@ -200,7 +208,7 @@ button[disabled], input[disabled] { cursor: default; }
 \*###########################################################################################*/
 
 /*###########################################################################################*\
-    --PAGECONTENT
+    --PAGES
 \*###########################################################################################*/
 /* Site wide */
 
