@@ -11,33 +11,58 @@
  
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 
+<!-- link to the site's main CSS here -->
 <link rel="stylesheet" href="../css/styles.css">
 
- <!-- favicon-->
-<link rel="shortcut icon" href="favicon.ico">
- <!-- touch icon - using one high-res icon that can be used across all devices, rather than saving three different icons... -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  
-<!-- All JavaScript at bottom for optimal page load times, except for modernizr and GA -->
-  <!-- custom build of modernizr, contains HTML5 shiv, css classes, yepnope load and tagged-on detection of old mobile OS -->
-  <script src="../js/libs/modernizr.js"></script>
+<!-- favicon -->
+<link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="../favicon.ico">
 
+<!-- Add any style guide specific styles here -->
 <style>
-  pre { clear: both; padding: 15px 15px 0 15px; margin: 15px 0;}
-  code { background-color: #333; color: #ffa0a0; padding: 2px 5px; }
+  @media only screen and (max-width: 43.99em ) {
+    header nav li { 
+      display: inline-block; 
+      padding: 1em 0.5em 1em 0;
+    }
+  }
+  @media only screen and (min-width: 44em ) {
+    header { 
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 24%; 
+      height: 100%; 
+      overflow: auto;
+    }
+    .pagecontent {
+      padding-left: 24%;
+    }
+    .styleguide-note {
+      display: block;
+      margin: -0.2rem 0 1.5rem;
+      color: #888;
+      font-style: italic;
+    }
+      p + .styleguide-note {
+        margin-top: -1.4rem;
+      }
+  }
+  pre { clear: both; padding: 1rem 0;}
+  code { border: 1px solid #888; padding: 0;}
 </style>
 <body>
   <header role="banner">
-    <h1>Style Guide</h1>
+    <h1>Site title</h1>
+    <h2>Style Guide</h2>
     <nav>
       <ul>
-        <li><a href="#notes">Notes</a></li>
+        <li><a href="#notes">Code Notes</a></li>
         <li><a href="#colours">Colours</a></li>
         <li><a href="#typography">Typography</a></li>      
         <li><a href="#icons">Icons</a></li> 
         <li><a href="#buttons">Buttons</a></li> 
         <li><a href="#forms">Forms</a></li> 
-        <li><a href="#grid">Grid</a></li>
+        <li><a href="#layout">Layout</a></li>
     </nav>
   </header>
   <section role="main" class="pagecontent">
@@ -50,234 +75,133 @@
   
   <p>The <em>scripts.js</em> file is set up in <a href="http://incident57.com/codekit/">CodeKit</a> to import all used plugins at the top and is then concatenated and minified to <em>scripts-min.js</em>.</p>
 </section>
-    <section class="tab-content colspan10 panel" id="colours">
+    <section class="tab-content" id="colours">
   <h1>Colours</h1>
 
   <table>
     <thead>
       <tr>
         <th style="width:33%;">Colour</th>
-        <th style="width:33%;">LESS</th>
+        <th style="width:33%;">Sass</th>
         <th style="width:33%;">HEX</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="background-color:#252525"></td>
-        <td>@grey25</td>
+        <td>$grey25</td>
         <td>#252525</td>
       </tr>
       <tr>
         <td style="background-color:#363636"></td>
-        <td>@grey36</td>
+        <td>$grey36</td>
         <td>#363636</td>
       </tr>
       <tr>
         <td style="background-color:#464646"></td>
-        <td>@grey46</td>
+        <td>$grey46</td>
         <td>#464646</td>
-      </tr>
-      <tr>
-        <td style="background-color:#737373"></td>
-        <td>@grey73</td>
-        <td>#737373</td>
-      </tr>
-      <tr>
-        <td style="background-color:#898989"></td>
-        <td>@grey89</td>
-        <td>#898989</td>
-      </tr>
-      <tr>
-        <td style="background-color:#B7B7B7"></td>
-        <td>@greyB7</td>
-        <td>#B7B7B7</td>
-      </tr>
-      <tr>
-        <td style="background-color:#CCCCCC"></td>
-        <td>@greyCCC</td>
-        <td>#CCCCCC</td>
-      </tr>
-      <tr>
-      <tr>
-        <td style="background-color:#f2f2f2"></td>
-        <td>@greyF2</td>
-        <td>#f2f2f2</td>
-      </tr>
-      <tr>
-        <td style="background-color:#f0ab00"></td>
-        <td>@yellow</td>
-        <td>#f0ab00</td>
-      </tr>
-      <tr>
-        <td style="background-color:#008fd3"></td>
-        <td>@blueLight</td>
-        <td>#008fd3</td>
-      </tr>
-      <tr>
-        <td style="background-color:#0076cb"></td>
-        <td>@blueDark</td>
-        <td>#0076cb</td>
-      </tr>
-      <tr>
-        <td style="background-color:#b93c47"></td>
-        <td>@red</td>
-        <td>#b93c47</td>
-      </tr>
-      <tr>
-        <td style="background-color:#f2dcdd"></td>
-        <td>@redLight</td>
-        <td>#f2dcdd</td>
-      </tr>
+      </tr> 
     </tbody>
   </table>
 </section>
-    <section class="tab-content colspan10 panel" id="typography">
+    <section class="tab-content" id="typography">
 
-  <h1>Heading 1 / Page heading - 31/38px Medium #008fd3</h1>
-     <p>Sed ut perspiciatis <strong>bold text</strong> sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <em>italised text</em> voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem <small>small text</small>. </p>
+  <h1>This is a heading 1</h1>
+  <small class="styleguide-note">Font family, font-style, font-weight, colour</small>
 
-  <h1 class="light">A light Heading 1</h1>
+  <p>Sed ut perspiciatis <strong>bold text</strong> sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <em>italised text</em> voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem <small>small text</small>.</p>
+  <small class="styleguide-note">Font family, font-style, font-weight</small>
 
-     <p>Sed ut perspiciatis unde <a href="#">inline link</a> error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui <span class="highlighted">highlighted text</span> uses the <code>.highlighted</code> class on a span tag. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+  <h2>This is a heading 2</h2>
+  <small class="styleguide-note">Font family, font-style, font-weight</small>
 
-  <h2>Heading 2 - 19/22 Medium #464646</h2>
+  <h3>This is a heading 3 that spans over multiple lines This is a heading 3 that spans over multiple lines This is a heading 3 that spans over multiple lines</h3>
+  <small class="styleguide-note">Font family, font-style, font-weight</small>
 
-  <h3>Heading 3 spanning over several lines Heading 3 spanning over several lines - 16/22px #252525 </h3>
-     <p>Sed ut perspiciatis unde <sub>subscript text</sub> sit voluptatem accusantium doloremque <sup>subscript text</sup>, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione <del>deleted text</del>.</p>
-  <h4>Heading 4</h4>
-     <p>Sed ut perspiciatis <strong>unde omnis iste natus error</strong> sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <em>Nemo enim ipsam voluptatem quia</em> voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-    <p>An abbreviation: <abbr title="World Wildlife Fund">WWF</abbr>.</p>
-  
-  <h2 class="stroke-border">Heading with a stroked border</h2>
-  <p>The class <code>.stroke-border</code> can be applied to any element to add the styled border below it.</p>
-  <p>For example: <code>&lt;h2 class="stroke-border">Heading with a stroked border&lt;/h2></code></p>
+  <p>Sed ut perspiciatis unde <sub>subscript text</sub> sit voluptatem accusantium doloremque <sup>subscript text</sup>, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione <del>deleted text</del>.</p>
 
-  <p>Or <code>&lt;hr class="stroke-border"></code> results in:</p>
-  <hr class="stroke-border">
+  <h4>This is a heading 4</h4>
+  <p>An abbreviation: <abbr title="World Wildlife Fund">WWF</abbr>.</p>
 
-  <div class="striped-bg">
-    <h2>Striped heading</h2>
-  </div>
-  <p>The class <code>.striped-bg</code> can be applied to a div with either a <code>h2</code> or <code>h3</code> inside it.</p>
-  <pre class="prettyprint">
-    &lt;div class="striped-bg">
-      &lt;h2>Striped heading&lt;/h2>
-    &lt;/div>
-  </pre>
+  <hr>
 
   <h2>Lists</h2>
-    <h3>Unordered list</h3>
-    <ul>
-      <li>Blue Arrow fraud Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, nobis maxime maiores ad cupiditate quibusdam tempora iste magni quos eius eligendi rerum sapiente a ut nisi officia ratione. Sit, sunt est ab id eos natus ratione a odit quia quam! Molestiae, maiores repellat assumenda voluptate excepturi voluptatum necessitatibus blanditiis sit.</li>
-      <li>Maxwell brothers fraud</li>
-      <li>Jubilee line fraud</li>
-      <li>Microsoft fraud</li>
-         <ul>
-            <li>A nested list</li>
-            <li>A nested list</li>
-         </ul>
-      <li>Wickes fraud</li>
-      <li>London City Bond fraud</li>
-    </ul>
+  <h3>Unordered list</h3>
+  <ul>
+    <li>Blue Arrow fraud Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, nobis maxime maiores ad cupiditate quibusdam tempora iste magni quos eius eligendi rerum sapiente a ut nisi officia ratione. Sit, sunt est ab id eos natus ratione a odit quia quam! Molestiae, maiores repellat assumenda voluptate excepturi voluptatum necessitatibus blanditiis sit.</li>
+    <li>Maxwell brothers fraud</li>
+    <li>Jubilee line fraud</li>
+    <li>Microsoft fraud</li>
+       <ul>
+          <li>A nested list</li>
+          <li>A nested list</li>
+       </ul>
+    <li>Wickes fraud</li>
+    <li>London City Bond fraud</li>
+  </ul>
      
-    <h3>Ordered List</h3>
+  <h3>Ordered List</h3>
+  <ol>
+    <li>List item</li>
+    <li>List item</li>
     <ol>
-      <li>List item</li>
-      <li>List item</li>
-      <ol>
-         <li>A nested list</li>
-         <li>A nested list</li>
-      </ol>
-      <li>Another item which has a bit more text Another item which has a bit more text Another item which has a bit more text</li>
+       <li>A nested list</li>
+       <li>A nested list</li>
     </ol>
+    <li>Another item which has a bit more text Another item which has a bit more text Another item which has a bit more text</li>
+  </ol>
 
-     <h3>Styled List</h3>
-     <ul class="styled-list">
-       <li>Apply the <code>.styled-list</code> class to the list element</li>
-       <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-     </ul>
-
-     <h3>Tick list</h3>
-     <ul class="tick-list">
-       <li>Apply the <code>.tick-list</code> class to the list element</li>
-       <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-     </ul>
-
-     <h3>Question List</h3>
-     <ul class="question-list">
-       <li>Apply the <code>.question-list</code> class to the list element</li>
-       <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-     </ul>
-
-     <h3>Arrow List</h3>
-     <ul class="arrow-list">
-       <li>Apply the <code>.arrow-list</code> class to the list element</li>
-       <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-     </ul>
+  <h3>Styled custom List</h3>
+  <ul class="styled-list">
+   <li>Apply the <code>.styled-list</code> class to the list element</li>
+   <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+  </ul>
     
-    <h3>Definition lists</h3>
-     <dl>
-        <dt>Coffee</dt>
-        <dd>- black hot drink</dd>
-        <dt>Milk</dt>
-        <dd>- white cold drink</dd>
-     </dl>
+  <h3>Definition lists</h3>
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>
 
   <hr>
   
   <h2>Inline image</h2>
   
   <figure class="inset floatright">
-    <img src="../assets/images/sample-article-image.jpg" height="175" width="280" alt="">
+    <img src="" height="175" width="280" alt="">
     <figcaption>
       Image caption on multiple lines lorem ipsum dolor sit amet
     </figcaption>
   </figure>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nostrum, est esse dolore fugiat ducimus officiis nisi doloremque ipsa blanditiis ipsum eius distinctio enim. Quasi, ratione, id facere perferendis molestiae atque placeat asperiores officiis vitae dolorem similique nam modi at corrupti quod a quisquam corporis laboriosam ea deleniti fugit velit pariatur deserunt obcaecati nisi eos adipisci minus soluta enim odio quam culpa voluptatum natus perspiciatis in reiciendis dolor. Harum, excepturi, error, pariatur hic earum ipsa soluta voluptates cumque eveniet eos ipsum assumenda repellat aspernatur porro tempore quidem amet ducimus magni doloribus eligendi nulla in molestiae vero eius dolor explicabo obcaecati!</p>
 
-  <pre class="prettyprint">
-    &lt;figure class="inset floatright">
-      &lt;img src="../assets/images/sample-article-image.jpg" height="175" width="280" alt="">
-      &lt;figcaption>
-        Image caption on multiple lines lorem ipsum dolor sit amet
-      &lt;/figcaption>
-    &lt;/figure>
-    &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nostrum, est esse dolore fugiat ducimus officiis nisi doloremque ipsa blanditiis ipsum eius distinctio enim. Quasi, ratione, id facere perferendis molestiae atque placeat asperiores officiis vitae dolorem similique nam modi at corrupti quod a quisquam corporis laboriosam ea deleniti fugit velit pariatur deserunt obcaecati nisi eos adipisci minus soluta enim odio quam culpa voluptatum natus perspiciatis in reiciendis dolor. Harum, excepturi, error, pariatur hic earum ipsa soluta voluptates cumque eveniet eos ipsum assumenda repellat aspernatur porro tempore quidem amet ducimus magni doloribus eligendi nulla in molestiae vero eius dolor explicabo obcaecati!&lt;/p>
-  </pre>
+<pre class="prettyprint">
+&lt;figure class="inset floatright">
+  &lt;img src="" height="175" width="280" alt="">
+  &lt;figcaption>
+    Image caption on multiple lines lorem ipsum dolor sit amet
+  &lt;/figcaption>
+&lt;/figure>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit[...]&lt;/p>
+</pre>
 
   <hr>
 
   <h2>Quotes</h2>
-    <h3>A blockquote:</h3>
-    <blockquote>
-      <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
-      <cite>Franz Kafka</cite>
-    </blockquote>
-    
-    <h3>Pull-out style blockquote</h3>
+  <h3>A blockquote:</h3>
+  <blockquote>
+    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
+    <cite>Franz Kafka</cite>
+  </blockquote>
 
-
-    <pre class="prettyprint">
-      &lt;blockquote class="pull-out-quote">
-        &lt;p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.&lt;/p>
-      &lt;/blockquote>
-      &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, aut quasi est minima accusamus facilis iste eum veritatis atque quidem vel doloremque cumque rerum sint quo pariatur consectetur molestiae omnis eveniet maxime. Fuga, possimus repellendus excepturi. Obcaecati, iste, possimus modi minima id qui doloremque assumenda consequuntur recusandae mollitia suscipit sapiente.&lt;/p>
-    </pre>
-
-    <blockquote class="pull-out-quote">
-      <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
-    </blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, aut quasi est minima accusamus facilis iste eum veritatis atque quidem vel doloremque cumque rerum sint quo pariatur consectetur molestiae omnis eveniet maxime. Fuga, possimus repellendus excepturi. Obcaecati, iste, possimus modi minima id qui doloremque assumenda consequuntur recusandae mollitia suscipit sapiente.</p>
-    <p>Rerum, labore, cum, dicta quo commodi iusto impedit soluta maiores at dolores veniam placeat delectus vero dignissimos architecto ab minus numquam voluptatem quis consequatur non iste eveniet cupiditate unde esse aspernatur ducimus nemo atque consequuntur eos! Saepe, fugit, quisquam porro quidem asperiores voluptatem fuga ex reiciendis sit doloribus? Quasi, tempore.</p>
-    <p>Rerum, praesentium, quidem eum quasi harum iste a commodi labore ipsam earum officiis unde esse quaerat ab et adipisci nam saepe corrupti repellendus in aut atque possimus hic. Sequi, nesciunt, assumenda esse officia temporibus culpa aperiam dolores odit facilis voluptatum similique sed ullam inventore quae repellendus? In quam labore ab.</p>
-
-
-    <h3>A short quote</h3>
-    <q>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</q>
-
+  <h3>A short quote</h3>
+  <q>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</q>
 
 </section>
-    <section class="tab-content colspan10 panel" id="icons">
+    <section class="tab-content" id="icons">
   <h1>Font icons</h1>
 
   <p>The font icons have been generated using <a href="http://icomoon.io/app/">IcoMoon</a>.</p>
@@ -287,186 +211,24 @@
 
   <ol>
     <li>Open the <a href="http://icomoon.io/app/">IcoMoon app</a> in your browser.</li>
-    <li>Click on the database icon at the bottom, and select <em>Load Session</em>.</li>
-    <li>Select the <a href="../assets/source-files/sap-icons.json">sap-icons.json</a> file from the <code>assets/source-files</code> folder. You'll see the used icons highlighted within the different libraries.</li>
-    <li>To add another icon, either select an existing one from on of the libraries (currently IcoMoon and Font Awesome), or upload a custom icon by importing the <code>.svg</code> file.</li>
-    <li>When you are done, click the <em>Font</em> button at the bottom and on the next page click the <em>Download</em> button.</li>
-    <li>Click on the database icon at the bottom, and select <em>Store Session</em> and replace the old session file with this one in the <code>assets/source-files</code> folder.</li>
-    <li>Use the new font files you've downloaded and replace the old ones.</li>
-    <li>Update the icon classes within the <a href="../css/_03elements.less">_03elements.less</a> file.</li>
+    <li>[...]</li>
   </ol>
 
   <h2>Available Icons</h2>
-
   <p>The <code>i</code> element is used to add icons, like so: <br>
-    <code> &lt;i aria-hidden="true" class="icon search">&lt;/i></code></p>
+  <code> &lt;i aria-hidden="true" class="icon icon-search">&lt;/i></code></p>
 
-  <p>Colours can be changed by applying the <code>.yellow</code>, <code>.blue</code>, <code>.lightgrey</code> or <code>.darkgrey</code> classes.</p>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon search"></i>
-    <code>.icon.search</code>
-  </div>
+  <p>Colours can be changed by applying the [...] classes.</p>
 
   <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon tags"></i>
-    <code>.icon.tags</code>
-    <code>\e001</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon home"></i>
-    <code>.icon.home</code>
-    <code>\e002</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon twitter"></i>
-    <code>.icon.twitter</code>
-    <code>\e003</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon facebook"></i>
-    <code>.icon.facebook</code>
-    <code>\e004</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon linkedin"></i>
-    <code>.icon.linkedin</code>
-    <code>\e005</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon youtube"></i>
-    <code>.icon.youtube</code>
-    <code>\e006</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon angle-right"></i>
-    <code>.icon.angle-right</code>
-    <code>\e007</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon angle-up"></i>
-    <code>.icon.angle-up</code>
-    <code>\e008</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon angle-down"></i>
-    <code>.icon.angle-down</code>
-    <code>\e009</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon angle-left"></i>
-    <code>.icon.angle-left</code>
-    <code>\e00a</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon arrow-circle"></i>
-    <code>.icon.arrow-circle</code>
-    <code>\e00b</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon arrow-right"></i>
-    <code>.icon.arrow-right</code>
-    <code>\e00c</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon checkmark"></i>
-    <code>.icon.checkmark</code>
-    <code>\e00d</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon checkbox-unchecked"></i>
-    <code>.icon.checkbox-unchecked</code>
-    <code>\e00e</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon checkbox-checked"></i>
-    <code>.icon.checkbox-checked</code>
-    <code>\e00f</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon radio-unchecked"></i>
-    <code>.icon.radio-unchecked</code>
-    <code>\e010</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon radio-checked"></i>
-    <code>.icon.radio-checked</code>
-    <code>\e011</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon flag"></i>
-    <code>.icon.flag</code>
-    <code>\e012</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon bubble"></i>
-    <code>.icon.bubble</code>
-    <code>\e013</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon bubbles"></i>
-    <code>.icon.bubbles</code>
-    <code>\e014</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon mobile"></i>
-    <code>.icon.mobile</code>
-    <code>\e015</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon cogs"></i>
-    <code>.icon.cogs</code>
-    <code>\e016</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon users"></i>
-    <code>.icon.users</code>
-    <code>\e017</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon cloud"></i>
-    <code>.icon.cloud</code>
+    <i aria-hidden="true" class="icon icon-search"></i>
+    <code>.icon.icon-search</code>
     <code>\e018</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon netweaver"></i>
-    <code>.icon.netweaver</code>
-    <code>\e019</code>
-  </div>
-
-  <div class="icon-wrapper">
-    <i aria-hidden="true" class="icon calendar"></i>
-    <code>.icon.calendar</code>
-    <code>\e01b</code>
   </div>
 </section>
 
 
-    <section class="tab-content colspan10 panel" id="buttons">
+    <section class="tab-content" id="buttons">
   <h1>Buttons</h1>
   
   <p>The <code>.btn</code> class can be applied to any element. For the examples below, an anchor tag is used. </p>
@@ -479,463 +241,133 @@
       </tr>
     </thead>
     <tbody>
-
       <tr>
         <td>
-          <a class="btn plain">A plain button</a>
+          <a class="btn btn-plain">A plain button</a>
         </td>
         <td>
           <code class="prettyprint">
-            &lt;a class="btn plain">Text&lt;/a>
+            &lt;a class="btn btn-plain">Text&lt;/a>
           </code>
         </td>
       </tr>
-
-      <tr>
-        <td>
-          <a class="btn plain small">A small plain button</a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn plain small">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn plain">
-            <i aria-hidden="true" class="icon calendar"></i>
-            A plain button with an icon
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn plain">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn plain small">
-            <i aria-hidden="true" class="icon calendar"></i>
-            A small plain button with an icon
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn plain small">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn yellow">
-            A yellow button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn yellow">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn blue">
-            A blue button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn blue">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn grey">
-            A grey button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn grey">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn yellow fat">
-            A yellow fat button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn yellow fat">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn blue fat">
-            A blue fat button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn blue fat">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn yellow tiny">
-            A yellow tiny button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn yellow tiny">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn blue tiny">
-            A blue tiny button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn blue tiny">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn filter">
-            A filter button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn filter">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <a class="btn filter selected">
-            Selected filter button
-          </a>
-        </td>
-        <td>
-          <code class="prettyprint">
-            &lt;a class="btn filter selected">Text&lt;/a>
-          </code>
-        </td>
-      </tr>
-
     </tbody>
   </table>
 </section>
-    <section class="tab-content colspan10 panel" id="forms">
+    <section class="tab-content" id="forms">
   <h1>Forms</h1>
    
-   <h2>Text inputs and textarea</h2>
-   <h3>Default width</h3>
-   <fieldset>
-     <legend class="visuallyhidden">Sample form</legend>
-   
-     <div class="fieldwrapper">
-       <label for="name">Your name *</label>
-       <input type="text" name="name" id="name" placeholder="John">
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="name">Your name *&lt;/label>
-         &lt;input type="text" name="name" id="name" placeholder="John">
-       &lt;/div>
-     </pre>
+  <h2>Text Inputs</h2>
+
+  <div class="field-wrapper">
+   <label for="name">Your name *</label>
+   <input type="text" name="name" id="name" placeholder="John">
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+ &lt;label for="name">Your name *&lt;/label>
+ &lt;input type="text" name="name" id="name" placeholder="John">
+&lt;/div>
+</pre>
+
+  <hr>
+
+  <h2>Textarea</h2>
      
-     <div class="fieldwrapper">
-       <label for="message">Message *</label>
-       <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="message">Message *&lt;/label>
-         &lt;textarea name="message" id="message" placeholder="Enter your message...">&lt;/textarea>
-       &lt;/div>
-     </pre>
+  <div class="field-wrapper">
+   <label for="message">Message *</label>
+   <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+  &lt;label for="message">Message *&lt;/label>
+  &lt;textarea name="message" id="message" placeholder="Enter your message...">&lt;/textarea>
+&lt;/div>
+</pre>
 
-     <div class="fieldwrapper">
-       <label for="select">Select</label>
-       <select name="select" id="select">
-         <option value="1">Option1</option>
-         <option value="2">Option2</option>
-       </select>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="select">Select&lt;/label>
-         &lt;select name="select" id="select">
-           &lt;option value="1">Option1&lt;/option>
-           &lt;option value="2">Option2&lt;/option>
-         &lt;/select>
-       &lt;/div>
-     </pre>
-      
-    <h3>Short width</h3>
+  <hr>
 
-    <div class="fieldwrapper">
-      <div class="short float">
-        <label for="name">Name *</label>
-        <input type="text" name="name" id="name" placeholder="John">
-      </div>
-      <div class="short floatright">
-        <label for="surname">Surname *</label>
-        <input type="text" name="surname" id="surname" placeholder="Smith">
-      </div>
-    </div>
-    <pre class="prettyprint">
-      &lt;div class="fieldwrapper">
-        &lt;div class="short float">
-          &lt;label for="name">Name *&lt;/label>
-          &lt;input type="text" name="name" id="name" placeholder="John">
-        &lt;/div>
-        &lt;div class="short floatright">
-          &lt;label for="surname">Surname *&lt;/label>
-          &lt;input type="text" name="surname" id="surname" placeholder="Smith">
-        &lt;/div>
-      &lt;/div>
-    </pre>
-    
-    <div class="fieldwrapper">
-      <div class="short">
-        <label for="message">Message *</label>
-        <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-      </div>
-    </div>
-    <pre class="prettyprint">
-      &lt;div class="fieldwrapper">
-        &lt;div class="short">
-          &lt;label for="message">Message *&lt;/label>
-          &lt;textarea name="message" id="message" placeholder="Enter your message...">&lt;/textarea>
-        &lt;/div>
-      &lt;/div>
-    </pre>
+  <h2>Checkboxes and Radio Selects</h2>
+  <div class="field-wrapper">
+    <label for="sample-checkbox" class="checkboxlabel">
+      <input type="checkbox" id="sample-checkbox" checked>
+      <span>Sample checkbox field </span>
+    </label>
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+  &lt;label for="sample-checkbox" class="checkboxlabel">
+    &lt;input type="checkbox" id="sample-checkbox" checked>
+    &lt;span>Sample checkbox field &lt;/span>
+  &lt;/label>
+&lt;/div>
+</pre>
 
-    <div class="fieldwrapper">
-      <div class="short">
-        <label for="select">Select</label>
-        <select name="select" id="select">
-          <option value="1">Option1 Option1 Option1 Option1</option>
-          <option value="2">Option2</option>
-        </select>
-      </div>
-    </div>
-    <pre class="prettyprint">
-      &lt;div class="fieldwrapper">
-        &lt;div class="short">
-          &lt;label for="select">Select&lt;/label>
-          &lt;select name="select" id="select">
-            &lt;option value="1">Option1 &lt;/option>
-            &lt;option value="2">Option2&lt;/option>
-          &lt;/select>
-        &lt;/div>
-      &lt;/div>
-    </pre>
-
-
-    <hr>
-    <h2>Checkboxes and Radio selects</h2>
-     <div class="fieldwrapper">
-       <label for="sample-checkbox" class="checkboxlabel">
-         <input type="checkbox" id="sample-checkbox" checked>
-         <span>Sample checkbox field </span>
-       </label>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="sample-checkbox" class="checkboxlabel">
-           &lt;input type="checkbox" id="sample-checkbox" checked>
-           &lt;span>Sample checkbox field &lt;/span>
-         &lt;/label>
-       &lt;/div>
-     </pre>
-   
-     <div class="fieldwrapper">
-       <span class="faux_label">How would you prefer to pay?</span>
-       <label class="checkboxlabel">
-           <input type="radio" name="test1" checked>
-           <span>Fee</span>
-       </label>
-       <label class="checkboxlabel">
-           <input type="radio" name="test1">
-           <span>Fixed fee</span>
-       </label>
-       <label class="checkboxlabel">
-           <input type="radio" name="test1">
-           <span>Hourly rate</span>
-       </label>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;span class="faux_label">How would you prefer to pay?&lt;/span>
-         &lt;label class="checkboxlabel">
-             &lt;input type="radio" name="test1" checked>
-             &lt;span>Fee&lt;/span>
-         &lt;/label>
-         &lt;label class="checkboxlabel">
-             &lt;input type="radio" name="test1">
-             &lt;span>Fixed fee&lt;/span>
-         &lt;/label>
-         &lt;label class="checkboxlabel">
-             &lt;input type="radio" name="test1">
-             &lt;span>Hourly rate&lt;/span>
-         &lt;/label>
-       &lt;/div>
-     </pre>
-   </fieldset>
-   
-   <hr>
-  
-    <h2>Field help notes</h2>
-
-    <div class="fieldwrapper">
-      <label for="email">Email *</label>
-      <input type="text" name="email" id="email" placeholder="john@company.com">
-      <span class="helpnote">
-        Please provide these contact details in case we need to discuss your application with you
-      </span>
-    </div>
+  <div class="field-wrapper">
+    <label for="select">Select an option</label>
+    <select name="select" id="select">
+     <option value="1">Option1</option>
+     <option value="2">Option2</option>
+    </select>
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+  &lt;label for="select">Select&lt;/label>
+  &lt;select name="select" id="select">
+    &lt;option value="1">Option1&lt;/option>
+    &lt;option value="2">Option2&lt;/option>
+  &lt;/select>
+&lt;/div>
+</pre>
 
    <hr>
 
    <h2>Submit button</h2>
      
-   <button type="submit" class="btn yellow fat">Submit</button>
-   <pre class="prettyprint">
-     &lt;button type="submit" class="btn yellow fat">Submit&lt;/button>      
-   </pre>
+   <button type="submit" class="btn">Submit</button>
+<pre class="prettyprint">
+ &lt;button type="submit" class="btn">Submit&lt;/button>      
+</pre>
    
    <hr>
      
    <h2>Form errors</h2>
    
    <h3>Form message</h3>
-   <pre class="prettyprint">
-     &lt;div class="form-error-message">
-       &lt;strong>Please correct any errors and submit again.&lt;/strong>
-     &lt;/div>
-   </pre>
-     
    <div class="form-error-message">
      <strong>Please correct any errors and submit again.</strong>
    </div>
+<pre class="prettyprint">
+&lt;div class="form-error-message">
+  &lt;strong>Please correct any errors and submit again.&lt;/strong>
+&lt;/div>
+</pre>
      
    <h3>Field error</h3>
-   <pre class="prettyprint">
-     &lt;div class="fieldwrapper error">
-       &lt;label for="name">Your name *&lt;/label>
-       &lt;input type="text" name="name" id="name" placeholder="John">
-     &lt;/div>
-   </pre>
-   <div class="fieldwrapper error">
+   <div class="field-wrapper field-error">
      <label for="name">Your name *</label>
      <input type="text" name="name" id="name" placeholder="John">
+     <label for="name" class="field-error-message">Please enter your name</label>
    </div>
-   
-   <hr>
-   
-   <h2>Search form</h2>
-   <form action="POST" role="search" class="search">
-     <label for="sitesearch" class="visuallyhidden">Search site</label>
-     <input type="text" name="sitesearch" id="sitesearch" placeholder="Search this site">
-     <button type="submit">
-       <span class="visuallyhidden">Search</span>
-       <i aria-hidden="true" class="icon search"></i>
-     </button>
-   </form>
-   <pre class="prettyprint">
-     &lt;form action="POST" role="search" class="search">
-       &lt;label for="sitesearch" class="visuallyhidden">Search site&lt;/label>
-       &lt;input type="text" name="sitesearch" id="sitesearch" placeholder="Search this site">
-       &lt;button type="submit">
-         &lt;span class="visuallyhidden">Search&lt;/span>
-         &lt;i aria-hidden="true" class="icon search">&lt;/i>
-       &lt;/button>
-     &lt;/form>
-   </pre> <!-- end panel -->
+<pre class="prettyprint">
+&lt;div class="field-wrapper error">
+  &lt;label for="name">Your name *&lt;/label>
+  &lt;input type="text" name="name" id="name" placeholder="John">
+  &lt;label for="name" class="field-error-message">Please enter your name&lt;/label>
+&lt;/div>
+</pre>   
+
 </section>
-    <section class="tab-content colspan10 panel" id="grid">
-  <h1>Grid</h1>
+    <section class="tab-content" id="layout">
+  <h1>Layout</h1>
 
-  <div class="colspan1">
-    .colspan1
-  </div>
-
-  <div class="colspan2">
-    .colspan2
-  </div>
-
-  <div class="colspan3">
-    .colspan3
-  </div>
-
-  <div class="colspan4">
-    .colspan4
-  </div>
-
-  <div class="colspan5">
-    .colspan5
-  </div>
-
-  <div class="colspan6">
-    .colspan6
-  </div>
-
-  <div class="colspan7">
-    .colspan7
-  </div>
-
-  <div class="colspan8">
-    .colspan8
-  </div>
-
-  <div class="colspan9">
-    .colspan9
-  </div>
-
-  <div class="colspan10">
-    .colspan10
-  </div>
-
-  <div class="colspan11">
-    .colspan11
-  </div>
-
-  <div class="colspan12">
-    .colspan12
-  </div>
+  [...]
 </section>
 
   </section> <!-- /pagecontent -->
   
   <!-- JavaScript -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="../js/libs/jquery-1.9.1.min.js"></script>
     <!-- Styleguide specific -->
       <!-- Google code prettify -->
       <script src="run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css"></script>
@@ -948,20 +380,20 @@
           if(window.location.hash) {
             $sections.hide();
             $('.pagecontent').find('section.tab-content' + window.location.hash).show();
-            $('nav').find('a[href="' + window.location.hash + '"]').addClass('active');
+            $('nav').find('a[href="' + window.location.hash + '"]').addClass('current');
           } else {
             $sections.hide();
             $('.pagecontent').find('section.tab-content#notes').show();
-            $('nav li:first-child a').addClass('active');
+            $('nav li:first-child a').addClass('current');
           }
 
           $links.click(function(){
             var $this  = $(this);
             var target = $(this).attr('href');
             window.location.hash = target;
-            $links.not(this).removeClass('active');
+            $links.not(this).removeClass('current');
             $sections.hide();
-            $this.addClass('active');
+            $this.addClass('current');
             $('section' +target).fadeIn(500);
             return false;
           });

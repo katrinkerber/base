@@ -1,230 +1,104 @@
-<section class="tab-content colspan10 panel" id="forms">
+<section class="tab-content" id="forms">
   <h1>Forms</h1>
    
-   <h2>Text inputs and textarea</h2>
-   <h3>Default width</h3>
-   <fieldset>
-     <legend class="visuallyhidden">Sample form</legend>
-   
-     <div class="fieldwrapper">
-       <label for="name">Your name *</label>
-       <input type="text" name="name" id="name" placeholder="John">
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="name">Your name *&lt;/label>
-         &lt;input type="text" name="name" id="name" placeholder="John">
-       &lt;/div>
-     </pre>
+  <h2>Text Inputs</h2>
+
+  <div class="field-wrapper">
+   <label for="name">Your name *</label>
+   <input type="text" name="name" id="name" placeholder="John">
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+ &lt;label for="name">Your name *&lt;/label>
+ &lt;input type="text" name="name" id="name" placeholder="John">
+&lt;/div>
+</pre>
+
+  <hr>
+
+  <h2>Textarea</h2>
      
-     <div class="fieldwrapper">
-       <label for="message">Message *</label>
-       <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="message">Message *&lt;/label>
-         &lt;textarea name="message" id="message" placeholder="Enter your message...">&lt;/textarea>
-       &lt;/div>
-     </pre>
+  <div class="field-wrapper">
+   <label for="message">Message *</label>
+   <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+  &lt;label for="message">Message *&lt;/label>
+  &lt;textarea name="message" id="message" placeholder="Enter your message...">&lt;/textarea>
+&lt;/div>
+</pre>
 
-     <div class="fieldwrapper">
-       <label for="select">Select</label>
-       <select name="select" id="select">
-         <option value="1">Option1</option>
-         <option value="2">Option2</option>
-       </select>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="select">Select&lt;/label>
-         &lt;select name="select" id="select">
-           &lt;option value="1">Option1&lt;/option>
-           &lt;option value="2">Option2&lt;/option>
-         &lt;/select>
-       &lt;/div>
-     </pre>
-      
-    <h3>Short width</h3>
+  <hr>
 
-    <div class="fieldwrapper">
-      <div class="short float">
-        <label for="name">Name *</label>
-        <input type="text" name="name" id="name" placeholder="John">
-      </div>
-      <div class="short floatright">
-        <label for="surname">Surname *</label>
-        <input type="text" name="surname" id="surname" placeholder="Smith">
-      </div>
-    </div>
-    <pre class="prettyprint">
-      &lt;div class="fieldwrapper">
-        &lt;div class="short float">
-          &lt;label for="name">Name *&lt;/label>
-          &lt;input type="text" name="name" id="name" placeholder="John">
-        &lt;/div>
-        &lt;div class="short floatright">
-          &lt;label for="surname">Surname *&lt;/label>
-          &lt;input type="text" name="surname" id="surname" placeholder="Smith">
-        &lt;/div>
-      &lt;/div>
-    </pre>
-    
-    <div class="fieldwrapper">
-      <div class="short">
-        <label for="message">Message *</label>
-        <textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-      </div>
-    </div>
-    <pre class="prettyprint">
-      &lt;div class="fieldwrapper">
-        &lt;div class="short">
-          &lt;label for="message">Message *&lt;/label>
-          &lt;textarea name="message" id="message" placeholder="Enter your message...">&lt;/textarea>
-        &lt;/div>
-      &lt;/div>
-    </pre>
+  <h2>Checkboxes and Radio Selects</h2>
+  <div class="field-wrapper">
+    <label for="sample-checkbox" class="checkboxlabel">
+      <input type="checkbox" id="sample-checkbox" checked>
+      <span>Sample checkbox field </span>
+    </label>
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+  &lt;label for="sample-checkbox" class="checkboxlabel">
+    &lt;input type="checkbox" id="sample-checkbox" checked>
+    &lt;span>Sample checkbox field &lt;/span>
+  &lt;/label>
+&lt;/div>
+</pre>
 
-    <div class="fieldwrapper">
-      <div class="short">
-        <label for="select">Select</label>
-        <select name="select" id="select">
-          <option value="1">Option1 Option1 Option1 Option1</option>
-          <option value="2">Option2</option>
-        </select>
-      </div>
-    </div>
-    <pre class="prettyprint">
-      &lt;div class="fieldwrapper">
-        &lt;div class="short">
-          &lt;label for="select">Select&lt;/label>
-          &lt;select name="select" id="select">
-            &lt;option value="1">Option1 &lt;/option>
-            &lt;option value="2">Option2&lt;/option>
-          &lt;/select>
-        &lt;/div>
-      &lt;/div>
-    </pre>
-
-
-    <hr>
-    <h2>Checkboxes and Radio selects</h2>
-     <div class="fieldwrapper">
-       <label for="sample-checkbox" class="checkboxlabel">
-         <input type="checkbox" id="sample-checkbox" checked>
-         <span>Sample checkbox field </span>
-       </label>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;label for="sample-checkbox" class="checkboxlabel">
-           &lt;input type="checkbox" id="sample-checkbox" checked>
-           &lt;span>Sample checkbox field &lt;/span>
-         &lt;/label>
-       &lt;/div>
-     </pre>
-   
-     <div class="fieldwrapper">
-       <span class="faux_label">How would you prefer to pay?</span>
-       <label class="checkboxlabel">
-           <input type="radio" name="test1" checked>
-           <span>Fee</span>
-       </label>
-       <label class="checkboxlabel">
-           <input type="radio" name="test1">
-           <span>Fixed fee</span>
-       </label>
-       <label class="checkboxlabel">
-           <input type="radio" name="test1">
-           <span>Hourly rate</span>
-       </label>
-     </div>
-     <pre class="prettyprint">
-       &lt;div class="fieldwrapper">
-         &lt;span class="faux_label">How would you prefer to pay?&lt;/span>
-         &lt;label class="checkboxlabel">
-             &lt;input type="radio" name="test1" checked>
-             &lt;span>Fee&lt;/span>
-         &lt;/label>
-         &lt;label class="checkboxlabel">
-             &lt;input type="radio" name="test1">
-             &lt;span>Fixed fee&lt;/span>
-         &lt;/label>
-         &lt;label class="checkboxlabel">
-             &lt;input type="radio" name="test1">
-             &lt;span>Hourly rate&lt;/span>
-         &lt;/label>
-       &lt;/div>
-     </pre>
-   </fieldset>
-   
-   <hr>
-  
-    <h2>Field help notes</h2>
-
-    <div class="fieldwrapper">
-      <label for="email">Email *</label>
-      <input type="text" name="email" id="email" placeholder="john@company.com">
-      <span class="helpnote">
-        Please provide these contact details in case we need to discuss your application with you
-      </span>
-    </div>
+  <div class="field-wrapper">
+    <label for="select">Select an option</label>
+    <select name="select" id="select">
+     <option value="1">Option1</option>
+     <option value="2">Option2</option>
+    </select>
+  </div>
+<pre class="prettyprint">
+&lt;div class="field-wrapper">
+  &lt;label for="select">Select&lt;/label>
+  &lt;select name="select" id="select">
+    &lt;option value="1">Option1&lt;/option>
+    &lt;option value="2">Option2&lt;/option>
+  &lt;/select>
+&lt;/div>
+</pre>
 
    <hr>
 
    <h2>Submit button</h2>
      
-   <button type="submit" class="btn yellow fat">Submit</button>
-   <pre class="prettyprint">
-     &lt;button type="submit" class="btn yellow fat">Submit&lt;/button>      
-   </pre>
+   <button type="submit" class="btn">Submit</button>
+<pre class="prettyprint">
+ &lt;button type="submit" class="btn">Submit&lt;/button>      
+</pre>
    
    <hr>
      
    <h2>Form errors</h2>
    
    <h3>Form message</h3>
-   <pre class="prettyprint">
-     &lt;div class="form-error-message">
-       &lt;strong>Please correct any errors and submit again.&lt;/strong>
-     &lt;/div>
-   </pre>
-     
    <div class="form-error-message">
      <strong>Please correct any errors and submit again.</strong>
    </div>
+<pre class="prettyprint">
+&lt;div class="form-error-message">
+  &lt;strong>Please correct any errors and submit again.&lt;/strong>
+&lt;/div>
+</pre>
      
    <h3>Field error</h3>
-   <pre class="prettyprint">
-     &lt;div class="fieldwrapper error">
-       &lt;label for="name">Your name *&lt;/label>
-       &lt;input type="text" name="name" id="name" placeholder="John">
-     &lt;/div>
-   </pre>
-   <div class="fieldwrapper error">
+   <div class="field-wrapper field-error">
      <label for="name">Your name *</label>
      <input type="text" name="name" id="name" placeholder="John">
+     <label for="name" class="field-error-message">Please enter your name</label>
    </div>
-   
-   <hr>
-   
-   <h2>Search form</h2>
-   <form action="POST" role="search" class="search">
-     <label for="sitesearch" class="visuallyhidden">Search site</label>
-     <input type="text" name="sitesearch" id="sitesearch" placeholder="Search this site">
-     <button type="submit">
-       <span class="visuallyhidden">Search</span>
-       <i aria-hidden="true" class="icon search"></i>
-     </button>
-   </form>
-   <pre class="prettyprint">
-     &lt;form action="POST" role="search" class="search">
-       &lt;label for="sitesearch" class="visuallyhidden">Search site&lt;/label>
-       &lt;input type="text" name="sitesearch" id="sitesearch" placeholder="Search this site">
-       &lt;button type="submit">
-         &lt;span class="visuallyhidden">Search&lt;/span>
-         &lt;i aria-hidden="true" class="icon search">&lt;/i>
-       &lt;/button>
-     &lt;/form>
-   </pre> <!-- end panel -->
+<pre class="prettyprint">
+&lt;div class="field-wrapper error">
+  &lt;label for="name">Your name *&lt;/label>
+  &lt;input type="text" name="name" id="name" placeholder="John">
+  &lt;label for="name" class="field-error-message">Please enter your name&lt;/label>
+&lt;/div>
+</pre>   
+
 </section>

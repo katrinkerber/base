@@ -11,33 +11,58 @@
  
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 
+<!-- link to the site's main CSS here -->
 <link rel="stylesheet" href="../css/styles.css">
 
- <!-- favicon-->
-<link rel="shortcut icon" href="favicon.ico">
- <!-- touch icon - using one high-res icon that can be used across all devices, rather than saving three different icons... -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  
-<!-- All JavaScript at bottom for optimal page load times, except for modernizr and GA -->
-  <!-- custom build of modernizr, contains HTML5 shiv, css classes, yepnope load and tagged-on detection of old mobile OS -->
-  <script src="../js/libs/modernizr.js"></script>
+<!-- favicon -->
+<link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="../favicon.ico">
 
+<!-- Add any style guide specific styles here -->
 <style>
-  pre { clear: both; padding: 15px 15px 0 15px; margin: 15px 0;}
-  code { background-color: #333; color: #ffa0a0; padding: 2px 5px; }
+  @media only screen and (max-width: 43.99em ) {
+    header nav li { 
+      display: inline-block; 
+      padding: 1em 0.5em 1em 0;
+    }
+  }
+  @media only screen and (min-width: 44em ) {
+    header { 
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 24%; 
+      height: 100%; 
+      overflow: auto;
+    }
+    .pagecontent {
+      padding-left: 24%;
+    }
+    .styleguide-note {
+      display: block;
+      margin: -0.2rem 0 1.5rem;
+      color: #888;
+      font-style: italic;
+    }
+      p + .styleguide-note {
+        margin-top: -1.4rem;
+      }
+  }
+  pre { clear: both; padding: 1rem 0;}
+  code { border: 1px solid #888; padding: 0;}
 </style>
 <body>
   <header role="banner">
-    <h1>Style Guide</h1>
+    <h1>Site title</h1>
+    <h2>Style Guide</h2>
     <nav>
       <ul>
-        <li><a href="#notes">Notes</a></li>
+        <li><a href="#notes">Code Notes</a></li>
         <li><a href="#colours">Colours</a></li>
         <li><a href="#typography">Typography</a></li>      
         <li><a href="#icons">Icons</a></li> 
         <li><a href="#buttons">Buttons</a></li> 
         <li><a href="#forms">Forms</a></li> 
-        <li><a href="#grid">Grid</a></li>
+        <li><a href="#layout">Layout</a></li>
     </nav>
   </header>
   <section role="main" class="pagecontent">
@@ -48,12 +73,12 @@
     <!-- @include _icons.html -->
     <!-- @include _buttons.html -->
     <!-- @include _forms.html -->
-    <!-- @include _grid.html -->
+    <!-- @include _layout.html -->
 
   </section> <!-- /pagecontent -->
   
   <!-- JavaScript -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="../js/libs/jquery-1.9.1.min.js"></script>
     <!-- Styleguide specific -->
       <!-- Google code prettify -->
       <script src="run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css"></script>
@@ -66,20 +91,20 @@
           if(window.location.hash) {
             $sections.hide();
             $('.pagecontent').find('section.tab-content' + window.location.hash).show();
-            $('nav').find('a[href="' + window.location.hash + '"]').addClass('active');
+            $('nav').find('a[href="' + window.location.hash + '"]').addClass('current');
           } else {
             $sections.hide();
             $('.pagecontent').find('section.tab-content#notes').show();
-            $('nav li:first-child a').addClass('active');
+            $('nav li:first-child a').addClass('current');
           }
 
           $links.click(function(){
             var $this  = $(this);
             var target = $(this).attr('href');
             window.location.hash = target;
-            $links.not(this).removeClass('active');
+            $links.not(this).removeClass('current');
             $sections.hide();
-            $this.addClass('active');
+            $this.addClass('current');
             $('section' +target).fadeIn(500);
             return false;
           });
