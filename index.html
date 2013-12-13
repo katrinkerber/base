@@ -37,18 +37,20 @@
 	<meta name="msapplication-TileColor" content="#FFFFFF">
 	<meta name="msapplication-TileImage" content="metro-tile-144.png">
 		
-	<!-- All JavaScript at bottom for optimal page load times, except for modernizr and GA -->
-		<!-- custom build of modernizr, contains HTML5 shiv, css classes, yepnope load and tagged-on detection of old mobile OS -->
-		<script src="js/libs/modernizr.js"></script>
+	<!-- Most JavaScript at bottom for optimal page load times, except for Modernizr, webfontloader and GA -->
 		<!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
-		<script src="js/analytics.js"></script>
+		<script src="js/analytics.js" async></script>
+		<!-- custom build of modernizr, contains HTML5 shiv, css classes, yepnope load and tagged-on detection of old mobile OS -->
+		<script src="js/libs/modernizr.js" async></script>
+
+		<script src="js/webfontloader.js" async></script>
 </head>
 <body>
 	<header role="banner" class="siteheader">
 		<nav role="navigation"></nav>
 	</header>
    
-	<section role="main" class="pagecontent" >
+	<section role="main" class="page">
 
 	</section>
    
@@ -57,10 +59,7 @@
 	</footer>
 	
 	<!-- JavaScript -->
-		<!-- Grab Google-hosted jQuery. Fall back to locally saved file if necessary. -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
-		<!-- Site's plugins and functions merged and minimized with CodeKit-->
-		<script src="js/scripts-min.js"></script>
+	<!-- Site's libs, plugins and functions merged and minimized with CodeKit-->
+	<script src="js/scripts.min.js"></script>
 </body>
 </html>
