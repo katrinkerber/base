@@ -3,11 +3,11 @@
       ---Bourbon
       ---Colours
       ---Font families
-      ---EM function
+      ---EM & REM functions (choose one)
       ---Opactiy mixin
       ---Breakpoint mixin
+      ---Reverse Visuallyhidden mixin
       ---Clearfix placeholder
-      ---Reverse Visuallyhidden
 \*###########################################################################################*/
 
 /* Bourbon - http://bourbon.io/docs/ */
@@ -18,9 +18,36 @@
 
 /* EM function - converts pixel value into em value */
 $baseFontSize:14;
-
 @function em($target, $context: $baseFontSize) {
     @return ($target / $context) * 1em; /* em(21) runs (21 / 14) and returns 1.5em */
+}
+
+/* 
+REM mixin, adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
+Values are added as plain in px
+For example: rem(font-size, 28px) will return:
+font-size: 28px;
+font-size: 1.75rem;
+*/
+$basesize: 16;
+@mixin rem($property, $values) {
+  // Create empty lists that we can dump values into
+  $px-values: ();
+  $rem-values: ();
+  // Loop through each value and put into px and rem lists
+  @each $value in $values {
+    // if value is 0 or not a numerical value (i.e. auto), return as is
+    @if $value == 0 or type-of( $value ) != "number" {
+      $px-values: append($px-values, $value);
+      $rem-values: append($rem-values, $value); 
+    } @else {   
+      $px-values: append($px-values, $value );
+      $rem-values: append($rem-values, $value/$basesize * 1rem);
+    }
+  }
+  // Return the property and its list of converted values
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
 }
 
 /* Opacity Mixin */
@@ -35,6 +62,12 @@ $baseFontSize:14;
     @media only screen and ($widthCondition: $emBreakpoint ) { @content; }
 }
 
+/* 
+Reverse Visuallyhidden mixin
+reverses the .visuallyhidden helper class properties
+*/
+@mixin reverse-visuallyhidden { position: static; overflow: auto; width: auto; height: auto; margin: 0; clip: auto; }
+
 /* Clearfix Placeholder */
 %clearfix {
   *zoom: 1;
@@ -44,5 +77,3 @@ $baseFontSize:14;
       clear: both;
   }
 }
-/* Reverse Visuallyhidden  */
-%reverse-visuallyhidden { position: static; overflow: auto; width: auto; height: auto; margin: 0; clip: auto; }
