@@ -29,7 +29,8 @@ For example: rem(font-size, 28px) will return:
 font-size: 28px;
 font-size: 1.75rem;
 */
-$basesize: 16;
+$basesize-px: 16px;
+
 @mixin rem($property, $values) {
   // Create empty lists that we can dump values into
   $px-values: ();
@@ -42,7 +43,7 @@ $basesize: 16;
       $rem-values: append($rem-values, $value); 
     } @else {   
       $px-values: append($px-values, $value );
-      $rem-values: append($rem-values, $value/$basesize * 1rem);
+      $rem-values: append($rem-values, ($value/$basesize-px) * 1rem );
     }
   }
   // Return the property and its list of converted values
