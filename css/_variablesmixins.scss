@@ -24,7 +24,7 @@ $baseFontSize:14;
 
 /* 
 REM mixin, adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
-Values are added as plain in px
+Values are added in px
 For example: rem(font-size, 28px) will return:
 font-size: 28px;
 font-size: 1.75rem;
@@ -57,9 +57,14 @@ $basesize-px: 16px;
   $opacityIE: $opacity * 100; filter: alpha(opacity=$opacityIE); /* <= IE8 */ 
 }
 
-/* Breakpoint Mixin */
+/* 
+Breakpoint Mixin 
+Example:
+@include respond-to(min-width, 640px) {
+}
+*/
 @mixin respond-to($widthCondition, $breakpoint) {
-    $emBreakpoint: ($breakpoint / 16) * 1em ;
+    $emBreakpoint: ($breakpoint / 16px) * 1em ;
     @media only screen and ($widthCondition: $emBreakpoint ) { @content; }
 }
 
