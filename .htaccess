@@ -84,6 +84,18 @@ AddDefaultCharset utf-8
     AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
 </IfModule>
 
+# ----------------------------------------------------------------------
+# PHP SETTINGS
+# ----------------------------------------------------------------------
+
+# Configure the PHP file upload size
+# php_value post_max_size 32M
+# php_value upload_max_filesize 32M
+# php_value max_execution_time 600
+
+# Override default memory limit so PHP can process large files
+# php_value memory_limit 128M
+
 # ------------------------------------------------------------------------------
 # | Rewrite engine                                                             |
 # ------------------------------------------------------------------------------
