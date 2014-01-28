@@ -17,7 +17,7 @@
 /* Font families */
 
 /* EM function - converts pixel value into em value */
-$baseFontSize:14;
+$baseFontSize:16;
 @function em($target, $context: $baseFontSize) {
     @return ($target / $context) * 1em; /* em(21) runs (21 / 14) and returns 1.5em */
 }
