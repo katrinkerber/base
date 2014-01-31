@@ -169,8 +169,6 @@ input, textarea { padding: em(5); outline:none; }
 
 textarea { 
   min-height: em(60); 
-  overflow: auto; /* Remove default vertical scrollbar in IE 8/9 */
-  vertical-align: top; /* Improve readability and alignment in all browsers */
   resize: vertical;  /* only allow vertical resizing */
 }
 
@@ -192,8 +190,6 @@ input[type="radio"] {
   [placeholder]:focus:-moz-placeholder { color: transparent; }
   [placeholder]:focus:-ms-input-placeholder { color: transparent; }
   [placeholder]:focus::input-placeholder { color: transparent; }
-
-button[disabled], input[disabled] { cursor: default; }
 
 /*###########################################################################################*\
     --COMPONENTS
