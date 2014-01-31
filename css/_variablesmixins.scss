@@ -1,25 +1,26 @@
 /*###########################################################################################*\
-    --SASS VARIABLES, MIXINS, PLACEHOLDERS
-      ---Bourbon
-      ---Colours
-      ---Font families
-      ---EM & REM functions (choose one)
-      ---Opactiy mixin
-      ---Breakpoint mixin
-      ---Reverse Visuallyhidden mixin
-      ---Clearfix placeholder
+--SASS VARIABLES, MIXINS, PLACEHOLDERS
+  ---Bourbon
+  ---Colours
+  ---Font families
+  ---EM & REM functions (choose one)
+  ---Opactiy mixin
+  ---Breakpoint mixin
+  ---Reverse Visuallyhidden mixin
+  ---Clearfix placeholder
 \*###########################################################################################*/
 
 /* Bourbon - http://bourbon.io/docs/ */
 @import 'bourbon';
+
 /* Colour variables */
 
 /* Font families */
 
 /* EM function - converts pixel value into em value */
-$baseFontSize:16;
-@function em($target, $context: $baseFontSize) {
-    @return ($target / $context) * 1em; /* em(21) runs (21 / 14) and returns 1.5em */
+$baseFontSize: 16px;
+@function em($value, $context: $baseFontSize) {
+    @return ($value / $context) * 1em; /* em(21px) returns 1.5em, or em(21px, 28px) returns 0.75em */
 }
 
 /* 
@@ -64,15 +65,24 @@ Example:
 }
 */
 @mixin respond-to($widthCondition, $breakpoint) {
-    $emBreakpoint: ($breakpoint / 16px) * 1em ;
-    @media only screen and ($widthCondition: $emBreakpoint ) { @content; }
+    $emBreakpoint: ($breakpoint / 16px) * 1em;
+    @media only screen and ($widthCondition: $emBreakpoint ) { 
+      @content; 
+    }
 }
 
 /* 
 Reverse Visuallyhidden mixin
 reverses the .visuallyhidden helper class properties
 */
-@mixin reverse-visuallyhidden { position: static; overflow: auto; width: auto; height: auto; margin: 0; clip: auto; }
+@mixin reverse-visuallyhidden {
+  position: static;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+}
 
 /* Clearfix Placeholder */
 %clearfix {
