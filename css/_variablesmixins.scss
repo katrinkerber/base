@@ -5,7 +5,7 @@
   ---Font families
   ---EM & REM functions (choose one)
   ---Opactiy mixin
-  ---Breakpoint mixin
+  ---Media Query mixin
   ---Reverse Visuallyhidden mixin
   ---Clearfix placeholder
 \*###########################################################################################*/
@@ -59,16 +59,31 @@ $basesize-px: 16px;
 }
 
 /* 
-Breakpoint Mixin 
-Example:
-@include respond-to(min-width, 640px) {
-}
+Media Query Mixin 
+Adapted from http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+Examples:
+@include media-query(min, 704px) {}
+@include media-query(max, 704px) {}
+@include media-query(min-max, 360px, 859px) {}
 */
-@mixin respond-to($widthCondition, $breakpoint) {
-    $emBreakpoint: ($breakpoint / 16px) * 1em;
-    @media only screen and ($widthCondition: $emBreakpoint ) { 
-      @content; 
+@mixin media-query($constraint, $breakpoint1, $breakpoint2: null) {
+  @if $constraint == "min" {
+    $emBreakpoint: ($breakpoint1 / 16px) * 1em ;
+    @media only screen and (min-width: $emBreakpoint) {
+      @content;
     }
+  } @else if $constraint == "max" {
+    $emBreakpoint: ($breakpoint1 / 16px) * 1em ;
+    @media only screen and (max-width: $emBreakpoint) {
+      @content;
+    }
+  } @else if $constraint == "min-max" {
+    $emBreakpoint1: ($breakpoint1 / 16px) * 1em ;
+    $emBreakpoint2: ($breakpoint2 / 16px) * 1em ;
+    @media only screen and (min-width: $emBreakpoint1) and (max-width: $emBreakpoint2) {
+      @content;
+    }
+  }
 }
 
 /* 
