@@ -138,44 +138,26 @@ a img:hover { opacity:0.8; -moz-opacity:0.8; }
 /*###########################################################################################*\
     --FORMS
 \*###########################################################################################*/
-form { margin: 0 0 em(24) 0; }
-fieldset { margin-bottom: em(24); }
-
-legend {
-    border: 0; /* Correct `color` not being inherited in IE 8/9 */
-    padding: 0; /* Remove padding so people aren't caught out if they zero out fieldsets */
+form {
+  @include rem(margin, 0 0 24px 0);
+}
+fieldset { 
+  @include rem(margin-bottom, 24px);
 }
 
-label { display: block; font-weight: bold; }
-
-input,
-select,
-textarea,
-button {
-    font-family: inherit; /* Correct font family not being inherited in all browsers */
-    font-size: 100%; /* Correct font size not being inherited in all browsers */
-    margin: 0; /* Address margins set differently in Firefox 4+, Safari 5, and Chrome */
-    line-height: normal; /* Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
+label {
+  display: block;
 }
 
-/* Remove any webkit styling from fields */
-input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
-
-input, textarea { padding: em(5); outline:none; }
+input, 
+textarea {
+  @include rem();
+  outline:none;
+}
 
 textarea { 
-  min-height: em(60); 
+  @include rem(min-height, 80px);
   resize: vertical;  /* only allow vertical resizing */
-}
-
-input[type="checkbox"],
-input[type="radio"] { 
-  box-sizing: border-box; /* Address box sizing set to `content-box` in IE 8/9 */
-  padding: 0; /* Remove excess padding in IE 8/9 */
 }
 
 /* Placeholders */
@@ -184,12 +166,12 @@ input[type="radio"] {
 :-moz-placeholder{ color: #999; font-style: italic; } /* Firefox 19+ */
 :-ms-input-placeholder { color: #999; font-style: italic; } /*Internet Explorer 10+ */
 ::input-placeholder { color: #999; font-style: italic; }
-  /* remove placeholder on input focus - http://adactio.com/journal/6147/ */
-  [placeholder]:focus::-webkit-input-placeholder { color: transparent; }
-  [placeholder]:focus::-moz-placeholder { color: transparent; }
-  [placeholder]:focus:-moz-placeholder { color: transparent; }
-  [placeholder]:focus:-ms-input-placeholder { color: transparent; }
-  [placeholder]:focus::input-placeholder { color: transparent; }
+/* remove placeholder on input focus - http://adactio.com/journal/6147/ */
+[placeholder]:focus::-webkit-input-placeholder { color: transparent; }
+[placeholder]:focus::-moz-placeholder { color: transparent; }
+[placeholder]:focus:-moz-placeholder { color: transparent; }
+[placeholder]:focus:-ms-input-placeholder { color: transparent; }
+[placeholder]:focus::input-placeholder { color: transparent; }
 
 /*###########################################################################################*\
     --COMPONENTS
