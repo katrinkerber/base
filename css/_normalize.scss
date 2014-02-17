@@ -150,11 +150,26 @@ audio:not([controls]) {
 
 /* Forms
    ========================================================================== */
+legend {
+    border: 0;
+    padding: 0;
+}
+
+/* 
+Remove any webkit styling from fields 
+*/
+input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
+
 /*
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- */
+1. Correct color not being inherited. Known issue: affects color of disabled elements.
+2. Correct font properties not being inherited.
+3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+4. Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet
+*/
 button,
 input,
 optgroup,
@@ -162,6 +177,8 @@ select,
 textarea {
   color: inherit; /* 1 */
   font: inherit; /* 2 */
+  margin: 0; /* 3 */
+  line-height: normal; /* 4 */
 }
 
 /*
@@ -189,11 +206,20 @@ input::-moz-focus-inner {
 }
 
 /*
+1. Address box sizing set to `content-box` in IE 8/9
+2. Remove excess padding in IE 8/9
+*/
+input[type="checkbox"],
+input[type="radio"] { 
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/*
 Fix the cursor style for Chrome's increment/decrement buttons. 
 For certain `font-size` values of the `input`, it causes the cursor style of the
 decrement button to change from `default` to `text`.
  */
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -203,7 +229,6 @@ input[type="number"]::-webkit-outer-spin-button {
 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof).
  */
-
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   -moz-box-sizing: content-box; /* 2 */
