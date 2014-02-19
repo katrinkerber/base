@@ -1,37 +1,47 @@
-/*###########################################################################################*\
---SASS VARIABLES, MIXINS, PLACEHOLDERS
-  ---Bourbon
-  ---Colours
-  ---Font families
-  ---EM & REM functions (choose one)
-  ---Opactiy mixin
-  ---Media Query mixin
-  ---Reverse Visuallyhidden mixin
-  ---Clearfix placeholder
-\*###########################################################################################*/
+/* 
+==========================================================================
+SASS VARIABLES, MIXINS, PLACEHOLDERS
+-Bourbon
+-Colours
+-Font families
+-EM & REM functions (choose one)
+-Opactiy mixin
+-Media query mixin
+-Reverse visuallyhidden mixin
+-Hover states mixin
+-Clearfix placeholder
+========================================================================== 
+*/
 
-/* Bourbon - http://bourbon.io/docs/ */
+/* 
+Bourbon - http://bourbon.io/docs/ 
+*/
 @import 'bourbon';
 
-/* Colour variables */
+/* 
+Colour variables 
+*/
 
-/* Font families */
+/* 
+Font families 
+*/
 
-/* EM function - converts pixel value into em value */
+/* 
+EM function - converts pixel value into em value 
+*/
 $baseFontSize: 16px;
 @function em($value, $context: $baseFontSize) {
     @return ($value / $context) * 1em; /* em(21px) returns 1.5em, or em(21px, 28px) returns 0.75em */
 }
 
 /* 
-REM mixin, adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
-Values are added in px
-For example: rem(font-size, 28px) will return:
+REM mixin
+Adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
+rem(font-size, 28px) will return:
 font-size: 28px;
 font-size: 1.75rem;
 */
 $basesize-px: 16px;
-
 @mixin rem($property, $values) {
   // Create empty lists that we can dump values into
   $px-values: ();
@@ -52,14 +62,16 @@ $basesize-px: 16px;
   #{$property}: $rem-values;
 }
 
-/* Opacity Mixin */
+/* 
+Opacity mixin 
+*/
 @mixin opacity($opacity) { 
   opacity: $opacity;
   $opacityIE: $opacity * 100; filter: alpha(opacity=$opacityIE); /* <= IE8 */ 
 }
 
 /* 
-Media Query Mixin 
+Media query mixin 
 Adapted from http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
 Examples:
 @include media-query(min, 704px) {}
@@ -87,7 +99,7 @@ Examples:
 }
 
 /* 
-Reverse Visuallyhidden mixin
+Reverse visuallyhidden mixin
 reverses the .visuallyhidden helper class properties
 */
 @mixin reverse-visuallyhidden {
@@ -97,6 +109,15 @@ reverses the .visuallyhidden helper class properties
   height: auto;
   margin: 0;
   clip: auto;
+}
+
+/*
+Hover states mixin
+*/
+@mixin hover-states {
+  &:hover, &:focus, &:active {
+    @content;
+  }
 }
 
 /* Clearfix Placeholder */

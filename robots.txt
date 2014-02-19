@@ -10,4 +10,3 @@ Disallow: /themes
 
 User-Agent: Googlebot-Image
 Disallow: /images
-Disallow: /assets

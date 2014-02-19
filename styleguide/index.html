@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 
 <!-- link to the site's main CSS here -->
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../assets/css/styles.min.css">
 
 <!-- favicon -->
 <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="../favicon.ico">
@@ -56,7 +56,7 @@
     <h2>Style Guide</h2>
     <nav>
       <ul>
-        <li><a href="#notes">Code Notes</a></li>
+        <li><a href="#notes">Notes</a></li>
         <li><a href="#colours">Colours</a></li>
         <li><a href="#typography">Typography</a></li>      
         <li><a href="#icons">Icons</a></li> 
@@ -68,12 +68,13 @@
   <section role="main" class="pagecontent">
 
     <section class="tab-content" id="notes">
-  <h1>Guide Notes</h1>
+  <h1>Notes</h1>
   
   <p>Code has been indented using spaces with a tab-width of two.</p>
-  <p>Sass files are combined into the <em>styles.css</em> file using <a href="http://incident57.com/codekit/">CodeKit</a>.</p>
+  <p>Sass files are combined to <em>styles.min.css</em> using <a href="http://incident57.com/codekit/">CodeKit</a>.</p>
+  <p>CSS is written following the mobile-first approach, declaring styles for small viewports first and then making adjustments for larger viewports.</p>
   
-  <p>The <em>scripts.js</em> file is set up in <a href="http://incident57.com/codekit/">CodeKit</a> to import all used plugins at the top and is then concatenated and minified to <em>scripts-min.js</em>.</p>
+  <p>The <em>scripts.js</em> file is set up in <a href="http://incident57.com/codekit/">CodeKit</a> to import all used plugins at the top and is then concatenated and minified to <em>scripts.min.js</em>.</p>
 </section>
     <section class="tab-content" id="colours">
   <h1>Colours</h1>
@@ -165,28 +166,6 @@
     <dt>Milk</dt>
     <dd>- white cold drink</dd>
   </dl>
-
-  <hr>
-  
-  <h2>Inline image</h2>
-  
-  <figure class="inset floatright">
-    <img src="" height="175" width="280" alt="">
-    <figcaption>
-      Image caption on multiple lines lorem ipsum dolor sit amet
-    </figcaption>
-  </figure>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nostrum, est esse dolore fugiat ducimus officiis nisi doloremque ipsa blanditiis ipsum eius distinctio enim. Quasi, ratione, id facere perferendis molestiae atque placeat asperiores officiis vitae dolorem similique nam modi at corrupti quod a quisquam corporis laboriosam ea deleniti fugit velit pariatur deserunt obcaecati nisi eos adipisci minus soluta enim odio quam culpa voluptatum natus perspiciatis in reiciendis dolor. Harum, excepturi, error, pariatur hic earum ipsa soluta voluptates cumque eveniet eos ipsum assumenda repellat aspernatur porro tempore quidem amet ducimus magni doloribus eligendi nulla in molestiae vero eius dolor explicabo obcaecati!</p>
-
-<pre class="prettyprint">
-&lt;figure class="inset floatright">
-  &lt;img src="" height="175" width="280" alt="">
-  &lt;figcaption>
-    Image caption on multiple lines lorem ipsum dolor sit amet
-  &lt;/figcaption>
-&lt;/figure>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit[...]&lt;/p>
-</pre>
 
   <hr>
 
@@ -367,7 +346,7 @@
   </section> <!-- /pagecontent -->
   
   <!-- JavaScript -->
-  <script src="../js/libs/jquery-1.9.1.min.js"></script>
+  <script src="../assets/js/libs/jquery-1.9.1.min.js"></script>
     <!-- Styleguide specific -->
       <!-- Google code prettify -->
       <script src="run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css"></script>

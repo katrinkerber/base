@@ -1,0 +1,38 @@
+/* 
+==========================================================================
+FORMS
+========================================================================== 
+*/
+form {
+  
+}
+
+fieldset { 
+  
+}
+
+label {
+  display: block;
+}
+
+input, 
+textarea {
+  outline:none;
+}
+
+textarea { 
+  resize: vertical;  /* only allow vertical resizing */
+}
+
+/* Placeholders */
+::-webkit-input-placeholder { color: #999; font-style: italic; }
+::-moz-placeholder { color: #999; font-style: italic; } /* Firefox 4 to 18 */ 
+:-moz-placeholder{ color: #999; font-style: italic; } /* Firefox 19+ */
+:-ms-input-placeholder { color: #999; font-style: italic; } /*Internet Explorer 10+ */
+::input-placeholder { color: #999; font-style: italic; }
+/* remove placeholder on input focus - http://adactio.com/journal/6147/ */
+[placeholder]:focus::-webkit-input-placeholder { color: transparent; }
+[placeholder]:focus::-moz-placeholder { color: transparent; }
+[placeholder]:focus:-moz-placeholder { color: transparent; }
+[placeholder]:focus:-ms-input-placeholder { color: transparent; }
+[placeholder]:focus::input-placeholder { color: transparent; }
