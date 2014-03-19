@@ -1,0 +1,29 @@
+{
+  "convertHtmlOutput": null,
+  "customRubyPath": null,
+  "debug": true,
+  "domain": null,
+  "followLeader": true,
+  "ignoreDir": "_add-ons,_app,_cache,_config,_content,_logs,_themes/MYTHEME/js/libs,assets/js/libs,admin,uploads,system,themes,uploads,images", 
+  "lintScripts": true,
+  "modelSource": null,
+  "preprocessorLocations": "assets/js",
+  "preprocessorScriptOutput": "assets/js",
+  "preprocessorStyleOutput": "assets/css",
+  "projectName": "Base",
+  "publishedId": null,
+  "sass": {
+    "outputStyle": "nested",
+    "sourceMap": false,
+    "cache": false,
+    "lineNumbers": false,
+    "debugInfo": false,
+    "globbing": true,
+    "useLibSass": false
+  },
+  "serverHostname": null,
+  "serverPort": null,
+  "simpleModeFileTypes": "md,css,js,html,scss",
+  "simpleModePartnerServer": null,
+  "type": "simple"
+}
