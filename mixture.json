@@ -5,6 +5,7 @@
   "domain": null,
   "followLeader": true,
   "lintScripts": false,
+  "ignoreDir": "assets/js/libs",
   "modelSource": null,
   "preprocessorLocations": "assets",
   "preprocessorScriptOutput": "assets/js",
