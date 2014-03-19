@@ -1,7 +1,6 @@
 WebFontConfig = {
   custom: {
-    families: ['fontFamilyNamesHere'],
-    urls: ['/css/styles.css']
+    families: ['fontFamilyNamesHere']
   }
 };
 
