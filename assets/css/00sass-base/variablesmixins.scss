@@ -1,46 +1,29 @@
 /* 
 ==========================================================================
 SASS VARIABLES, MIXINS, PLACEHOLDERS
--Bourbon
 -Colours
 -Font families
--EM & REM functions (choose one)
+-REM mixin
 -Opactiy mixin
 -Media query mixin
 -Reverse visuallyhidden mixin
 -Hover states mixin
 -Clearfix placeholder
-========================================================================== 
-*/
+========================================================================== */
 
 /* 
-Bourbon - http://bourbon.io/docs/ 
-*/
-@import 'bourbon';
+Colours */
 
 /* 
-Colour variables 
-*/
+Font families */
 
-/* 
-Font families 
-*/
-
-/* 
-EM function - converts pixel value into em value 
-*/
-$baseFontSize: 16px;
-@function em($value, $context: $baseFontSize) {
-    @return ($value / $context) * 1em; /* em(21px) returns 1.5em, or em(21px, 28px) returns 0.75em */
-}
 
 /* 
 REM mixin
 Adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
 rem(font-size, 28px) will return:
 font-size: 28px;
-font-size: 1.75rem;
-*/
+font-size: 1.75rem; */
 $basesize-px: 16px;
 @mixin rem($property, $values) {
   // Create empty lists that we can dump values into
@@ -63,8 +46,7 @@ $basesize-px: 16px;
 }
 
 /* 
-Opacity mixin 
-*/
+Opacity mixin */
 @mixin opacity($opacity) { 
   opacity: $opacity;
   $opacityIE: $opacity * 100; filter: alpha(opacity=$opacityIE); /* <= IE8 */ 
@@ -76,8 +58,7 @@ Adapted from http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
 Examples:
 @include media-query(min, 704px) {}
 @include media-query(max, 704px) {}
-@include media-query(min-max, 360px, 859px) {}
-*/
+@include media-query(min-max, 360px, 859px) {} */
 @mixin media-query($constraint, $breakpoint1, $breakpoint2: null) {
   @if $constraint == "min" {
     $emBreakpoint: ($breakpoint1 / 16px) * 1em ;
@@ -100,8 +81,7 @@ Examples:
 
 /* 
 Reverse visuallyhidden mixin
-reverses the .visuallyhidden helper class properties
-*/
+reverses the .visuallyhidden helper class properties */
 @mixin reverse-visuallyhidden {
   position: static;
   overflow: auto;
@@ -112,15 +92,15 @@ reverses the .visuallyhidden helper class properties
 }
 
 /*
-Hover states mixin
-*/
+Hover states mixin */
 @mixin hover-states {
   &:hover, &:focus, &:active {
     @content;
   }
 }
 
-/* Clearfix Placeholder */
+/* 
+Clearfix Placeholder */
 %clearfix {
   *zoom: 1;
   &:after {
