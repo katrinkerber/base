@@ -43,7 +43,6 @@ images/made
 images/captchas
 .PBSyncDB
 ## Statamic specific
-_cache
 _cache/*
 _logs/*
 transformed_img/*
