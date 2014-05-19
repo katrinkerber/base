@@ -1,9 +1,9 @@
-/* 
+/*
 THIS FILE IS MINIMISED AND SAVED AS 'scripts.min.js'
 */
 
 /* ############## IMPORT PLUGINS ############## */
-// Does this project need jQuery? If we don't need <=IE8 support, use 2.x version? 
+// Does this project need jQuery? If we don't need <=IE8 support, use 2.x version?
 // Could we go Vanilla? (https://gist.github.com/liamcurry/2597326)
 
 // CodeKit import example:
@@ -15,6 +15,13 @@ THIS FILE IS MINIMISED AND SAVED AS 'scripts.min.js'
 
 
 /* ############## SET FUNCTIONS ############## */
+function svgImages() {
+  $('.inlinesvg').find('img[data-svg-file]').each(function(){
+    $thisImg = $(this);
+    var $svgPath = $thisImg.attr('data-svg-file');
+    $thisImg.attr('src', $svgPath);
+  });
+}
 
 /* ############## CALL FUNCTIONS ############## */
 $(document).ready(function() {
