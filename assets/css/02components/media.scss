@@ -1,35 +1,34 @@
-/* 
+/*
 ==========================================================================
 EMBEDDED MEDIA
 ========================================================================== */
-figure { 
-  margin: 0; 
+figure {
+  margin: 0;
 }
 figure img { }
 
-img { 
-  -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
-  vertical-align: middle; /* remove gap between images and the bottom of their containers */
-  border: 0; /* Remove border when inside `a` element in IE 8/9 */
-  max-width: 100%; 
+img {
+  max-width: 100%;
   height: auto;
 }
-a img:hover { 
-  @include opacity(0.8); 
-}  
+a:hover img,
+a:focus img,
+a:active img {
+  @include opacity(0.8);
+}
 
-/* 
+/*
 Responsive video */
-.video {
+.video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
   @include rem(padding-top, 30px);
   height: 0;
   overflow: hidden;
 }
-.video iframe,  
-.video object,  
-.video embed {
+.video-wrapper iframe,
+.video-wrapper object,
+.video-wrapper embed {
   position: absolute;
   top: 0;
   left: 0;
