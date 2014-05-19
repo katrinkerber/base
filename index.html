@@ -20,31 +20,31 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Open Graph protocol meta tags - http://ogp.me/ -->
-  <meta property="og:title" content="Page title" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="/apple-touch-icon.png" />
-
   <!-- Styles are written in Sass and then minified using CodeKit -->
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <!-- favicon -->
   <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
   <!-- touch icon - using one 152px icon used across all devices -->
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Metro tile -->
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="/metro-tile-144.png">
 
+  <!-- Open Graph protocol meta tags - http://ogp.me/ -->
+  <meta property="og:title" content="Page title" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="/apple-touch-icon.png" />
+
   <!-- Most JavaScript at bottom for optimal page load times, except for Modernizr, webfontloader and GA -->
-    <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
-    <script src="/assets/js/analytics.js" async></script>
-    <!-- Custom Modernizr scipt, which includes some mobile device/OS detection -->
-    <script src="/assets/js/libs/modernizr.js" async></script>
-    <script src="/assets/js/libs/webfontloader.js" async></script>
+  <!-- Custom Modernizr scipt, which includes some mobile device/OS detection -->
+  <script src="/assets/js/libs/modernizr.js"></script>
+  <script src="/assets/js/libs/webfontloader.js" async></script>
+  <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
+  <script src="/assets/js/analytics.js" async></script>
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
   <header role="banner" class="siteheader">
     <nav role="navigation"></nav>
   </header>
