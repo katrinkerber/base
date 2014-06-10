@@ -4,22 +4,28 @@ TYPOGRAPHY
 ========================================================================== */
 body {
   font: 100%/1.5em sans-serif; /* 16px/24px */
-   /* Nicer text rendering in webkit */
-  -webkit-font-smoothing: antialiased;
-  /* preventing text size adjustment on iOS without disabling zoom */
-  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
-  /* use ligatures if available - disabled as latest Chrome does funny things to inline text */
-  /*font-variant-ligatures: common-ligatures;*/
 }
 
 h1, h2, h3, h4, h5, h6,
-.faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 { }
-h1, .faux_h1 {  }
-h2, .faux_h2 {  }
-h3, .faux_h3 {  }
-h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 { }
+.faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 {
 
-p {  }
+}
+h1, .faux_h1 {
+
+}
+h2, .faux_h2 {
+
+}
+h3, .faux_h3 {
+
+}
+h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 {
+
+}
+
+p {
+
+}
 p img { margin: 0; }
 
 em { font-style: italic; }
