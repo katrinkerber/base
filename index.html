@@ -7,58 +7,66 @@
 <head>
   <!-- front-end code designed and built by Katrin Kerber -->
   <!-- http://katrinkerber.com -->
+
   <meta charset="UTF-8" />
 
   <title>Page title</title>
   <meta name="description" content="" />
-
   <meta name="author" content="/humans.txt" />
   <meta name="robots" content="/robots.txt" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Disable skype from styling numbers as skype buttons - DOES NOT VALIDATE -->
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/styles.min.css">
 
-  <!-- Styles are written in Sass and then minified using CodeKit -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-
-  <!-- favicon -->
+  <!-- Icons - https://github.com/audreyr/favicon-cheat-sheet -->
+  <!-- IE6-10 -->
   <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
-  <!-- touch icon - using one 152px icon used across all devices -->
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Everybody else -->
+  <link rel="icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+  <!-- iOS 2.0+ and Android 2.1+ -->
+  <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
   <!-- Metro tile -->
   <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="/metro-tile-144.png">
+  <meta name="msapplication-TileImage" content="/favicon-144.png">
 
   <!-- Open Graph protocol meta tags - http://ogp.me/ -->
   <meta property="og:title" content="Page title" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
-  <meta property="og:image" content="/apple-touch-icon.png" />
+  <meta property="og:image" content="/favicon-152.png" />
 
   <!-- Most JavaScript at bottom for optimal page load times, except for Modernizr, webfontloader and GA -->
-  <!-- Custom Modernizr scipt, which includes some mobile device/OS detection -->
+  <!-- Custom Modernizr script, includes some mobile device/OS detection -->
   <script src="/assets/js/libs/modernizr.js"></script>
   <script src="/assets/js/libs/webfontloader.js" async></script>
   <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
   <script src="/assets/js/analytics.js" async></script>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-  <header role="banner" class="siteheader">
+  <header class="siteheader" role="banner">
     <nav role="navigation"></nav>
   </header>
 
-  <section role="main" class="page">
+  <section class="page" role="main">
 
   </section>
 
-  <footer role="contentinfo" class="sitefooter">
+  <footer class="sitefooter" role="contentinfo">
 
   </footer>
 
-  <!-- JavaScript -->
-  <!-- Site's libs, plugins and functions merged and minimized with CodeKit-->
+
+  <!--
+  Check if jQuery is needed first
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write("<script src='/assets/js/libs/jquery-1.9.1.min.js'>\x3C/script>")
+  </script>
+  -->
   <script src="/assets/js/scripts.min.js"></script>
 </body>
 </html>
