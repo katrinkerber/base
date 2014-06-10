@@ -1,1 +1,1 @@
-A set of base files to kick of new, wondrous web-things.
+A set of base files to kick off new, wondrous web-things.
