@@ -1,0 +1,35 @@
+.note {
+  display: block;
+  margin: 0 0 1.5rem;
+  color: #888;
+  font-style: italic;
+}
+h1 + .note,
+p + .note {
+  margin-top: -1.4rem;
+}
+th,
+td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 43.99em ) {
+  header nav li {
+    display: inline-block;
+    padding: 1em 0.5em 1em 0;
+  }
+}
+@media only screen and (min-width: 44em ) {
+  header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 24%;
+    height: 100%;
+    overflow: auto;
+  }
+  .page {
+    padding-left: 24%;
+  }
+}
