@@ -6,6 +6,8 @@ body {
   font: 100%/1.5em sans-serif; /* 16px/24px */
 }
 
+/*=====*/
+
 h1, h2, h3, h4, h5, h6,
 .faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 {
 
@@ -23,37 +25,122 @@ h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 {
 
 }
 
+
+/*=====*/
+
 p {
 
 }
-p img { margin: 0; }
+p img {
+  margin: 0;
+}
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
-strong, b { font-weight: bold; }
+strong, b {
+  font-weight: bold;
+}
 
-small { font-size: 80%; line-height: 1.2em; }
+small {
+  font-size: 80%;
+  line-height: 1.2em;
+}
 
-/* ABBR styling not present in IE 8/9, Safari 5, and Chrome. */
-abbr[title] { border-bottom: 1px dotted; }
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 
-/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-
-blockquote {  }
-  blockquote p { font-style: italic; }
-  blockquote p:last-of-type { margin-bottom: 0; }
-  blockquote cite { }
-  blockquote cite:before { content:'– '; }
-
-hr { height: 0; border: 0; border-top: 1px solid; margin: 0; @include rem(padding, 14px 0 15px 0); }
+hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid;
+  margin: 0;
+  @include rem(padding, 14px 0 15px 0);
+}
 
 ::-moz-selection { }
 ::selection { }
 
-/* Links */
-a { color: red; text-decoration:none; }
-a:focus { outline: thin dotted; }
-a:hover, a:active { text-decoration: underline; outline: 0; }
+/*====
+Quotes
+====*/
+blockquote {  }
+blockquote p {
+  font-style: italic;
+}
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+blockquote cite { }
+blockquote cite:before {
+  content:'– ';
+}
+
+/*====
+Links
+====*/
+a {
+  color: red;
+  text-decoration:none;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  text-decoration: underline;
+  outline: 0;
+}
+
+/*====
+Lists
+====*/
+ul {
+  @include rem(padding-left, 20px);
+  @include rem(margin-bottom, 24px);
+}
+ol {
+  @include rem(padding-left, 24px);
+  @include rem(margin-bottom, 24px);
+}
+ul ul,
+ol ol {
+  margin-bottom: 0;
+}
+ul li {
+  list-style-type: disc;
+  @include rem(margin-bottom, 4px);
+}
+ol li {
+  list-style-type: decimal;
+  @include rem(margin-bottom, 4px);
+}
+
+ul.no-bull,
+ol.no-bull {
+  padding-left: 0;
+  li {
+    list-style: none;
+  }
+}
+
+ul.inline li,
+ol.inline li {
+  display: inline-block;
+  *display: inline;
+  zoom:1;
+}
+
+dl {  }
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+  @include rem(margin-bottom, 4px);
+}
+

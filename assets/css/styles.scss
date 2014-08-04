@@ -1,27 +1,25 @@
-/* 
-Sass base */ 
-@import "00sass-base/bourbon/bourbon";
-@import "00sass-base/variablesmixins";
+ @import "00bourbon/bourbon";
 
 /*
 Base styles */
+@import "01base/variablesmixins";
 @import "01base/normalize";
 @import "01base/helpers";
 @import "01base/typography";
 
-/* 
+/*
 Components */
 @import "02components/*";
 
-/* 
+/*
 Modules */
 @import "03modules/*";
 
-/* 
+/*
 Pages */
 @import "04pages/*";
 
-/* 
+/*
 Print */
 @import "print";
 
