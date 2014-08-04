@@ -1,32 +1,52 @@
 {
-  "convertHtmlOutput": null,
+  "convertHtml": {
+    "relativePaths": false
+  },
   "customRubyPath": null,
   "debug": false,
   "domain": null,
   "followLeader": true,
+  "ignoreDir": [
+    "_add-ons",
+    "_app",
+    "_cache",
+    "_config",
+    "_content",
+    "_logs",
+    "admin",
+    "uploads",
+    "assets/js/libs"
+  ],
   "lintScripts": false,
-  "ignoreDir": "assets/js/libs,styleguide",
   "modelSource": null,
   "optimiseImages": false,
   "optimiseSVG": false,
-  "preprocessorLocations": "assets",
+  "preprocessorLocations": [
+    "assets/css",
+    "assets/js"
+  ],
   "preprocessorScriptOutput": "assets/js",
   "preprocessorStyleOutput": "assets/css",
-  "projectName": "base",
+  "projectName": "Base",
   "publishedId": null,
   "sass": {
-    "outputStyle": "nested",
-    "sourceMap": false,
     "cache": false,
-    "lineNumbers": false,
     "debugInfo": false,
     "globbing": true,
+    "lineNumbers": false,
+    "outputStyle": "nested",
+    "sourceMap": false,
     "useLibSass": false
   },
-  "serverHostname": null,
+  "serverHostname": "dev.base.com",
   "serverPort": null,
-  "simpleModeFileTypes": "md,css,js,html,scss",
-  "simpleModePartnerServer": null,
+  "simpleModeFileTypes": [
+    "css",
+    "js",
+    "html",
+    "scss"
+  ],
+  "simpleModePartnerServer": "dev.base.com",
   "type": "simple",
   "useCompass": false
 }
