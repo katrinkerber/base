@@ -1,39 +1,41 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /* CUSTOMISED */
 
+
+/*
+Prevent iOS text size adjust after orientation change, without disabling
+*/
 html {
-  /*
-  Forcing a scroll bar to prevent page jumps on short pages */
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-  /*
-  Prevent iOS text size adjust after orientation change, without disabling zoom*/
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  /*
-  Nicer text rendering in webkit */
-  -webkit-font-smoothing: antialiased;
-  /*
-  use ligatures if available - disabled as latest Chrome does funny things to inline text */
-  /*font-variant-ligatures: common-ligatures;*/
-
 }
 
 /*
-Remove default body margin */
+Forcing a scroll bar to prevent page jumps on short pages
+*/
+html {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+/*
+Remove default body margin
+*/
 body {
   margin: 0;
 }
 
 /*
-Correct `block` display not defined in IE 8/9.*/
+Correct `block` display not defined in IE 8/9.
+*/
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block;
 }
 
 /*
-`[hidden]` styling not present in IE 8/9*/
+`[hidden]` styling not present in IE 8/9.
+*/
 [hidden] {
   display: none;
 }
@@ -42,30 +44,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
    ========================================================================== *
 
 /*
-Remove top margins for headings and paragraphs*/
+Remove top margins for headings and paragraphs
+*/
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0;
 }
 
 /*
-Remove the grey background color from active links in IE 10.*/
+Remove the grey background color from active links in IE 10.
+ */
 a {
   background: transparent;
 }
 
 /*
-ABBR styling not present in IE 8/9, Safari 5, and Chrome.*/
+ABBR styling not present in IE 8/9, Safari 5, and Chrome.
+ */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
+/*
+Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+*/
 b,
 strong {
   font-weight: bold;
 }
 
 /*
-Prevent `sub` and `sup` affecting `line-height` in all browsers.*/
+Prevent `sub` and `sup` affecting `line-height` in all browsers.
+*/
 sub,
 sup {
   line-height: 0;
@@ -74,13 +83,15 @@ sup {
 }
 
 /*
-Set consistent quote types.*/
+Set consistent quote types.
+*/
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 /*
-Address differences between Firefox and other browsers.*/
+Address differences between Firefox and other browsers.
+*/
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -88,7 +99,8 @@ hr {
 }
 
 /*
-Address odd `em`-unit font size rendering in all browsers.*/
+Address odd `em`-unit font size rendering in all browsers.
+*/
 code, kbd, pre, samp {
   font-family: monospace, serif;
   font-size: 1em;
@@ -96,7 +108,8 @@ code, kbd, pre, samp {
 
 /*
 Improve readability of pre-formatted text in all browsers.
-Contain overflow in all browsers.*/
+Contain overflow in all browsers.
+*/
 pre {
   white-space: pre-wrap;
   overflow: auto;
@@ -113,7 +126,6 @@ nav ul li {
   list-style: none;
 }
 
-
 /* Embedded content
    ========================================================================== */
 img {
@@ -123,20 +135,23 @@ img {
 }
 
 /*
-Correct `inline-block` display not defined in IE 8/9.*/
+Correct `inline-block` display not defined in IE 8/9.
+*/
 audio, canvas, video {
   display: inline-block;
 }
 
 /*
-Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.*/
+Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+*/
 progress {
   vertical-align: baseline;
 }
 
 /*
 Prevent modern browsers from displaying `audio` without controls.
-Remove excess height in iOS 5 devices.*/
+Remove excess height in iOS 5 devices.
+ */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -150,7 +165,8 @@ legend {
 }
 
 /*
-Remove any webkit styling from fields*/
+Remove any webkit styling from fields
+*/
 input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0; }
 input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0; }
 input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
@@ -161,7 +177,8 @@ textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
 1. Correct color not being inherited. Known issue: affects color of disabled elements.
 2. Correct font properties not being inherited.
 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
-4. Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
+4. Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet
+*/
 button,
 input,
 optgroup,
@@ -174,20 +191,23 @@ textarea {
 }
 
 /*
-Address `overflow` set to `hidden` in IE 8/9/10. */
+Address `overflow` set to `hidden` in IE 8/9/10.
+ */
 button {
   overflow: visible;
 }
 
 /*
-Re-set default cursor for disabled elements. */
+Re-set default cursor for disabled elements.
+ */
 button[disabled],
 input[disabled] {
   cursor: default;
 }
 
 /*
-Remove inner padding and border in Firefox 4+. */
+Remove inner padding and border in Firefox 4+.
+ */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -196,7 +216,8 @@ input::-moz-focus-inner {
 
 /*
 1. Address box sizing set to `content-box` in IE 8/9
-2. Remove excess padding in IE 8/9 */
+2. Remove excess padding in IE 8/9
+*/
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box; /* 1 */
@@ -206,7 +227,8 @@ input[type="radio"] {
 /*
 Fix the cursor style for Chrome's increment/decrement buttons.
 For certain `font-size` values of the `input`, it causes the cursor style of the
-decrement button to change from `default` to `text`.*/
+decrement button to change from `default` to `text`.
+ */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -214,7 +236,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /*
 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
+2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof).
+ */
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   -moz-box-sizing: content-box; /* 2 */
@@ -224,7 +247,8 @@ input[type="search"] {
 
 /*
 1. Remove default vertical scrollbar in IE 8/9.
-2. Improve readability and alignment in all browsers */
+2. Improve readability and alignment in all browsers
+*/
 textarea {
   overflow: auto; /* 1 */
   vertical-align: top;  /* 2 */
