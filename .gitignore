@@ -34,6 +34,7 @@ intermediate
 publish
 .idea
 back_up
+
 ## EE specific
 cache
 cache/*
@@ -42,6 +43,7 @@ system/expressionengine/cache/*
 images/made
 images/captchas
 .PBSyncDB
+
 ## Statamic specific
 _cache/*
 _logs/*
@@ -50,3 +52,7 @@ transformed_img/*
 
 # SFTP set up file
 sftp-config.json
+
+# Sketch data files
+*.sketch/Data
+*.sketch/metadata
