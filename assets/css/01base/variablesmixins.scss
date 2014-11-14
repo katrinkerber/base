@@ -1,4 +1,4 @@
-/* 
+/*
 ==========================================================================
 SASS VARIABLES, MIXINS, PLACEHOLDERS
 -Colours
@@ -11,14 +11,14 @@ SASS VARIABLES, MIXINS, PLACEHOLDERS
 -Clearfix placeholder
 ========================================================================== */
 
-/* 
+/*
 Colours */
 
-/* 
+/*
 Font families */
 
 
-/* 
+/*
 REM mixin
 Adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
 rem(font-size, 28px) will return:
@@ -34,8 +34,8 @@ $basesize-px: 16px;
     // if value is 0 or not a numerical value (i.e. auto), return as is
     @if $value == 0 or type-of( $value ) != "number" {
       $px-values: append($px-values, $value);
-      $rem-values: append($rem-values, $value); 
-    } @else {   
+      $rem-values: append($rem-values, $value);
+    } @else {
       $px-values: append($px-values, $value );
       $rem-values: append($rem-values, ($value/$basesize-px) * 1rem );
     }
@@ -45,15 +45,8 @@ $basesize-px: 16px;
   #{$property}: $rem-values;
 }
 
-/* 
-Opacity mixin */
-@mixin opacity($opacity) { 
-  opacity: $opacity;
-  $opacityIE: $opacity * 100; filter: alpha(opacity=$opacityIE); /* <= IE8 */ 
-}
-
-/* 
-Media query mixin 
+/*
+Media query mixin
 Adapted from http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
 Examples:
 @include media-query(min, 704px) {}
@@ -79,18 +72,6 @@ Examples:
   }
 }
 
-/* 
-Reverse visuallyhidden mixin
-reverses the .visuallyhidden helper class properties */
-@mixin reverse-visuallyhidden {
-  position: static;
-  overflow: auto;
-  width: auto;
-  height: auto;
-  margin: 0;
-  clip: auto;
-}
-
 /*
 Hover states mixin */
 @mixin hover-states {
@@ -99,7 +80,7 @@ Hover states mixin */
   }
 }
 
-/* 
+/*
 Clearfix Placeholder */
 %clearfix {
   *zoom: 1;
