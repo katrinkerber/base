@@ -29,9 +29,3 @@ textarea {
 :-moz-placeholder{ color: #999; opacity: 1; font-style: italic; } /* Firefox 19+ */
 :-ms-input-placeholder { color: #999; opacity: 1; font-style: italic; } /*Internet Explorer 10+ */
 ::input-placeholder { color: #999; font-style: italic; }
-/* remove placeholder on input focus - http://adactio.com/journal/6147/ */
-[placeholder]:focus::-webkit-input-placeholder { color: transparent; }
-[placeholder]:focus::-moz-placeholder { color: transparent; }
-[placeholder]:focus:-moz-placeholder { color: transparent; }
-[placeholder]:focus:-ms-input-placeholder { color: transparent; }
-[placeholder]:focus::input-placeholder { color: transparent; }
