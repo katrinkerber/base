@@ -8,6 +8,8 @@ Prevent iOS text size adjust after orientation change, without disabling
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+   /* Nicer text rendering in webkit */
+  -webkit-font-smoothing: antialiased;
 }
 
 /*
