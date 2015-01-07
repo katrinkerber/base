@@ -1,0 +1,160 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JS Form validation</title>
+</head>
+<body>
+
+  <h1>JS Form Validation Approach</h1>
+
+  <p>Uses the <a href="http://jqueryvalidation.org/">jQuery Validate Plugin</a>.</p>
+
+  <p>All validation rules are applied to the form field via attributes.</p>
+
+  <p>The <code>required</code> attribute on a field triggers either the JS validation, or the default browser validation if JS is disabled.</p>
+
+  <p>The <code>data-msg-required</code> attribute defines the error message that appears when the field is invalid.</p>
+
+  <p>Special rules can also be added for special fields, i.e. email, url, numbers, minlength etc.</p>
+
+  <form method="post" autocomplete="off">
+    <fieldset>
+      <h2>Simple text field</h2>
+      <div class="form__field">
+        <label for="name">
+          Name
+        </label>
+        <input
+          name="name"
+          id="name"
+          type="text"
+
+          aria-required="true"
+          required
+          data-msg-required="Please enter your name."
+        >
+        <!-- This element holds the error message set with the data-msg-required attribute in the input element above -->
+        <span class="form__field--error__msg"></span>
+      </div>
+
+      <div class="form__field">
+        <h2>Email field</h2>
+        <label for="email">
+          Email
+        </label>
+        <input
+          name="email"
+          id="email"
+          type="email"
+          placeholder="john@doe.com"
+
+          aria-required="true"
+          required
+          data-msg-required="Please enter your email."
+          data-rule-email="true"
+          data-msg-email="Please enter a valid email address."
+        >
+        <span class="form__field--error__msg"></span>
+      </div>
+
+      <div class="form__field">
+        <h2>Number/Digits</h2>
+        <label for="number">
+          Number
+        </label>
+        <input
+          name="number"
+          id="number"
+          type="text"
+          placeholder="1122"
+
+          aria-required="true"
+          required
+          data-msg-required="Please add a number."
+          data-rule-digits="true"
+          data-msg-digits="Please enter only numerical characters."
+        >
+        <span class="form__field--error__msg"></span>
+      </div>
+
+      <div class="form__field">
+        <h2>URL</h2>
+        <label for="url">
+          URL
+        </label>
+        <input
+          name="url"
+          id="url"
+          type="text"
+          placeholder="http://mysite.com"
+
+          aria-required="true"
+          required
+          data-msg-required="Please add a URL."
+          data-rule-url="true"
+          data-msg-url="Please enter a valid URL address (including the http://)."
+        >
+        <span class="form__field--error__msg"></span>
+      </div>
+
+      <div class="form__field">
+        <h2>Min Length</h2>
+        <label for="minlength">
+          Min Length - 10 characters
+        </label>
+        <input
+          name="minlength"
+          id="minlength"
+          type="text"
+
+          aria-required="true"
+          required
+          data-msg-required="Please add something."
+          data-rule-minlength="10"
+          data-msg-minlength="Please enter at least 10 characters."
+        >
+        <span class="form__field--error__msg"></span>
+      </div>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+
+<!-- JS Validation needs jQuery and jQuery Validate Plugin (http://jqueryvalidation.org/) -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.validate.min.js"></script>
+<!-- This handles the actual validation. No changes necessary (unless you want to change classes of course). All validation rules are handled via the HTML -->
+<script>
+  function formValidation() {
+    $('form').each(function(){
+      var validator = $(this).validate({
+        // empty errorPlacement function ensures no error element is being created, we are adding that ourselves
+        errorPlacement: function(error, element) {},
+        onfocusout: function (element) {
+          $(element).valid();
+        },
+        highlight: function (element, errorClass, message) {
+          var errorMessage = validator.errorMap[element.name];
+          var $thisFormFieldWrapper =  $(element).parents('.form__field');
+          $(element).attr('aria-invalid', 'true');
+          $thisFormFieldWrapper.addClass('form__field--error');
+          if ( $thisFormFieldWrapper.find('.form__field--error__msg').length == 0 ) {
+            $thisFormFieldWrapper.append('<span class="form__field--error__msg" />');
+          }
+          $thisFormFieldWrapper.find('.form__field--error__msg').html(errorMessage);
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          var $thisFormFieldWrapper =  $(element).parents('.form__field');
+          $thisFormFieldWrapper.removeClass('form__field--error');
+          $thisFormFieldWrapper.find('.form__field--error__msg').remove();
+          $thisFormFieldWrapper.find('.form-field__error').html('');
+        }
+      });
+    });
+  }
+
+  $(document).ready(function() {
+    formValidation();
+  });
+</script>
+</body>
+</html>
