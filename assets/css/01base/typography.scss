@@ -99,13 +99,9 @@ a:hover, a:active {
 /*====
 Lists
 ====*/
-ul {
-  @include rem(padding-left, 20px);
-  @include rem(margin-bottom, 24px);
-}
-ol {
-  @include rem(padding-left, 24px);
-  @include rem(margin-bottom, 24px);
+
+ul, ol {
+  padding-left: 1.3em;
 }
 ul ul,
 ol ol {
@@ -113,34 +109,30 @@ ol ol {
 }
 ul li {
   list-style-type: disc;
-  @include rem(margin-bottom, 4px);
 }
 ol li {
   list-style-type: decimal;
-  @include rem(margin-bottom, 4px);
 }
 
-ul.no-bull,
-ol.no-bull {
-  padding-left: 0;
-  li {
-    list-style: none;
-  }
+
+ul.list__unstyled,
+ol.list__unstyled {
+  margin-left: 0;
+}
+ul.list__unstyled li,
+ol.list__unstyled li {
+  list-style: none;
 }
 
-ul.inline li,
-ol.inline li {
+
+ul.list__inline li,
+ol.list__inline li {
   display: inline-block;
   *display: inline;
   zoom:1;
 }
 
-dl {  }
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 0;
-  @include rem(margin-bottom, 4px);
-}
 
+dl {  }
+  dt { font-weight: bold; }
+  dd {  }

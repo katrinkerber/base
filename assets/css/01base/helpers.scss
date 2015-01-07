@@ -1,19 +1,36 @@
-/* 
+/*
 ==========================================================================
 HELPER CLASSES
+Can be applied to element or used as @extends.
 ========================================================================== */
 /*  hide element visually, but have it available for screenreaders - http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
-.visuallyhidden { position: absolute; overflow: hidden; width: 1px; height: 1px; border:0; padding: 0; margin: -1px; clip: rect(0 0 0 0); }
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  border:0;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+
 /* hide from everybody */
-.hidden { visibility: hidden; display: none !important; }
-/* replace text with a background image, but keep screenreaders happy -  https://github.com/h5bp/html5-boilerplate/commit/adecc5da035d6d76b77e3fa95c6abde841073da2 */
-.replaced { background-color:transparent; background-repeat:no-repeat; border: 0; overflow: hidden; *text-indent:-999em; }
-.replaced:before { content: ""; display: block; width: 0; height: 200%; }
-/* float element to the left */
-.float { float:left; clear:none; display:inline; }
-/* float element to the right */
-.floatright { float:right; clear:none; display:inline; }
-/* don't floot element */
-.clear { overflow:hidden; clear:both; display:block; }
+.hidden {
+  visibility: hidden;
+  display: none !important;
+}
+
+.clearfix {
+  *zoom: 1;
+  &:after {
+      content: " ";
+      display: table;
+      clear: both;
+  }
+}
+
 /* no bottom margin on element */
-.no-btm-margin { margin-bottom: 0; }
+.no-btm-margin {
+  margin-bottom: 0;
+}
