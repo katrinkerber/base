@@ -3,7 +3,9 @@
 TYPOGRAPHY
 ========================================================================== */
 body {
-  font: 100%/1.5em sans-serif; /* 16px/24px */
+  font-family: sans-serif;
+  font-size: 100%; /* 16px */
+  line-height: 1.5em; /* 24px */
 }
 
 /*=====*/
@@ -35,28 +37,7 @@ p img {
   margin: 0;
 }
 
-em {
-  font-style: italic;
-}
-
-strong, b {
-  font-weight: bold;
-}
-
-small {
-  font-size: 80%;
-  line-height: 1.2em;
-}
-
-sup {
-  top: -0.5em;
-}
-sub {
-  bottom: -0.25em;
-}
-
 hr {
-  height: 0;
   border: 0;
   border-top: 1px solid;
   margin: 0;

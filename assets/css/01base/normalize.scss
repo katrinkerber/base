@@ -1,125 +1,121 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /* CUSTOMISED */
 
-
-/*
-Prevent iOS text size adjust after orientation change, without disabling
-*/
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-   /* Nicer text rendering in webkit */
-  -webkit-font-smoothing: antialiased;
-}
-
-/*
-Forcing a scroll bar to prevent page jumps on short pages
-*/
 html {
   height: 100%;
   width: 100%;
+  -ms-text-size-adjust: 100%;
+  /* Prevent iOS text size adjust after orientation change, without disabling */
+  -webkit-text-size-adjust: 100%;
+  /* Nicer text rendering in webkit */
+  -webkit-font-smoothing: antialiased;
+  /* Forcing a scroll bar to prevent page jumps on short pages */
   overflow-y: scroll;
 }
 
-/*
-Remove default body margin
-*/
+/* Remove default body margin */
 body {
   margin: 0;
 }
 
-/*
-Correct `block` display not defined in IE 8/9.
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
 */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
   display: block;
 }
 
-/*
-`[hidden]` styling not present in IE 8/9.
-*/
+/* `[hidden]` styling not present in IE 8/9. */
 [hidden] {
   display: none;
 }
 
 /* Text-level elements
-   ========================================================================== *
+   ========================================================================== */
 
-/*
-Remove top margins for headings and paragraphs
-*/
+/* Remove top margins for headings and paragraphs */
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0;
 }
 
-/*
-Remove the grey background color from active links in IE 10.
- */
+/* Remove the grey background color from active links in IE 10. */
 a {
   background: transparent;
 }
 
-/*
-ABBR styling not present in IE 8/9, Safari 5, and Chrome.
- */
+/* ABBR styling not present in IE 8/9/10/11, Safari, and Chrome. */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/*
-Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
-*/
+/* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
 b,
 strong {
   font-weight: bold;
 }
 
-/*
-Prevent `sub` and `sup` affecting `line-height` in all browsers.
-*/
+/* Inconsistent and variable font size in all browsers. */
+small {
+  font-size: 80%;
+}
+
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
 sub,
 sup {
+  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 
-/*
-Set consistent quote types.
-*/
+/* Set consistent quote types. */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/*
-Address differences between Firefox and other browsers.
-*/
+/* Address differences between Firefox and other browsers. */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-/*
-Address odd `em`-unit font size rendering in all browsers.
-*/
-code, kbd, pre, samp {
-  font-family: monospace, serif;
+/* Address odd `em`-unit font size rendering in all browsers. */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
   font-size: 1em;
 }
 
-/*
-Improve readability of pre-formatted text in all browsers.
-Contain overflow in all browsers.
-*/
+/* Improve readability of pre-formatted text in all browsers. Contain overflow in all browsers. */
 pre {
   white-space: pre-wrap;
   overflow: auto;
 }
 
-/*
-Nav lists
-*/
+/* Nav lists */
 nav ul {
   margin: 0;
   padding: 0;
@@ -133,12 +129,15 @@ nav ul li {
 img {
   -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
   vertical-align: middle; /* remove gap between images and the bottom of their containers */
-  border: 0; /* Remove border when inside `a` element in IE 8/9 */
+  border: 0; /* Remove border when inside `a` element in IE 8/9/10. */
 }
 
-/*
-Correct `inline-block` display not defined in IE 8/9.
-*/
+/* Correct overflow not hidden in IE 9/10/11. */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Correct `inline-block` display not defined in IE 8/9. */
 audio, canvas, video {
   display: inline-block;
 }
@@ -150,10 +149,7 @@ progress {
   vertical-align: baseline;
 }
 
-/*
-Prevent modern browsers from displaying `audio` without controls.
-Remove excess height in iOS 5 devices.
- */
+/* Prevent modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -161,27 +157,14 @@ audio:not([controls]) {
 
 /* Forms
    ========================================================================== */
-legend {
-    border: 0;
-    padding: 0;
-}
-
-/*
-Remove any webkit styling from fields
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
 */
-input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0; }
-textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
-
-/*
-Remove placeholder on input focus - http://adactio.com/journal/6147/ */
-[placeholder]:focus::-webkit-input-placeholder { color: transparent; }
-[placeholder]:focus::-moz-placeholder { color: transparent; }
-[placeholder]:focus:-moz-placeholder { color: transparent; }
-[placeholder]:focus:-ms-input-placeholder { color: transparent; }
-[placeholder]:focus::input-placeholder { color: transparent; }
+legend {
+  border: 0;
+  padding: 0;
+}
 
 /*
 1. Correct color not being inherited. Known issue: affects color of disabled elements.
@@ -200,28 +183,56 @@ textarea {
   line-height: normal; /* 4 */
 }
 
-/*
-Address `overflow` set to `hidden` in IE 8/9/10.
- */
+
+/* Remove any webkit styling from fields */
+input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="search"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="email"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+input[type="password"] { -webkit-appearance: none; -webkit-border-radius: 0; }
+textarea  { -webkit-appearance: none; -webkit-border-radius: 0; }
+
+/* Remove placeholder on input focus - http://adactio.com/journal/6147/ */
+[placeholder]:focus::-webkit-input-placeholder { color: transparent; }
+[placeholder]:focus::-moz-placeholder { color: transparent; }
+[placeholder]:focus:-moz-placeholder { color: transparent; }
+[placeholder]:focus:-ms-input-placeholder { color: transparent; }
+[placeholder]:focus::input-placeholder { color: transparent; }
+
+/* Address `overflow` set to `hidden` in IE 8/9/10/11 */
 button {
   overflow: visible;
 }
 
-/*
-Re-set default cursor for disabled elements.
- */
+/**
+* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls.
+* 2. Correct inability to style clickable `input` types in iOS.
+* 3. Improve usability and consistency of cursor style between image-type `input` and others.
+*/
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/* Re-set default cursor for disabled elements. */
 button[disabled],
 input[disabled] {
   cursor: default;
 }
 
-/*
-Remove inner padding and border in Firefox 4+.
- */
+/* Remove inner padding and border in Firefox 4+. */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+/* Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
+input {
+  line-height: normal;
 }
 
 /*
@@ -256,7 +267,7 @@ input[type="search"] {
 }
 
 /*
-1. Remove default vertical scrollbar in IE 8/9.
+1. Remove default vertical scrollbar in IE 8/9/10/11
 2. Improve readability and alignment in all browsers
 */
 textarea {

@@ -1,10 +1,10 @@
- @import "00bourbon/bourbon";
+ @import "00libs/bourbon/bourbon";
 
 /*
 Base styles */
 @import "01base/variablesmixins";
-@import "01base/normalize";
 @import "01base/helpers";
+@import "01base/normalize";
 @import "01base/typography";
 
 /*
@@ -18,6 +18,5 @@ Pages */
 /*
 Print */
 @import "print";
-
 
 

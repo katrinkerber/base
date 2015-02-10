@@ -49,6 +49,10 @@ _cache/*
 _logs/*
 transformed_img/*
 
+## Craft specific
+craft/app/*
+craft/storage/*
+
 
 # SFTP set up file
 sftp-config.json
