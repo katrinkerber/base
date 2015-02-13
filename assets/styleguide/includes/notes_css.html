@@ -1,58 +1,6 @@
-<section class="tab-content" id="notes">
-  <h1>Notes</h1>
+<section class="styleguide__section" id="notes_css">
+  <h1>CSS</h1>
 
-  <blockquote>
-    <p>Every line of code should appear to be written by a single person, no matter the number of contributors.</p>
-  </blockquote>
-
-  <h2>Editor preferences</h2>
-  <p>Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:</p>
-  <ul>
-    <li>Use soft-tabs set to <strong>2 spaces</strong>.</li>
-    <li>Trim trailing white space on save.</li>
-    <li>Set encoding to UTF-8.</li>
-    <li>Add new line at end of files.</li>
-  </ul>
-
-  <p>If you are using <strong>Sublime Text 2</strong>, have a look at these <a href="https://gist.github.com/katrinkerber/d471b3f995f80f48117c">settings</a>.</p>
-
-  <hr>
-
-  <h2>HTML</h2>
-  <h3>Syntax</h3>
-  <ul>
-    <li>Use soft-tabs set to <strong>2 spaces</strong>.</li>
-    <li>Nested elements should be indented once (2 spaces).</li>
-    <li>Always use double quotes, never single quotes.</li>
-    <li>Don't include a trailing slash in self-closing elements.</li>
-  </ul>
-
-  <h3>Attribute order</h3>
-  <p>HTML attributes should come in this particular order for easier reading of code:</p>
-  <ol>
-    <li><code>class</code></li>
-    <li><code>data-*</code></li>
-    <li><code>role</code></li>
-    <li><code>aria-*</code></li>
-    <li><code>src</code>, <code>alt</code>, <code>href</code></li>
-    <li><code>for</code></li>
-    <li><code>type</code>, <code>name</code>, <code>id</code>, <code>value</code></li>
-    <li><code>itemprop</code>, <code>itemscope</code>, <code>itemtype</code></li>
-  </ol>
-  <h4>Examples</h4>
-<pre><code class="language-markup">
-&lt;section class="section" role="main">
-
-&lt;div class="address" itemscope itemtype="http://schema.org/PostalAddress">
-
-&lt;img class="img" role="presentation" aria-hidden="true" src="" alt="" data-svg-file="">
-
-&lt;input class="field" type="text" name="postcode" id="postcode" value="" data-rule-required="true">
-</code></pre>
-
-  <hr>
-
-  <h2>CSS</h2>
   <p>CSS is written in Sass.</p>
   <p>Sass files are combined to <code>styles.min.css</code> using <a href="http://docs.mixture.io/">Mixture</a>.</p>
   <p><a href="http://bourbon.io/docs/">Bourbon</a> is used as a library for common mixins.</p>
@@ -71,40 +19,38 @@ h1 {
 }
 </code></pre>
 
-  <h3>Files structure</h3>
-  The <code>styles.scss</code> file handles the import of all Sass files and is compiled to <code>styles.min.css</code>.
-  <ol>
-    <li>
-      <strong>Bourbon</strong> <br>
-      The Bourbon library.
-    </li>
-    <li>
-      <strong>Base</strong>
-      <ul>
-        <li>Sass Variables and mixins</li>
-        <li>Normalize</li>
-        <li>Helper classes</li>
-        <li>Typography</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Components</strong> <br>
-      Independent small-scale elements, like buttons, for example.
-    </li>
-    <li>
-      <strong>Modules</strong> <br>
-      Complex, independent modular parts of the site. Forms, for example.
-    </li>
-    <li>
-      <strong>Pages</strong> <br>
-      Page specific styles. Use sparingly, think <strong>'modular'</strong> as much as possible.
-    </li>
-    <li>
-      <strong>Print styles</strong>
-    </li>
-  </ol>
+    <h2>File organization</h2>
+<pre class="language-markup"><code>
+css/
+|
+|-- libs/                    # Includes Bourbon mixin library
+|
+|-- base/                    # Default settings and normalise
+|   |-- normalize.scss       # Help with cross-browser consistency
+|   |-- variables.scss       # Default settings and values, colours, breakpoints etc.
+|   |-- mixins.scss          # Mixins, including import of bourbon librabry
+|   |-- helpers.scss         # Helper classes
+|   |-- typography.scss      # Set up font style and scale
+|
+|-- modules/                  # Global components
+|   |-- buttons.scss          # Buttons
+|   |-- icons.scss            # Icons
+|   |-- forms.scss            # Form elements
+|   |-- tables.scss           # Tables
+|   |-- header.scss           # Site header
+|   |-- footer.scss           # Site footer
+|   ...
+|
+|-- pages                     # Page styles (add one file for every section needed)
+|   |-- base.scss             # Global base page styles
+|   |-- home.scss
+|   ...
+|
+|-- print.scss                # Print styles
+|-- style.scss                # Main import file. Compiles to style.css and styles.min.css
+</code></pre>
 
-  <h3>Syntax</h3>
+  <h2>Syntax</h2>
   <ul>
     <li>Use soft-tabs with two spaces.</li>
     <li>Include one space before the opening brace of declaration blocks.</li>
@@ -137,7 +83,7 @@ box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
 </code></pre>
 
-  <h3>Declaration order</h3>
+  <h2>Declaration order</h2>
   <ol>
     <li>Positioning</li>
     <li>Box-model</li>
@@ -180,7 +126,7 @@ opacity: 1;
 }
 </code></pre>
 
-  <h3>Media query placement</h3>
+  <h2>Media query placement</h2>
   <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future.</p>
   <p>Here's a typical setup using the media-query mixin set in <code>variablesmixins.scss</code>:</p>
 <pre class="language-css"><code>
@@ -193,7 +139,7 @@ opacity: 1;
 }
 </code></pre>
 
-  <h3>Class names</h3>
+  <h2>Class names</h2>
   <ul>
     <li>Keep classes lowercase (no camelCase).</li>
     <li>Follow the <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">BEM principles</a> for class names, using two dashes for modifier classes and two underscores for child elements.</li>
@@ -213,15 +159,5 @@ opacity: 1;
 .tweet__item { ... } /* child element */
 .tweet--small { ... } /* modifier class */
 </code></pre>
-
-  <hr>
-
-  <h2>JS</h2>
-  <p>The <code>scripts.mix.js</code> file is set up in <a href="http://mixture.io">Mixture</a> to include all plugins and site functions. It is concatenated and minified to <code>scripts.min.js</code>.</p>
-
-  <hr>
-  <p>
-    <small>These notes were heavily inspired by <a href="http://mdo.github.io/code-guide/">@mdo's Code Guide</a>.</small>
-  </p>
 </section>
 <!-- /notes -->

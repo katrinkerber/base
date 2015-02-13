@@ -1,0 +1,34 @@
+<section class="styleguide__section" id="notes_html">
+  <h1>HTML</h1>
+
+  <h2>Syntax</h2>
+  <ul>
+    <li>Use soft-tabs set to <strong>2 spaces</strong>.</li>
+    <li>Nested elements should be indented once (2 spaces).</li>
+    <li>Always use double quotes, never single quotes.</li>
+    <li>Don't include a trailing slash in self-closing elements.</li>
+  </ul>
+
+  <h2>Attribute order</h2>
+  <p>HTML attributes should come in this particular order for easier reading of code:</p>
+  <ol>
+    <li><code>class</code></li>
+    <li><code>data-*</code></li>
+    <li><code>role</code></li>
+    <li><code>aria-*</code></li>
+    <li><code>src</code>, <code>alt</code>, <code>href</code></li>
+    <li><code>for</code></li>
+    <li><code>type</code>, <code>name</code>, <code>id</code>, <code>value</code></li>
+    <li><code>itemprop</code>, <code>itemscope</code>, <code>itemtype</code></li>
+  </ol>
+  <h3>Examples</h3>
+<pre><code class="language-markup">
+&lt;section class="section" role="main">
+
+&lt;div class="address" itemscope itemtype="http://schema.org/PostalAddress">
+
+&lt;img class="img" role="presentation" aria-hidden="true" src="" alt="" data-svg-file="">
+
+&lt;input class="field" type="text" name="postcode" id="postcode" value="" data-rule-required="true">
+</code></pre>
+</section>

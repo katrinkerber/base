@@ -15,7 +15,8 @@
     "_logs",
     "admin",
     "uploads",
-    "assets/js/libs"
+    "assets/js/libs",
+    "assets/styleguide"
   ],
   "lintScripts": false,
   "modelSource": null,

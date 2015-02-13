@@ -19,9 +19,6 @@ textarea {
   outline:none;
 }
 
-textarea {
-  resize: vertical;  /* only allow vertical resizing */
-}
 
 /* Placeholders */
 ::-webkit-input-placeholder { color: #999; opacity: 1; font-style: italic; }
