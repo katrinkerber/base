@@ -6,7 +6,6 @@ Can be applied to element or used as @extends.
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
 .sr-only {
   position: absolute;
-  overflow: hidden;
   width: 1px;
   height: 1px;
   border: 0;
