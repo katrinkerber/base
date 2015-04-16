@@ -14,7 +14,7 @@ img {
 a:hover img,
 a:focus img,
 a:active img {
-  @include opacity(0.8);
+  opacity: 0.8;
 }
 
 /*
