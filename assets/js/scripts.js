@@ -15,13 +15,7 @@ THIS FILE IS MINIMISED AND SAVED AS 'scripts.min.js'
 
 
 /* ############## SET FUNCTIONS ############## */
-function svgImages() {
-  $('.inlinesvg').find('img[data-svg-file]').each(function(){
-    $thisImg = $(this);
-    var $svgPath = $thisImg.attr('data-svg-file');
-    $thisImg.attr('src', $svgPath);
-  });
-}
+
 
 /* ############## CALL FUNCTIONS ############## */
 $(document).ready(function() {
