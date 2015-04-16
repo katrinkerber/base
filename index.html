@@ -1,12 +1,9 @@
 <!doctype html>
-<!--[if IE 7 ]>     <html class="no-js old-ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>     <html class="no-js old-ie ie8" lang="en"> <![endif]-->
+<!--[if IE 7 ]>     <html class="no-js oldie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>     <html class="no-js oldie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]>     <html class="no-js ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <!-- front-end code built by Katrin Kerber -->
-  <!-- http://katrinkerber.com -->
-
   <meta charset="UTF-8" />
 
   <title>Page title</title>
@@ -39,10 +36,26 @@
   <meta property="og:image" content="/favicon-152.png" />
 
   <script src="/assets/js/libs/modernizr.js"></script>
-  <script src="/assets/js/libs/webfontloader.js" async></script>
+
+  <!-- load Web Font Loader asynchronously - https://github.com/typekit/webfontloader#get-started -->
+  <!-- <script>
+     WebFontConfig = {
+        custom: {
+          families: ['fontFamilyNamesHere']
+        }
+     };
+
+     (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js';
+        s.parentNode.insertBefore(wf, s);
+     })(document);
+  </script> -->
+
   <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
   <script src="/assets/js/analytics.js" async></script>
 </head>
+
 <body itemscope itemtype="http://schema.org/WebPage">
   <header class="siteheader" role="banner">
     <nav role="navigation"></nav>
@@ -66,4 +79,5 @@
   -->
   <script src="/assets/js/scripts.min.js"></script>
 </body>
+
 </html>
