@@ -16,6 +16,7 @@
   <p>The <code>data-msg-required</code> attribute defines the error message that appears when the field is invalid.</p>
 
   <p>Special rules can also be added for special fields, i.e. email, url, numbers, minlength etc.</p>
+  <p><strong>Check <a href="http://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods">the documentation here</a></strong> or <a href="http://johnnycode.com/2014/03/27/using-jquery-validate-plugin-html5-data-attribute-rules/">this post</a> for built-in and additional validation rules.</p>
 
   <form method="post" autocomplete="off">
     <fieldset>
@@ -144,6 +145,7 @@
         },
         unhighlight: function(element, errorClass, validClass) {
           var $thisFormFieldWrapper =  $(element).parents('.form__field');
+          $(element).removeAttr('aria-invalid');
           $thisFormFieldWrapper.removeClass('form__field--error');
           $thisFormFieldWrapper.find('.form__field--error__msg').remove();
           $thisFormFieldWrapper.find('.form-field__error').html('');
