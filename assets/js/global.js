@@ -1,5 +1,5 @@
 /*
-THIS FILE IS MINIMISED AND SAVED AS 'scripts.min.js'
+THIS FILE IS MINIMISED AND SAVED AS 'global.min.js'
 */
 
 /* ############## IMPORT PLUGINS ############## */
