@@ -1,0 +1,54 @@
+/* ==========================================================================
+HELPER CLASSES
+Can be applied to element or used as @extends.
+========================================================================== */
+
+/*
+Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+  // also as a mixin, so that we can use this within media queries
+  @mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+  }
+
+/*
+Clearfix: contain floats */
+.clearfix {
+  /* trigger hasLayout and contain floats for IE 6/7 */
+  *zoom: 1;
+  &:after {
+      content: " ";
+      display: table;
+      clear: both;
+  }
+}
+  // also as a mixin, so that we can use this within media queries
+  @mixin clearfix {
+    *zoom: 1;
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+  }
+
+/*
+No bottom margin */
+.no-btm-margin {
+  margin-bottom: 0;
+}
+

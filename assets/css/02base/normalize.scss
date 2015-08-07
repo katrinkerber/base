@@ -88,6 +88,10 @@ sub {
   bottom: -0.25em;
 }
 
+abbr {
+  cursor: help;
+}
+
 /* Set consistent quote types. */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
@@ -113,6 +117,13 @@ samp {
 pre {
   white-space: pre-wrap;
   overflow: auto;
+}
+
+ul li {
+  list-style-type: disc;
+}
+ol li {
+  list-style-type: decimal;
 }
 
 /* Nav lists */

@@ -1,32 +1,4 @@
 /*
-==========================================================================
-SASS VARIABLES, MIXINS, PLACEHOLDERS
--Colours
--Font families
--EM function
--REM mixin
--Hover states mixin
--Clearfix mixin (not using a placeholder as this cannot be used within media queries)
-========================================================================== */
-
-/*
-Colours */
-
-/*
-Font families */
-
-
-// Base font size used in EM function and REM mixin
-$basesize-px: 16px;
-
-/*
-EM mixin (used in media queries, for any other relative sizing use REM)
-*/
-@function em($value) {
-  @return #{$value / $basesize-px}em;
-}
-
-/*
 REM mixin
 Adapted from https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss
 rem(font-size, 28px) will return:
@@ -58,16 +30,5 @@ Hover states mixin */
 @mixin hover-states {
   &:hover, &:focus, &:active {
     @content;
-  }
-}
-
-/*
-Clearfix mixin */
-@mixin clearfix {
-  *zoom: 1;
-  &:after {
-      content: " ";
-      display: table;
-      clear: both;
   }
 }

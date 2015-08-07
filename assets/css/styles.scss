@@ -1,9 +1,13 @@
 @import "00libs/bourbon/bourbon";
 
 /*
-Base styles */
-@import "01base/variablesmixins";
+Tools */
+@import "01base/variables";
+@import "01base/mixins";
 @import "01base/helpers";
+
+/*
+Base */
 @import "01base/normalize";
 @import "01base/typography";
 

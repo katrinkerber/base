@@ -1,34 +1,48 @@
 <section class="styleguide__section" id="notes_js">
-  <h1>JS</h1>
+  <h1>JavaScript</h1>
 
-  <p><strong>Don’t</strong> link JS actions to styling classes, instead either add <strong>JS specific classes</strong> or work with <code>data attributes</code>.</p>
+  <h2>Separation of concerns</h2>
 
-  <p>If using classes, prefix them with <code>js-</code></p>
+  <p>JavaScript behaviour <strong>should never be linked to classes</strong>. By using classes as styling hooks only and the <code>data-role</code> for JS behaviour only, we are preventing any possibility of the two ever crossing streams. Any changes to classes will never affect the JS behaviour and vice versa. <a href="http://blog.realstuffforabstractpeople.com/post/31753521367/classnames-for-styling-data-attributes-for">This post explains this concept and its advantages well</a>.
+  </p>
+
+<pre class="language-markup"><code>
+&lt;section class="tabs__section" data-role="tabs-section">
+  &lt;h2 class="tabs__section__heading" data-role="tabs-section-trigger">
+    Description
+  &lt;/h2>
+  &lt;div class="tabs__section__content" data-role="tabs-section-content">
+    &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic cupiditate corporis molestias, fugiat cumque non veritatis dolorem laborum laudantium recusandae consectetur eos itaque facilis obcaecati consequuntur error cum. Aliquam repellendus nam, minima! Placeat est rerum iure enim quis commodi, aut tenetur dolorum eius quae. Accusantium repudiandae enim repellendus veritatis, iste.&lt;/p>
+  &lt;/div>
+&lt;/section>
+</code></pre>
+
+    <h2>File organization</h2>
+<pre class="language-markup"><code>
+js/
+|
+|-- libs/         # Includes any libraries and plugins
+|-- global.js    # Global site functions, Mixture imports plugins and minifies into global.min.js
+|
+|-- # Add more JS files as required for specific sections of the site, i.e. 'studio.js'
+</code></pre>
 
   <h2>Syntax</h2>
   <ul>
-    <li>Use soft-tabs set to <strong>4 spaces</strong>.</li>
-    <li>Nested elements should be indented once (<strong>4 spaces</strong>).</li>
-    <li>Always use single quotes for selectors.</li>
+    <li>Use soft-tabs set to 2<strong> spaces</strong>.</li>
+    <li>Nested elements should be indented once (<strong>2 </strong><strong>spaces</strong>).</li>
+    <li>Always use <strong>single quotes</strong> for selectors.</li>
   </ul>
 
 <pre class="language-javascript"><code>
 /* HTML */
-&lt;img class="img-responsive js-slidein-toggle"&gt;
+&lt;button data-role="slidein-toggle">Toggle me&lt;/button>
 
 /* JS */
 function slideInContent() {
-var $slideToggleBtn = $('.js-slidein-toggle');
+  var $slideToggleBtn = $('[data-role="slidein-toggle"]');
+  ...
+}
 </code></pre>
 
-  <h2>File organization</h2>
-<pre class="language-markup"><code>
-js/
-|
-|-- libs/                    # Includes any libraries and plugins
-|-- plugins.js               # Plugins used on site merged into one files
-|-- scripts.js               # Global site functions
-|
-|-- # Add more JS files as required for specific sections of the site, i.e. 'studio.js'
-</code></pre>
 </section>

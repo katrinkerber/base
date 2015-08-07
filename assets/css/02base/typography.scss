@@ -5,25 +5,25 @@ TYPOGRAPHY
 body {
   font-family: sans-serif;
   font-size: 100%; /* 16px */
-  line-height: 1.5em; /* 24px */
+  line-height: 1.375em; /* 22px */
 }
 
 /*=====*/
 
 h1, h2, h3, h4, h5, h6,
-.faux_h1, .faux_h2, .faux_h3, .faux_h4, .faux_h5, .faux_h6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
 
 }
-h1, .faux_h1 {
+h1, .h1 {
 
 }
-h2, .faux_h2 {
+h2, .h2 {
 
 }
-h3, .faux_h3 {
+h3, .h3 {
 
 }
-h4, h5, h6, .faux_h4, .faux_h5, .faux_h6 {
+h4, h5, h6, .h4, .h5, .h6 {
 
 }
 
@@ -88,26 +88,15 @@ ul ul,
 ol ol {
   margin-bottom: 0;
 }
-ul li {
-  list-style-type: disc;
-}
-ol li {
-  list-style-type: decimal;
-}
 
-
-ul.list__unstyled,
-ol.list__unstyled {
+.list__unstyled {
   margin-left: 0;
 }
-ul.list__unstyled li,
-ol.list__unstyled li {
+.list__unstyled li {
   list-style: none;
 }
 
-
-ul.list__inline li,
-ol.list__inline li {
+.list__inline li{
   display: inline-block;
   *display: inline;
   zoom:1;

@@ -11,11 +11,11 @@
 h1 {
 font-size: 20px;
 }
-/* Larger viewport - using Media Query mixin */
-@include media-query(min, 40em) {
-h1 {
-  font-size: 26px;
-}
+/* Larger viewport - using Media Query with Sass Variable */
+@media screen and (min-width: $breakpoint) { {
+  h1 {
+    font-size: 26px;
+  }
 }
 </code></pre>
 
@@ -23,31 +23,34 @@ h1 {
 <pre class="language-markup"><code>
 css/
 |
-|-- libs/                    # Includes Bourbon mixin library
+|-- 00libs/                      # Third-party libraries
 |
-|-- base/                    # Default settings and normalise
-|   |-- normalize.scss       # Help with cross-browser consistency
-|   |-- variables.scss       # Default settings and values, colours, breakpoints etc.
-|   |-- mixins.scss          # Mixins, including import of bourbon librabry
-|   |-- helpers.scss         # Helper classes
-|   |-- typography.scss      # Set up font style and scale
+|-- 01tools/                     # Global tools
+|   |-- helpers.scss           # Helper classes and mixins
+|   |-- mixins.scss            # Sass mixins
+|   |-- variables.scss         # Sass variables, incl. colours, fonts etc.
 |
-|-- modules/                  # Global components
-|   |-- buttons.scss          # Buttons
-|   |-- icons.scss            # Icons
-|   |-- forms.scss            # Form elements
-|   |-- tables.scss           # Tables
-|   |-- header.scss           # Site header
-|   |-- footer.scss           # Site footer
+|-- 02base/                      # Base styles
+|   |-- normalize.scss         # Help with cross-browser consistency
+|   |-- typography.scss        # Unclassed and some classed styled
+|
+|-- 03modules/                   # Global reusable components
+|   |-- buttons.scss           # Buttons
+|   |-- icons.scss             # Icons
+|   |-- forms.scss             # Forms and its elements
+|   |-- media.scss             # Images, videos etc
+|   |-- tables.scss            # Tables
+|   |-- header.scss            # Site’s header
+|   |-- footer.scss            # Site’s footer
 |   ...
 |
-|-- pages                     # Page styles (add one file for every section needed)
-|   |-- base.scss             # Global base page styles
-|   |-- home.scss
+|-- 04pages                      # Page styles (add file for every page needed, but keep them to minimum)
+|   |-- base.scss              # Global base page styles
+|   |-- home.scss              # Home specific page
 |   ...
 |
-|-- print.scss                # Print styles
-|-- style.scss                # Main import file. Compiles to style.css and styles.min.css
+|-- print.scss                 # Print styles
+|-- style.scss                 # Main import file. Compiles to style.css and styles.min.css
 </code></pre>
 
   <h2>Syntax</h2>
@@ -133,9 +136,9 @@ opacity: 1;
 .element { ... }
 .element--selected { ... }
 
-@include media-query(min, 40em) {
-.element { ... }
-.element--selected { ... }
+@media screen and (min-width: $breakpoint) { {
+  .element { ... }
+  .element--selected { ... }
 }
 </code></pre>
 
