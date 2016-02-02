@@ -1,4 +1,4 @@
-@import "/assets/libs/bourbon/bourbon";
+@import "../libs/bourbon/bourbon";
 
 /*
 Tools */
@@ -10,6 +10,7 @@ Tools */
 Base */
 @import "02base/normalize";
 @import "02base/typography";
+@import "02base/layout";
 
 /*
 Modules */

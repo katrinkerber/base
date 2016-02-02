@@ -61,14 +61,10 @@ a {
 abbr {
   cursor: help;
 }
-/* Address inconsistent styling of `abbr[title]`.
- * 1. Correct styling in Firefox 39 and Opera 12.
- * 2. Correct missing styling in Chrome, Edge, IE, Opera, and Safari.
- */
+/* Address inconsistent styling of `abbr[title]`. */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: 1px dotted; /* 1 */
+  text-decoration: none; /* 2 */
 }
 
 /* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
@@ -129,6 +125,10 @@ ul li {
 }
 ol li {
   list-style-type: decimal;
+}
+nav ul {
+  margin-left: 0;
+  padding-left: 0;
 }
 nav li {
   list-style: none;
