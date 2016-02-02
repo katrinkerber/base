@@ -1,0 +1,76 @@
+{# Meta title #}
+{% set metaTitle %}
+  {% if entry.metaTitle|default %}
+    {{ entry.metaTitle }}
+  {% elseif pageTitle|default %}
+    {{ pageTitle }} | {{ siteName }}
+  {% elseif entry.title|default %}
+    {% if craft.request.getFirstSegment() %}
+      {{ entry.title }} | {{ siteName }}
+    {% else %}
+      {{ siteName }}
+    {% endif %}
+  {% endif %}
+{% endset %}
+
+<title>{% spaceless %}{{ metaTitle }}{% endspaceless %}</title>
+
+{# Meta desc #}
+{% if entry.metaDescription|default %}
+  <meta name="description" content="{{ entry.metaDescription }}" />
+{% else %}
+  <meta name="description" content="Default site description" />
+{% endif %}
+
+
+{# Robots #}
+{% if craft.config.devMode %}
+  <meta name="robots" content="noindex, nofollow">
+{% else %}
+  <meta name="robots" content="/robots.txt" />
+{% endif %}
+
+
+
+{# CSS #}
+{% if craft.config.devMode or ('staging' in craft.request.url() ) %}
+  <link rel="stylesheet" href="/assets/css/styles.css?v{{now|date("Y-m-d-H-i")}}">
+{% else %}
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v=1.1">
+{% endif %}
+
+
+
+{# Twitter Card and Open Graph #}
+{% if entry.sharingImage|default %}
+  <meta name="twitter:card" content="summary_large_image" />
+{% else %}
+  <meta name="twitter:card" content="summary" />
+{% endif %}
+
+<meta name="twitter:site" content="twitter-username" />
+<meta name="twitter:creator" content="twitter-username" />
+
+<meta property="og:url" content="{{ craft.request.url }}" />
+
+{% if entry.sharingTitle|default %}
+  <meta property="og:title" content="{{ entry.sharingTitle }}" />
+{% else %}
+  <meta property="og:title" content="{% spaceless %}{{ metaTitle }}{% endspaceless %}" />
+{% endif %}
+
+{% if entry.sharingDescription|default %}
+  <meta property="og:description" content="{{ entry.sharingDescription }}" />
+{% else %}
+  {% if entry.metaDescription|default %}
+    <meta property="og:description" content="{{ entry.metaDescription }}" />
+  {% else %}
+    <meta property="og:description" content="Default site description" />
+  {% endif %}
+{% endif %}
+
+{% if entry.sharingImage|default %}
+  <meta property="og:image" content="{{ siteUrl }}{{ entry.sharingImage.first().url() }}" />
+{% else %}
+  <meta property="og:image" content="{{ siteUrl }}favicon-152.png" />
+{% endif %}
