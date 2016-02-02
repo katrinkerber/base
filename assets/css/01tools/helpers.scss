@@ -1,5 +1,5 @@
 /* ==========================================================================
-HELPER CLASSES
+HELPER CLASSES/MIXINS
 Can be applied to element or used as @extends.
 ========================================================================== */
 
@@ -31,7 +31,7 @@ Clearfix: contain floats */
   /* trigger hasLayout and contain floats for IE 6/7 */
   *zoom: 1;
   &:after {
-      content: " ";
+      content: ' ';
       display: table;
       clear: both;
   }
@@ -40,15 +40,16 @@ Clearfix: contain floats */
   @mixin clearfix {
     *zoom: 1;
     &:after {
-        content: " ";
+        content: ' ';
         display: table;
         clear: both;
     }
   }
 
 /*
-No bottom margin */
-.no-btm-margin {
-  margin-bottom: 0;
+Inline */
+.inline {
+  display: inline-block;
+  *display: inline;
+  zoom:1;
 }
-

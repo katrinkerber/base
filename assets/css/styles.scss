@@ -1,23 +1,23 @@
-@import "00libs/bourbon/bourbon";
+@import "/assets/libs/bourbon/bourbon";
 
 /*
 Tools */
-@import "01base/variables";
-@import "01base/mixins";
-@import "01base/helpers";
+@import "01tools/variables";
+@import "01tools/mixins";
+@import "01tools/helpers";
 
 /*
 Base */
-@import "01base/normalize";
-@import "01base/typography";
+@import "02base/normalize";
+@import "02base/typography";
 
 /*
 Modules */
-@import "02modules/*";
+@import "03modules/*";
 
 /*
 Pages */
-@import "03pages/*";
+@import "04pages/*";
 
 /*
 Print */
