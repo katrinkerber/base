@@ -29,7 +29,7 @@ td {
     height: 100%;
     overflow: auto;
   }
-  .page {
+  main {
     padding-left: 24%;
   }
 }

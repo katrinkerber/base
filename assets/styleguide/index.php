@@ -6,52 +6,53 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>Style Guide SITE NAME</title>
+  <title>Style Guide {SITE NAME}</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <meta name="robots" content="noindex, nofollow">
+
   <link rel="stylesheet" href="/assets/css/styles.min.css">
   <link rel="stylesheet" href="/styleguide/styleguide.css">
-  <link rel="stylesheet" href="/styleguide/prism/prism.css" />
-
-  <!-- favicon -->
-  <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/libs/prism/prism.css" />
 </head>
 
 <body>
+
   <header role="banner">
-    <h1>Site title</h1>
+    <h1>{SITE NAME}</h1>
     <h2>Style Guide</h2>
     <nav>
         <ul>
-            <!-- links populated via JS -->
+          <!-- section links populated via JS -->
         </ul>
     </nav>
   </header>
 
-  <div role="main" class="page">
+  <main role="main">
+
     <section class="styleguide__section" id="landing">
-        <blockquote>
-            <p>Every line of code should appear to be written by a single person, no matter the number of contributors.</p>
-        </blockquote>
+      <blockquote>
+          <p>Every line of code should appear to be written by a single person, no matter the number of contributors.</p>
+      </blockquote>
 
-        <h2>Basic editor preferences</h2>
-            <p>Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:</p>
-        <ul>
-            <li>Use soft-tabs set to <strong>4 spaces</strong>.</li>
-            <li>Trim trailing white space on save.</li>
-            <li>Set encoding to UTF-8.</li>
-            <li>Add new line at end of files.</li>
-        </ul>
+      <h2>Basic editor preferences</h2>
+        <p>Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:</p>
+      <ul>
+        <li>Use soft-tabs set to <strong>4 spaces</strong>.</li>
+        <li>Trim trailing white space on save.</li>
+        <li>Set encoding to UTF-8.</li>
+        <li>Add new line at end of files.</li>
+      </ul>
 
-        <p>If you are using <strong>Sublime Text 2</strong>, have a look at these <a href="https://gist.github.com/katrinkerber/d471b3f995f80f48117c">settings</a>.</p>
+      <p>If you are using <strong>Sublime Text 2</strong>, have a look at these <a href="https://gist.github.com/katrinkerber/d471b3f995f80f48117c">settings</a>.</p>
 
-        <p>
-          <small>This guide was heavily inspired by <a href="http://mdo.github.io/code-guide/">@mdo's Code Guide</a>.</small>
-        </p>
+      <p>
+        <small>This guide was heavily inspired by <a href="http://mdo.github.io/code-guide/">@mdo's Code Guide</a>.</small>
+      </p>
     </section>
 
-    <div class="styleguide__sectionparent" data-sectionparent-title="Coding guidelines">
+    <div data-section data-section-title="Coding guidelines">
         <?php
           include 'includes/notes_html.html';
           include 'includes/notes_css.html';
@@ -59,13 +60,13 @@
         ?>
     </div>
 
-    <div class="styleguide__sectionparent" data-sectionparent-title="Base">
+    <div data-section data-section-title="Base">
         <?php
           include 'includes/colours.html';
           include 'includes/typography.html';
         ?>
     </div>
-  </div>
+  </main>
   <!-- /page -->
 
 <!-- JavaScript -->
