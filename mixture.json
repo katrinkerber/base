@@ -14,8 +14,9 @@
     "_content",
     "_logs",
     "admin",
+    "craft",
     "uploads",
-    "assets/js/libs",
+    "assets/libs",
     "assets/styleguide"
   ],
   "lintScripts": false,
