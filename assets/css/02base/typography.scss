@@ -39,8 +39,8 @@ p img {
 hr {
   border: 0;
   border-top: 1px solid;
-  margin: 0;
-  @include rem(padding, 14px 0 15px 0);
+  @include rem(padding-bottom, 24px);
+  @include rem(margin-top, 24px);
 }
 
 ::-moz-selection { }
