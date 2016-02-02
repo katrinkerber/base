@@ -1,14 +1,14 @@
 <!doctype html>
-<!--[if IE 7 ]>     <html class="no-js oldie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>     <html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]>     <html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if IE 7 ]> <html class="no-js oldie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]> <html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="UTF-8" />
 
   <title>Page title</title>
-  <meta name="description" content="" />
-  <meta name="author" content="/humans.txt" />
+  <meta name="description" content="Default site description" />
+
   <meta name="robots" content="/robots.txt" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,47 +16,42 @@
   <!-- Disable skype from styling numbers as skype buttons -->
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
-  <link rel="stylesheet" href="/assets/css/styles.min.css">
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v=1.0">
 
   <!-- Icons - https://github.com/audreyr/favicon-cheat-sheet -->
+  <!-- ICO generator: http://www.icoconverter.com -->
   <!-- IE6-10 -->
-  <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico">
   <!-- Everybody else -->
-  <link rel="icon" sizes="16x16 24x24 32x32 64x64" href="/favicon.ico">
+  <link rel="icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico">
   <!-- iOS 2.0+ and Android 2.1+ -->
   <link rel="apple-touch-icon" href="/favicon-152.png">
   <!-- Metro tile -->
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="/favicon-144.png">
 
-  <!-- Open Graph protocol meta tags - http://ogp.me/ -->
+  <!-- Twitter Card and Open Graph protocol tags -->
+  <meta name="twitter:card" content="summary" /> <!-- or 'summary_large_image' -->
+  <meta name="twitter:site" content="twitter-username" />
+  <meta name="twitter:creator" content="twitter-username" />
+  <meta property="og:url" content="page url" />
   <meta property="og:title" content="Page title" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="" />
+  <meta property="og:description" content="Default site description" />
   <meta property="og:image" content="/favicon-152.png" />
+  <!-- end Twitter Card and Open Graph protocol tags -->
 
-  <script src="/assets/js/libs/modernizr.js"></script>
+  <script src="/assets/libs/modernizr.js"></script>
 
-  <!-- load Web Font Loader asynchronously - https://github.com/typekit/webfontloader#get-started -->
-  <!-- <script>
-     WebFontConfig = {
-        custom: {
-          families: ['fontFamilyNamesHere']
-        }
-     };
-
-     (function(d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js';
-        s.parentNode.insertBefore(wf, s);
-     })(document);
-  </script> -->
+  <!--[if lte IE 8 ]>
+    <script src="/assets/libs/respond.min.js"></script>
+  <![endif]-->
 
   <!-- adding GA in head to increase likelihood of tracking even if user should leave before page has completely loaded -->
   <script src="/assets/js/analytics.js" async></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+
   <header class="siteheader" role="banner">
     <nav role="navigation"></nav>
   </header>
@@ -74,10 +69,11 @@
   Check if jQuery is needed first
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>
-    window.jQuery || document.write("<script src='/assets/js/libs/jquery-1.9.1.min.js'>\x3C/script>")
+    window.jQuery || document.write("<script src='/assets/libs/jquery-1.9.1.min.js'>\x3C/script>")
   </script>
   -->
-  <script src="/assets/js/scripts.min.js"></script>
+  <script src="/assets/js/libs.min.js"></script>
+  <script src="/assets/js/global.min.js"></script>
 </body>
 
 </html>
