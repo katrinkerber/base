@@ -1,9 +1,9 @@
-<section id="notes_js" data-section-child>
+<section id="js" data-section-child>
   <h1>JavaScript</h1>
 
   <h2>Separation of concerns</h2>
 
-  <p>JavaScript behaviour <strong>should never be linked to classes</strong>. By using classes as styling hooks only and the <code>data-role</code> for JS behaviour only, we are preventing any possibility of the two ever crossing streams. Any changes to classes will never affect the JS behaviour and vice versa. <a href="http://blog.realstuffforabstractpeople.com/post/31753521367/classnames-for-styling-data-attributes-for">This post explains this concept and its advantages well</a>.
+  <p>JavaScript behaviour <strong>should never be linked to classes</strong>. By using classes as styling hooks only and the <code>data-role</code> attribute for JS behaviour only, we are preventing any possibility of the two ever crossing streams. Any changes to classes will never affect the JS behaviour and vice versa. <a href="http://blog.realstuffforabstractpeople.com/post/31753521367/classnames-for-styling-data-attributes-for">This post explains this concept and its advantages well</a>.
   </p>
 
 <pre class="language-markup"><code>
@@ -21,16 +21,16 @@
 <pre class="language-markup"><code>
 js/
 |
-|-- libs/         # Includes any libraries and plugins
-|-- global.js    # Global site functions, Mixture imports plugins and minifies into global.min.js
+|-- libs.js      # Includes any third-party scripts.
+|-- global.js    # Global site functions, minifies into global.min.js.
 |
-|-- # Add more JS files as required for specific sections of the site, i.e. 'studio.js'
+|-- # Add more JS files as required for specific sections of the site, i.e. 'home.js'
 </code></pre>
 
   <h2>Syntax</h2>
   <ul>
-    <li>Use soft-tabs set to 2<strong> spaces</strong>.</li>
-    <li>Nested elements should be indented once (<strong>2 </strong><strong>spaces</strong>).</li>
+    <li>Use soft-tabs set to <strong>2 spaces</strong>.</li>
+    <li>Nested elements should be indented once (<strong>2 spaces</strong>).</li>
     <li>Always use <strong>single quotes</strong> for selectors.</li>
   </ul>
 

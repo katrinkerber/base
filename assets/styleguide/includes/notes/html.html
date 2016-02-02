@@ -1,34 +1,40 @@
-<section id="notes_html" data-section-child>
+<section id="html" data-section-child>
   <h1>HTML</h1>
 
   <h2>Syntax</h2>
   <ul>
     <li>Use soft-tabs set to <strong>2 spaces</strong>.</li>
     <li>Nested elements should be indented once (2 spaces).</li>
-    <li>Always use double quotes, never single quotes.</li>
+    <li>Always use double quotes, never single quotes, on attributes.</li>
     <li>Don't include a trailing slash in self-closing elements.</li>
+    <li>Don’t omit optional closing tags.</li>
+    <li>As per the HTML5 spec, there is no need to specify a type when including CSS and JavaScript files.</li>
+    <li>Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML.</li>
   </ul>
 
   <h2>Attribute order</h2>
-  <p>HTML attributes should come in this particular order for easier reading of code:</p>
-  <ol>
-    <li><code>class</code></li>
-    <li><code>data-*</code></li>
-    <li><code>role</code></li>
-    <li><code>aria-*</code></li>
-    <li><code>src</code>, <code>alt</code>, <code>href</code></li>
-    <li><code>for</code></li>
-    <li><code>type</code>, <code>name</code>, <code>id</code>, <code>value</code></li>
-    <li><code>itemprop</code>, <code>itemscope</code>, <code>itemtype</code></li>
-  </ol>
-  <h3>Examples</h3>
+  <p>For easier reading/scanning of code always declare the classes of the element first.</p>
+  <p>Group further attributes as it makes most sense to you.</p>
+
 <pre><code class="language-markup">
 &lt;section class="section" role="main">
 
 &lt;div class="address" itemscope itemtype="http://schema.org/PostalAddress">
 
-&lt;img class="img" role="presentation" aria-hidden="true" src="" alt="" data-svg-file="">
+&lt;img class="img" src="" alt="" role="presentation" aria-hidden="true" >
 
-&lt;input class="field" type="text" name="postcode" id="postcode" value="" data-rule-required="true">
+&lt;input
+  class="form__field"
+  name="number"
+  id="number"
+  type="text"
+  placeholder="1122"
+
+  aria-required="true"
+  required
+  data-msg-required="Please add a number."
+  data-rule-digits="true"
+  data-msg-digits="Please enter only numerical characters."
+>
 </code></pre>
 </section>

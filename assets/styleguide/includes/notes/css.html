@@ -1,11 +1,12 @@
-<section id="notes_css" data-section-child>
+<section id="css" data-section-child>
   <h1>CSS</h1>
 
   <p>CSS is written in Sass.</p>
-  <p>Sass files are combined to <code>styles.min.css</code> using <a href="http://docs.mixture.io/">Mixture</a>.</p>
+  <p>Sass files are combined to <code>styles.min.css</code>.</p>
   <p><a href="http://bourbon.io/docs/">Bourbon</a> is used as a library for common mixins.</p>
 
   <p>CSS is written following the <strong>mobile-first approach</strong>, declaring styles for small viewports first and then making adjustments for larger viewports.</p>
+
 <pre><code class="language-css">
 /* Default style */
 h1 {
@@ -19,43 +20,41 @@ font-size: 20px;
 }
 </code></pre>
 
-    <h2>File organization</h2>
+  <h2>File organization</h2>
 <pre class="language-markup"><code>
 css/
 |
-|-- 00libs/                      # Third-party libraries
-|
-|-- 01tools/                     # Global tools
+|-- 01tools/                   # Global tools
 |   |-- helpers.scss           # Helper classes and mixins
 |   |-- mixins.scss            # Sass mixins
 |   |-- variables.scss         # Sass variables, incl. colours, fonts etc.
 |
-|-- 02base/                      # Base styles
+|-- 02base/                    # Base styles
 |   |-- normalize.scss         # Help with cross-browser consistency
 |   |-- typography.scss        # Unclassed and some classed styled
+|   |-- layout.scss            # Overall global page layout
 |
-|-- 03modules/                   # Global reusable components
+|-- 03modules/                 # Global reusable components
 |   |-- buttons.scss           # Buttons
-|   |-- icons.scss             # Icons
 |   |-- forms.scss             # Forms and its elements
 |   |-- media.scss             # Images, videos etc
-|   |-- tables.scss            # Tables
-|   |-- header.scss            # Site’s header
-|   |-- footer.scss            # Site’s footer
+|   |-- site-header.scss       # Site’s header
+|   |-- site-footer.scss       # Site’s footer
 |   ...
 |
-|-- 04pages                      # Page styles (add file for every page needed, but keep them to minimum)
+|-- 04pages                    # Page styles (add file for every page needed, but keep them to minimum)
 |   |-- base.scss              # Global base page styles
 |   |-- home.scss              # Home specific page
 |   ...
 |
 |-- print.scss                 # Print styles
-|-- style.scss                 # Main import file. Compiles to style.css and styles.min.css
+|-- styles.scss                # Main import file. Compiles to styles.min.css
 </code></pre>
 
   <h2>Syntax</h2>
   <ul>
     <li>Use soft-tabs with two spaces.</li>
+    <li>When grouping selectors, keep individual selectors to a single line.</li>
     <li>Include one space before the opening brace of declaration blocks.</li>
     <li>Place closing braces of declaration blocks on a new line.</li>
     <li>Include one space after : for each declaration.</li>
@@ -86,7 +85,31 @@ box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
 </code></pre>
 
-  <h2>Declaration order</h2>
+  <h2>Shorthand conventions</h2>
+  <p>Avoid using shorthand declarations as it leads to sloppier code with the need to add unnecessary overrides.</p>
+  <p>Although some people may feel declaring properties singularly is too verbose, it is far easier to manage when multiple developers are managing the code.</p>
+
+<pre class="language-css"><code>
+  /* Bad example */
+  .element {
+    margin: 0 0 10px;
+    background: red;
+    background: url("image.jpg");
+    border-radius: 3px 3px 0 0;
+  }
+
+  /* Good example */
+  .element {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: red;
+    background-image: url("image.jpg");
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+</code></pre>
+
+  <h2>Ideal declaration order</h2>
   <ol>
     <li>Positioning</li>
     <li>Box-model</li>
@@ -152,15 +175,32 @@ opacity: 1;
 <pre class="language-css"><code>
 /* Bad example */
 .t { ... }
-.red { ... }
-.item { ... }
 .small { ... }
+.item { ... }
 
 /* Good example */
 .tweet { ... }
-.important { ... }
-.tweet__item { ... } /* child element */
 .tweet--small { ... } /* modifier class */
+.tweet__item { ... } /* child element */
+</code></pre>
+
+  <h2>Nesting</h2>
+  <p>Avoid unnecessary element nesting. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested. However, this should be very rarely needed, if at all.</p>
+
+  <p>When working with modules, you can use <strong>Sass’ ampersand feature</strong> to nest modifier and child declarations, which can help to organise blocks of code without creating verbose declarations as an end result.</p>
+
+<pre class="language-css"><code>
+/* Input */
+.tweet {
+  &--small { ... }
+
+  &__item { ... }
+}
+
+/* Output */
+.tweet { ... }
+.tweet__item { ... }
+.tweet--small { ... }
 </code></pre>
 </section>
 <!-- /notes -->
