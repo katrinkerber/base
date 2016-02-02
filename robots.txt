@@ -1,20 +1,9 @@
 # User-Agent: *
-# Disallow: /index.php
-# Disallow: /_add-ons
-# Disallow: /_app
-# Disallow: /_cache
-# Disallow: /_config
-# Disallow: /_themes
-# Disallow: /system
-# Disallow: /themes
-# Disallow: /craft
-
-# User-Agent: Googlebot-Image
-# Disallow: /images
+Disallow: /index.php
+Disallow: /assets
+Disallow: /craft
+Disallow: /admin/login
+Disallow: /admin
 
 # User-agent: *
-# Sitemap: insert URL
-
-# REMOVE THIS WHEN GOING LIVE
-User-Agent: *
-Disallow: /
+Sitemap: /sitemap.xml
