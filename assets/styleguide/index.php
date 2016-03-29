@@ -6,20 +6,21 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>Style Guide {SITE NAME}</title>
+  <title>Style Guide for {SITE NAME}</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="robots" content="noindex, nofollow">
 
   <link rel="stylesheet" href="/assets/css/styles.min.css">
-  <link rel="stylesheet" href="styleguide.css">
   <link rel="stylesheet" href="/assets/libs/prism/prism.css" />
+
+  <script src="/assets/libs/modernizr.js"></script>
 </head>
 
-<body>
+<body class="page--guide">
 
-  <header role="banner">
+  <header class="guide-header" role="banner">
     <h1>{SITE NAME}</h1>
     <h2>Style Guide</h2>
     <nav>
@@ -40,9 +41,14 @@
       ?>
     </div>
 
+    <div data-section data-section-title="Tools">
+      <?php
+        include 'includes/tools/colours.html';
+      ?>
+    </div>
+
     <div data-section data-section-title="Base">
       <?php
-        include 'includes/base/colours.html';
         include 'includes/base/typography.html';
       ?>
     </div>
@@ -51,10 +57,8 @@
 
   <!-- JavaScript -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/assets/js/libs.min.js"></script>
-  <script src="/assets/js/global.min.js"></script>
-  <!-- Styleguide specific -->
-  <script src="styleguide.js"></script>
   <script src="/assets/libs/prism/prism.js"></script>
+  <!-- Styleguide specific -->
+  <script src="/assets/js/styleguide.min.js"></script>
 </body>
 </html>
