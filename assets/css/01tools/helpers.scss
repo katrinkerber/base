@@ -1,10 +1,8 @@
 /* ==========================================================================
 HELPER CLASSES/MIXINS
-Can be applied to element or used as @extends.
 ========================================================================== */
 
-/*
-Hide only visually, but have it available for screenreaders: h5bp.com/v */
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
 .sr-only {
   position: absolute;
   width: 1px;
@@ -14,7 +12,6 @@ Hide only visually, but have it available for screenreaders: h5bp.com/v */
   margin: -1px;
   clip: rect(0 0 0 0);
 }
-  // also as a mixin, so that we can use this within media queries
   @mixin sr-only {
     position: absolute;
     width: 1px;
@@ -25,8 +22,8 @@ Hide only visually, but have it available for screenreaders: h5bp.com/v */
     clip: rect(0 0 0 0);
   }
 
-/*
-Clearfix: contain floats */
+
+// Clearfix: contain floats
 .clearfix {
   /* trigger hasLayout and contain floats for IE 6/7 */
   *zoom: 1;
@@ -36,7 +33,6 @@ Clearfix: contain floats */
       clear: both;
   }
 }
-  // also as a mixin, so that we can use this within media queries
   @mixin clearfix {
     *zoom: 1;
     &:after {
@@ -46,10 +42,15 @@ Clearfix: contain floats */
     }
   }
 
-/*
-Inline */
-.inline {
+
+// Inline block
+.inline-block {
   display: inline-block;
   *display: inline;
   zoom:1;
 }
+  @mixin inline-block {
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+  }
