@@ -1,0 +1,54 @@
+.page--guide {
+
+  .note {
+    display: block;
+    margin: 0 0 1.5rem;
+    color: #888;
+    font-style: italic;
+  }
+  h1 + .note,
+  p + .note {
+    margin-top: -1.4rem;
+  }
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 1rem;
+    text-align: left;
+  }
+  th:first-child {
+    padding-left: 0;
+  }
+  .nav__current {
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 43.99em ) {
+    header nav li li {
+      display: inline-block;
+      padding: 0 0.5em 1em 0;
+    }
+  }
+  @media only screen and (min-width: 44em ) {
+    header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 24%;
+      height: 100%;
+      overflow: auto;
+    }
+    .nav__parent {
+      font-weight: bold;
+    }
+    nav li ul {
+      margin-bottom: 1em;
+    }
+    main {
+      padding-left: 24%;
+    }
+  }
+
+}
