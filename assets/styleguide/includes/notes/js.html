@@ -3,26 +3,26 @@
 
   <h2>Separation of concerns</h2>
 
-  <p>JavaScript behaviour <strong>should never be linked to classes</strong>. By using classes as styling hooks only and the <code>data-role</code> attribute for JS behaviour only, we are preventing any possibility of the two ever crossing streams. Any changes to classes will never affect the JS behaviour and vice versa. <a href="http://blog.realstuffforabstractpeople.com/post/31753521367/classnames-for-styling-data-attributes-for">This post explains this concept and its advantages well</a>.
+  <p>JavaScript behaviour <strong>should never be linked to classes</strong>. By using classes as styling hooks only and the <code>data-js</code> attribute for JS behaviour only, we are preventing any possibility of the two ever crossing streams. Any changes to classes will never affect the JS behaviour and vice versa. <a href="http://blog.realstuffforabstractpeople.com/post/31753521367/classnames-for-styling-data-attributes-for">This post explains this concept and its advantages well</a>.
   </p>
 
 <pre class="language-markup"><code>
-&lt;section class="tabs__section" data-role="tabs-section">
-  &lt;h2 class="tabs__section__heading" data-role="tabs-section-trigger">
+&lt;section class="tabs__section" data-js="tabs-section">
+  &lt;h2 class="tabs__section__heading" data-js="tabs-section-trigger">
     Description
   &lt;/h2>
-  &lt;div class="tabs__section__content" data-role="tabs-section-content">
+  &lt;div class="tabs__section__content" data-js="tabs-section-content">
     &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic cupiditate corporis molestias, fugiat cumque non veritatis dolorem laborum laudantium recusandae consectetur eos itaque facilis obcaecati consequuntur error cum. Aliquam repellendus nam, minima! Placeat est rerum iure enim quis commodi, aut tenetur dolorum eius quae. Accusantium repudiandae enim repellendus veritatis, iste.&lt;/p>
   &lt;/div>
 &lt;/section>
 </code></pre>
 
-    <h2>File organization</h2>
+  <h2>File organization</h2>
 <pre class="language-markup"><code>
 js/
 |
-|-- libs.js      # Includes any third-party scripts.
-|-- global.js    # Global site functions, minifies into global.min.js.
+|-- global.js       # Global library imports and site functions, minifies into global.min.js.
+|-- styleguide.js   # This guide’s JS, minifies into styleguide.min.js.
 |
 |-- # Add more JS files as required for specific sections of the site, i.e. 'home.js'
 </code></pre>
@@ -36,11 +36,11 @@ js/
 
 <pre class="language-javascript"><code>
 /* HTML */
-&lt;button data-role="slidein-toggle">Toggle me&lt;/button>
+&lt;button data-js="slidein-toggle">Toggle me&lt;/button>
 
 /* JS */
 function slideInContent() {
-  var $slideToggleBtn = $('[data-role="slidein-toggle"]');
+  var $slideToggleBtn = $('[data-js="slidein-toggle"]');
   ...
 }
 </code></pre>
