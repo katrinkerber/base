@@ -1,4 +1,4 @@
-@import "../libs/bourbon/bourbon";
+@import "../libs/bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 
 /*
 Tools */
@@ -10,15 +10,18 @@ Tools */
 Base */
 @import "02base/normalize";
 @import "02base/typography";
-@import "02base/layout";
 
 /*
 Modules */
 @import "03modules/*";
 
 /*
+Layout */
+@import "04layout/*";
+
+/*
 Pages */
-@import "04pages/*";
+@import "05pages/*";
 
 /*
 Print */
