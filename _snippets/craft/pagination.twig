@@ -1,0 +1,34 @@
+{% if paginate.totalPages > 1 %}
+  <div class="pagination" role="navigation" aria-label="pagination">
+    <span class="visuallyhidden">You are on page {{ paginate.currentPage }} of {{ paginate.totalPages }}</span>
+    {% if paginate.prevUrl %}
+      <a class="pagination__item" href="{{ paginate.firstUrl }}">First<span class="visuallyhidden"> page</span></a>
+      <a class="pagination__item" href="{{ paginate.prevUrl }}">Prev<span class="visuallyhidden"> page</span></a>
+    {% else %}
+      <span class="pagination__item pagination__item--disabled" aria-hidden="true">First<span class="visuallyhidden"> page</span></span>
+      <span class="pagination__item pagination__item--disabled" aria-hidden="true">Prev<span class="visuallyhidden"> page</span></span>
+    {% endif %}
+    <div class="pagination__pages">
+      {% for page, url in paginate.getPrevUrls(2) %}
+        <a class="pagination__item btn" href="{{ url }}">
+          <span class="visuallyhidden">Go to page </span>{{ page }}
+        </a>
+      {% endfor %}
+      <span class="pagination__item pagination__item--current btn" aria-hidden="true" href="">
+        <span class="visuallyhidden">You are on </span>{{ paginate.currentPage }}
+      </span>
+      {% for page, url in paginate.getNextUrls(2) %}
+        <a class="pagination__item btn" href="{{ url }}">
+          <span class="visuallyhidden">Go to page </span>{{ page }}
+        </a>
+      {% endfor %}
+    </div>
+    {% if paginate.nextUrl %}
+      <a class="pagination__item" href="{{ paginate.nextUrl }}">Next<span class="visuallyhidden"> page</span></a>
+      <a class="pagination__item" href="{{ paginate.lastUrl }}">Last<span class="visuallyhidden"> page</span></a>
+    {% else %}
+      <span class="pagination__item pagination__item--disabled" aria-hidden="true">Next<span class="visuallyhidden"> page</span></span>
+      <span class="pagination__item pagination__item--disabled" aria-hidden="true">Last<span class="visuallyhidden"> page</span></span>
+    {% endif %}
+  </div>
+{% endif %}

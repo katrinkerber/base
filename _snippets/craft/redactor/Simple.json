@@ -1,0 +1,5 @@
+{
+  buttons: ['bold', 'italic','link'],
+  plugins: ['source'],
+  toolbarFixedBox: true
+}

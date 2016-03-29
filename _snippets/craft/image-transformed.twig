@@ -1,0 +1,7 @@
+<img
+  src="{{ image.getUrl({mode: 'fit', width: 1200}) }}"
+  srcset="{{ image.getUrl({mode: 'fit', width: 480}) }} 480w,
+          {{ image.getUrl({mode: 'fit', width: 1200}) }} 1200w"
+  sizes="100%"
+  alt="{{ image.altDescription }}"
+>

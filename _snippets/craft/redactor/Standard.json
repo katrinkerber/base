@@ -1,0 +1,6 @@
+{
+  formatting: ['h2', 'h3', 'h4', 'blockquote', 'p'],
+	buttons: ['format','bold','italic','lists','link'],
+	plugins: ['fullscreen','source'],
+  toolbarFixedBox: true
+}

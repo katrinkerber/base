@@ -1,19 +1,23 @@
+{# Wrap entire _layout file in spacelss tags #}
+{% spaceless %}
+{% endspaceless %}
+
 {# Meta title #}
 {% set metaTitle %}
   {% if entry.metaTitle|default %}
     {{ entry.metaTitle }}
-  {% elseif pageTitle|default %}
-    {{ pageTitle }} | {{ siteName }}
   {% elseif entry.title|default %}
     {% if craft.request.getFirstSegment() %}
-      {{ entry.title }} | {{ siteName }}
+      {{ entry.title }} - {{ siteName }}
     {% else %}
       {{ siteName }}
     {% endif %}
   {% endif %}
 {% endset %}
 
-<title>{% spaceless %}{{ metaTitle }}{% endspaceless %}</title>
+{% block metaTitle %}
+  <title>{% spaceless %}{{ metaTitle }}{% endspaceless %}</title>
+{% endblock %}
 
 {# Meta desc #}
 {% if entry.metaDescription|default %}
@@ -24,21 +28,25 @@
 
 
 {# Robots #}
-{% if craft.config.devMode %}
-  <meta name="robots" content="noindex, nofollow">
-{% else %}
-  <meta name="robots" content="/robots.txt" />
-{% endif %}
+{% block robots %}
+  {% if craft.config.devMode %}
+    <meta name="robots" content="noindex, nofollow">
+  {% else %}
+    <meta name="robots" content="/robots.txt" />
+  {% endif %}
+  {# Prevent Search Engines using DMOZ data. #}
+  <meta name="robots" content="NOODP">
+{% endblock %}
 
-
+{# Canonical #}
+<link rel="canonical" href="{{ craft.request.url }}">
 
 {# CSS #}
 {% if craft.config.devMode or ('staging' in craft.request.url() ) %}
-  <link rel="stylesheet" href="/assets/css/styles.css?v{{now|date("Y-m-d-H-i")}}">
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v{{now|date("Y-m-d-H-i")}}">
 {% else %}
   <link rel="stylesheet" href="/assets/css/styles.min.css?v=1.1">
 {% endif %}
-
 
 
 {# Twitter Card and Open Graph #}
@@ -48,8 +56,8 @@
   <meta name="twitter:card" content="summary" />
 {% endif %}
 
-<meta name="twitter:site" content="twitter-username" />
-<meta name="twitter:creator" content="twitter-username" />
+<meta name="twitter:site" content="@twitter-username" />
+<meta name="twitter:creator" content="@twitter-username" />
 
 <meta property="og:url" content="{{ craft.request.url }}" />
 

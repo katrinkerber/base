@@ -18,7 +18,7 @@
   <p>Special rules can also be added for special fields, i.e. email, url, numbers, minlength etc.</p>
   <p><strong>Check <a href="http://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods">the documentation here</a></strong> or <a href="http://johnnycode.com/2014/03/27/using-jquery-validate-plugin-html5-data-attribute-rules/">this post</a> for built-in and additional validation rules.</p>
 
-  <form method="post" autocomplete="off">
+  <form class="js-validate" method="post" autocomplete="off">
     <fieldset>
       <h2>Simple text field</h2>
       <div class="form__field">
@@ -34,8 +34,6 @@
           required
           data-msg-required="Please enter your name."
         >
-        <!-- This element holds the error message set with the data-msg-required attribute in the input element above -->
-        <span class="form__field--error__msg"></span>
       </div>
 
       <div class="form__field">
@@ -55,7 +53,6 @@
           data-rule-email="true"
           data-msg-email="Please enter a valid email address."
         >
-        <span class="form__field--error__msg"></span>
       </div>
 
       <div class="form__field">
@@ -75,7 +72,6 @@
           data-rule-digits="true"
           data-msg-digits="Please enter only numerical characters."
         >
-        <span class="form__field--error__msg"></span>
       </div>
 
       <div class="form__field">
@@ -95,7 +91,6 @@
           data-rule-url="true"
           data-msg-url="Please enter a valid URL address (including the http://)."
         >
-        <span class="form__field--error__msg"></span>
       </div>
 
       <div class="form__field">
@@ -114,7 +109,6 @@
           data-rule-minlength="10"
           data-msg-minlength="Please enter at least 10 characters."
         >
-        <span class="form__field--error__msg"></span>
       </div>
     </fieldset>
     <button type="submit">Submit</button>
@@ -126,9 +120,11 @@
 <!-- This handles the actual validation. No changes necessary (unless you want to change classes of course). All validation rules are handled via the HTML -->
 <script>
   function formValidation() {
-    $('form').each(function(){
+    $('form.js-validate').each(function(){
+      $(this).find('.form__field').append('<span class="form__field--error__msg"></span>');
+
       var validator = $(this).validate({
-        // empty errorPlacement function ensures no error element is being created, we are adding that ourselves
+        // empty errorPlacement function ensures no error element is being created, we've added this ourselves above
         errorPlacement: function(error, element) {},
         onfocusout: function (element) {
           $(element).valid();
