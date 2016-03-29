@@ -1,0 +1,19 @@
+.icon {
+  @include inline-block;
+  background-repeat: no-repeat;
+}
+.icon--arrow-down {
+  @include rem(width, 16px);
+  @include rem(height, 11px);
+  background-image: url('../images/icons/icon-arrow-down.png');
+  html.svg & {
+    background-image: url('../images/icons/icon-arrow-down.svg');
+  }
+
+  &--yellow {
+    background-image: url('../images/icons/icon-arrow-down-yellow.png');
+    html.svg & {
+      background-image: url('../images/icons/icon-arrow-down-yellow.svg');
+    }
+  }
+}
