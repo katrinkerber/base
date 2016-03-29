@@ -87,14 +87,11 @@ AddDefaultCharset utf-8
 # ----------------------------------------------------------------------
 # PHP SETTINGS
 # ----------------------------------------------------------------------
-
-# Configure the PHP file upload size
-# php_value post_max_size 32M
+# php_value post_max_size 50M
 # php_value upload_max_filesize 32M
 # php_value max_execution_time 600
-
-# Override default memory limit so PHP can process large files
-# php_value memory_limit 128M
+# php_value max_input_vars 5000
+# php_value memory_limit 512M
 
 # ------------------------------------------------------------------------------
 # | Rewrite engine                                                             |
@@ -131,6 +128,17 @@ AddDefaultCharset utf-8
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
 </IfModule>
+
+# ------------------------------------------------------------------------------
+# | Craft CMS                           |
+# ------------------------------------------------------------------------------
+# <IfModule mod_rewrite.c>
+#   # Send would-be 404 requests to Craft
+#   RewriteCond %{REQUEST_FILENAME} !-f
+#   RewriteCond %{REQUEST_FILENAME} !-d
+#   RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+#   RewriteRule (.+) index.php?p=$1 [QSA,L]
+# </IfModule>
 
 # ------------------------------------------------------------------------------
 # | File access                                                                |
