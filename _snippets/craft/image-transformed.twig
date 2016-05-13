@@ -1,7 +1,14 @@
-<img
-  src="{{ image.getUrl({mode: 'fit', width: 1200}) }}"
-  srcset="{{ image.getUrl({mode: 'fit', width: 480}) }} 480w,
-          {{ image.getUrl({mode: 'fit', width: 1200}) }} 1200w"
-  sizes="100%"
-  alt="{{ image.altDescription }}"
->
+{% if image.width < 960 %}
+  <img
+    src="{{ image.getUrl({ mode: 'fit', width: image.width, format: 'jpg' }) }}"
+    alt="{{ image.alt }}"
+  >
+{% else %}
+  <img
+    src="{{ image.getUrl({ mode: 'fit', width: image.width, format: 'jpg' }) }}"
+    srcset="{{ image.getUrl({ mode: 'fit', width: 480, format: 'jpg' }) }} 480w,
+            {{ image.getUrl({ mode: 'fit', width: 960, format: 'jpg' }) }} 960w"
+    sizes="(min-width: 960px) 960px, 100vw"
+    alt="{{ image.alt }}"
+  >
+{% endif %}

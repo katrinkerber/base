@@ -68,15 +68,23 @@ Links
 ====*/
 a {
   color: red;
-  text-decoration:none;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    outline: 0;
+  }
+  &:focus {
+    outline: thin dotted;
+  }
 }
-a:focus {
-  outline: thin dotted;
-}
-a:hover,
-a:active {
-  text-decoration: underline;
-  outline: 0;
+a[href^='tel'] {
+  html.no-touch & {
+    color: inherit;
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 /*====

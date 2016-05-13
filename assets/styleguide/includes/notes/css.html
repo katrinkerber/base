@@ -13,7 +13,7 @@ h1 {
 font-size: 20px;
 }
 /* Larger viewport - using Media Query with Sass Variable */
-@media screen and (min-width: $breakpoint) { {
+@media screen and (min-width: em(640px)) {
   h1 {
     font-size: 26px;
   }
@@ -32,17 +32,19 @@ css/
 |-- 02base/                    # Base styles
 |   |-- normalize.scss         # Help with cross-browser consistency
 |   |-- typography.scss        # Unclassed and some classed styled
-|   |-- layout.scss            # Overall global page layout
 |
 |-- 03modules/                 # Global reusable components
-|   |-- buttons.scss           # Buttons
-|   |-- forms.scss             # Forms and its elements
+|   |-- icons.scss             # Icons
+|   |-- forms.scss             # Forms and form elements
 |   |-- media.scss             # Images, videos etc
-|   |-- site-header.scss       # Site’s header
-|   |-- site-footer.scss       # Site’s footer
 |   ...
 |
-|-- 04pages                    # Page styles (add file for every page needed, but keep them to minimum)
+|-- 04layout/                  # Page styles (add file for every page needed, but keep them to minimum)
+|   |-- global.scss            # Global layout styles
+|   |-- sitefooter.scss        # Site’s header
+|   |-- siteheader.scss        # Site’s footer
+|
+|-- 05pages                    # Page styles (add file for every page needed, but keep them to minimum)
 |   |-- base.scss              # Global base page styles
 |   |-- home.scss              # Home specific page
 |   ...
@@ -53,14 +55,13 @@ css/
 
   <h2>Syntax</h2>
   <ul>
-    <li>Use soft-tabs with two spaces.</li>
+    <li>Use soft-tabs with <strong>2 spaces</strong>.</li>
     <li>When grouping selectors, keep individual selectors to a single line.</li>
     <li>Include one space before the opening brace of declaration blocks.</li>
     <li>Place closing braces of declaration blocks on a new line.</li>
     <li>Include one space after : for each declaration.</li>
     <li>End all declarations with a semi-colon.</li>
     <li>Comma-separated property values should include a space after each comma (e.g. <code>box-shadow</code>).</li>
-    <li>Don't prefix values with a leading zero (e.g. <code>.5</code> instead of <code>0.5</code>).</li>
     <li>Decide on whether you using upper or lower case for hex values and keep it consistent across all styles.</li>
     <li>Double-quote attribute values in selectors, e.g., <code>input[type="text"]</code>.</li>
     <li>Don't specify units for zero values, e.g. <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
@@ -70,7 +71,6 @@ css/
 .selector, .selector-secondary, .selector[type=text] {
 padding:15px;
 margin:0px 0px 15px;
-background-color:rgba(0, 0, 0, 0.5);
 box-shadow:0 1px 2px #CCC,inset 0 1px 0 #ffffff
 }
 
@@ -80,12 +80,11 @@ box-shadow:0 1px 2px #CCC,inset 0 1px 0 #ffffff
 .selector[type="text"] {
 padding: 15px;
 margin: 0 0 15px;
-background-color: rgba(0,0,0,.5);
 box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
 </code></pre>
 
-  <h2>Shorthand conventions</h2>
+  <h2>Avoid shorthand conventions</h2>
   <p>Avoid using shorthand declarations as it leads to sloppier code with the need to add unnecessary overrides.</p>
   <p>Although some people may feel declaring properties singularly is too verbose, it is far easier to manage when multiple developers are managing the code.</p>
 
@@ -154,12 +153,9 @@ opacity: 1;
 
   <h2>Media query placement</h2>
   <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future.</p>
-  <p>Here's a typical setup using the media-query mixin set in <code>variablesmixins.scss</code>:</p>
+  <p>Breakpoints are declared in <code>ems</code>, <a href="http://zellwk.com/blog/media-query-units/#concluding-the-experiments">here’s why</a>. Use Bourbon’s <a href="http://bourbon.io/docs/#px-to-em">'Pixels to Ems' function</a> to help.</p>
 <pre class="language-css"><code>
-.element { ... }
-.element--selected { ... }
-
-@media screen and (min-width: $breakpoint) { {
+@media screen and (min-width: em(640px)) {
   .element { ... }
   .element--selected { ... }
 }

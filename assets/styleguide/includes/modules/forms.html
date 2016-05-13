@@ -1,0 +1,186 @@
+<section id="forms" data-section-child>
+  <h1>Standard form</h1>
+  <small class="note">03modules/forms.scss</small>
+
+  <p>JS-driven validation is powered by the <a href="http://jqueryvalidation.org/">jQuery Validate Plugin</a>.</p>
+
+  <p>All validation rules are applied to the form field via attributes.</p>
+
+  <p>The <code>required</code> attribute on a field triggers either the JS validation, or the default browser validation if JS is disabled.</p>
+
+  <p>The <code>data-msg-required</code> attribute defines the error message that appears when the field is invalid.</p>
+
+  <p>Special rules can also be added for special fields, i.e. email, url, numbers, minlength etc.. <strong>Check <a href="http://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods">the documentation here</a></strong> or <a href="http://johnnycode.com/2014/03/27/using-jquery-validate-plugin-html5-data-attribute-rules/">this post</a> for built-in and additional validation rules.</p>
+
+  <form data-js="validate" method="post" autocomplete="off">
+    <fieldset class="form__fields">
+      <div class="form__fields__group">
+        <div class="form__field">
+          <label for="name">
+            Your name
+          </label>
+          <input
+            name="name"
+            id="name"
+            type="text"
+
+            aria-required="true"
+            required
+            data-msg-required="Please enter your name."
+          >
+        </div>
+
+        <div class="form__field form__field--inline">
+          <label for="number">
+            Telephone number
+          </label>
+          <input
+            name="number"
+            id="number"
+            type="tel"
+
+            aria-required="true"
+            required
+            data-msg-required="Please add a number."
+            data-rule-digits="true"
+            data-msg-digits="Please enter only numerical characters."
+          >
+        </div>
+      </div>
+
+      <div class="form__fields__group">
+        <div class="form__field">
+          <label for="email">
+            Email address
+          </label>
+          <input
+            name="email"
+            id="email"
+            type="email"
+
+            aria-required="true"
+            required
+            data-msg-required="Please enter your email."
+            data-rule-email="true"
+            data-msg-email="Please enter a valid email address."
+          >
+        </div>
+
+        <div class="form__field">
+          <label for="company">
+            Company name
+          </label>
+          <input
+            name="company"
+            id="company"
+            type="text"
+
+            aria-required="true"
+            required
+            data-msg-required="Please enter your name."
+          >
+        </div>
+      </div>
+
+      <div class="form__field">
+        <label for="message">
+          Your message
+        </label>
+        <textarea
+          name="message"
+          id="message"
+          rows="1"
+        ></textarea>
+      </div>
+    </fieldset>
+
+    <button class="form__btn btn btn--white" type="submit">Send</button>
+  </form>
+
+<pre class="language-markup maxwidth1024"><code>
+&lt;form class="js-validate" method="post" autocomplete="off">
+  &lt;fieldset class="form__fields">
+    &lt;div class="form__fields__group">
+      &lt;div class="form__field">
+        &lt;label for="name">
+          Your name
+        &lt;/label>
+        &lt;input
+          name="name"
+          id="name"
+          type="text"
+
+          aria-required="true"
+          required
+          data-msg-required="Please enter your name."
+        >
+      &lt;/div>
+
+      &lt;div class="form__field form__field--inline">
+        &lt;label for="number">
+          Telephone number
+        &lt;/label>
+        &lt;input
+          name="number"
+          id="number"
+          type="tel"
+
+          aria-required="true"
+          required
+          data-msg-required="Please add a number."
+          data-rule-digits="true"
+          data-msg-digits="Please enter only numerical characters."
+        >
+      &lt;/div>
+    &lt;/div>
+
+    &lt;div class="form__fields__group">
+      &lt;div class="form__field">
+        &lt;label for="email">
+          Email address
+        &lt;/label>
+        &lt;input
+          name="email"
+          id="email"
+          type="email"
+
+          aria-required="true"
+          required
+          data-msg-required="Please enter your email."
+          data-rule-email="true"
+          data-msg-email="Please enter a valid email address."
+        >
+      &lt;/div>
+
+      &lt;div class="form__field">
+        &lt;label for="company">
+          Company name
+        &lt;/label>
+        &lt;input
+          name="company"
+          id="company"
+          type="text"
+
+          aria-required="true"
+          required
+          data-msg-required="Please enter your name."
+        >
+      &lt;/div>
+    &lt;/div>
+
+    &lt;div class="form__field">
+      &lt;label for="message">
+        Your message
+      &lt;/label>
+      &lt;textarea
+        name="message"
+        id="message"
+        rows="1"
+      >&lt;/textarea>
+    &lt;/div>
+  &lt;/fieldset>
+
+  &lt;button class="form__btn btn btn--white" type="submit">Send&lt;/button>
+&lt;/form>
+</code></pre>
+</section>

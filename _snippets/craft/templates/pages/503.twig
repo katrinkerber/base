@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+
+{% block metaTitle %}
+  <title>Site Temporarily Unavailable - {{ siteName }}</title>
+{% endblock %}
+
+{% block robots %}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+  <div class="page-intro">
+    <p>
+      This website is temporarily unavailable for maintenance.
+    </p>
+  </div>
+{% endblock %}

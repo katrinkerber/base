@@ -10,6 +10,8 @@ html {
   -webkit-text-size-adjust: 100%;
   // Nicer text rendering in webkit
   -webkit-font-smoothing: antialiased;
+  // Make text less bold in Firefox
+  -moz-osx-font-smoothing: grayscale;
   // Forcing a scroll bar to prevent page jumps on short pages
   overflow-y: scroll;
 }
@@ -148,6 +150,7 @@ nav ul {
 EMBEDDED CONTENT
 ========================================================================== */
 img {
+  -webkit-backface-visibility: hidden; /* Stops image shifting in Chrome when using opacity change on hover */
   -ms-interpolation-mode: bicubic; /* improve image quality when scaled in IE 7 */
   vertical-align: middle; /* remove gap between images and the bottom of their containers */
   border: 0; /* Remove the border on images inside links in IE 10-. */
@@ -250,9 +253,15 @@ textarea {
   color: inherit;
 }
 
-/* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+/*
+1. Address `overflow` set to `hidden` in IE 8/9/10/11
+2. Specify focus outline style */
 button {
   overflow: visible;
+
+  &:focus {
+    outline: 1px dotted;
+  }
 }
 
 /*
@@ -334,10 +343,10 @@ Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X
 
 /*
 TABLES
-==========================================================================
-*/
+========================================================================== */
 
-/* Remove most spacing between table cells. */
+/*
+Remove most spacing between table cells. */
 table {
   border-collapse: collapse;
   border-spacing: 0;

@@ -1,0 +1,70 @@
+<section id="mixins" data-section-child>
+  <h1>Mixins</h1>
+  <small class="note">01tools/mixins.scss</small>
+
+  <p>A couple of custom mixins, <strong>which are not covered by Bourbon and are not classed as styling helpers</strong>.</p>
+
+  <h2>REM Mixin</h2>
+  <p>Converts pixel units into both pixel and rem values. Adapted from <a href="https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss">Ben Frain’s code</a>.</p>
+
+<pre><code class="language-css">
+/* rem(font-size, 28px) returns: */
+font-size: 28px;
+font-size: 1.75rem;
+</code></pre>
+
+  <p>If you are using Sublime Text and <a href="http://emmet.io/">Emmet</a>, consider adding these following <a href="https://github.com/emmetio/emmet/blob/master/lib/snippets.json">custom snippets</a> to <em>Emmet customization</em> section in the <code>Settings - User</code> file to make your life easier:</p>
+
+<pre><code class="language-markup">
+  "css": {
+    "snippets": {
+      "rem": "@include rem(${1});",
+      "remm": "@include rem(margin, ${1});",
+      "remmt": "@include rem(margin-top, ${1});",
+      "remmr": "@include rem(margin-right, ${1});",
+      "remmb": "@include rem(margin-bottom, ${1});",
+      "remml": "@include rem(margin-left, ${1});",
+      "rempt": "@include rem(padding-top, ${1});",
+      "remp": "@include rem(padding, ${1});",
+      "rempr": "@include rem(padding-right, ${1});",
+      "rempb": "@include rem(padding-bottom, ${1});",
+      "rempl": "@include rem(padding-left, ${1});",
+      "remw": "@include rem(width, ${1});",
+      "remmw": "@include rem(max-width, ${1});",
+      "remh": "@include rem(height, ${1});",
+      "remmh": "@include rem(max-height, ${1});",
+      "remfz": "@include rem(font-size, ${1});",
+      "remlts": "@include rem(letter-spacing, ${1});",
+      "remt": "@include rem(top, ${1});",
+      "remr": "@include rem(right, ${1});",
+      "remb": "@include rem(bottom, ${1});",
+      "reml": "@include rem(left, ${1});"
+    }
+  }
+</code></pre>
+
+  <h2>Hover States</h2>
+
+  <p>A shortcut to apply styling changes to the <code>&:hover, &:focus, &:active</code> states in one go.</p>
+
+<pre><code class="language-css">
+/* Input */
+a {
+  color: blue;
+
+  @include hover-states {
+    color: red;
+  }
+}
+
+/* Output */
+a {
+  color: blue;
+}
+a:hover,
+a:focus,
+a:active {
+  color: red;
+}
+</code></pre>
+</section>

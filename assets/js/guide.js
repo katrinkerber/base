@@ -31,14 +31,15 @@ $(document).ready(function() {
     $('nav').find('a[href="' + window.location.hash + '"]').addClass('nav__current');
   } else {
     $sectionChildren.hide();
-    $('[data-section-child]#intro').show();
-    $('nav').find('a[href="#intro"]').addClass('nav__current');
+    $('[data-section]:first-child [data-section-child]:first-child').show();
+    $('nav').find('li:first-child ul li:first-child a').addClass('nav__current');
   }
 
   $links.click(function(){
     var $this = $(this);
     var target = $this.attr('href');
     window.location.hash = target;
+    window.scrollTo(0, 0);
     $links.not($this).removeClass('nav__current');
     $sectionChildren.hide();
     $this.addClass('nav__current');

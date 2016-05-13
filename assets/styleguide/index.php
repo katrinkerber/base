@@ -44,6 +44,8 @@
     <div data-section data-section-title="Tools">
       <?php
         include 'includes/tools/colours.html';
+        include 'includes/tools/helpers.html';
+        include 'includes/tools/mixins.html';
       ?>
     </div>
 
@@ -52,13 +54,20 @@
         include 'includes/base/typography.html';
       ?>
     </div>
+
+    <div data-section data-section-title="Modules">
+      <?php
+        include 'includes/modules/icons.html';
+        include 'includes/modules/forms.html';
+      ?>
+    </div>
   </main>
 
 
   <!-- JavaScript -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/assets/libs/prism/prism.js"></script>
-  <!-- Styleguide specific -->
-  <script src="/assets/js/styleguide.min.js"></script>
+  <!-- Guide specific -->
+  <script src="/assets/js/guide.min.js"></script>
 </body>
 </html>

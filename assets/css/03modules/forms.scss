@@ -17,12 +17,9 @@ label {
 input,
 textarea {
   outline:none;
+
+  @include placeholder {
+    color: #999;
+    font-style: italic;
+  }
 }
-
-
-/* Placeholders */
-::-webkit-input-placeholder { color: #999; opacity: 1; font-style: italic; }
-::-moz-placeholder { color: #999; opacity: 1; font-style: italic; } /* Firefox 4 to 18 */
-:-moz-placeholder{ color: #999; opacity: 1; font-style: italic; } /* Firefox 19+ */
-:-ms-input-placeholder { color: #999; opacity: 1; font-style: italic; } /*Internet Explorer 10+ */
-::input-placeholder { color: #999; font-style: italic; }

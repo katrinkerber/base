@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+
+{% block metaTitle %}
+  <title>Page Not Found - {{ siteName }}</title>
+{% endblock %}
+
+{% block robots %}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+  <div class="page-intro">
+    <p>
+      The page you are looking for cannot be found.
+    </p>
+  </div>
+{% endblock %}

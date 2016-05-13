@@ -2,19 +2,22 @@
 ==========================================================================
 EMBEDDED MEDIA
 ========================================================================== */
-figure {
-  margin: 0;
-}
-figure img { }
-
 img {
   max-width: 100%;
   height: auto;
+  // Stop image shifting in chrome when using hover with opacity change
+  -webkit-backface-visibility: hidden;
+
+  a & {
+    @include transition(opacity, 0.3s ease-in-out);
+    @include hover-states {
+      opacity: 0.8;
+    }
+  }
 }
-a:hover img,
-a:focus img,
-a:active img {
-  opacity: 0.8;
+
+figure {
+
 }
 
 /*

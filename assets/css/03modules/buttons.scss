@@ -1,0 +1,8 @@
+.btn {
+  display: table;
+
+  &--inline {
+    @include inline-block;
+    vertical-align: middle;
+  }
+}
